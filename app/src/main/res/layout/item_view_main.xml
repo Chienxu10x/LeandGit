@@ -103,6 +103,7 @@
     </GridLayout>
 
     <Button
+        android:id="@+id/buttonTheme"
         android:layout_width="99dp"
         android:layout_height="38dp"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"

@@ -20,9 +20,9 @@ class ViewPagerAdapterTheme(fragment: Fragment) : FragmentStateAdapter(fragment)
     override fun createFragment(position: Int): Fragment {
 
        return when(position){
-           0->FragmetThemeChild();
-           1->FragmentThemeChild2();
-           else->FragmetThemeChild();
+           0->FragmetThemeChild()
+           1->FragmentThemeChild2()
+           else->FragmetThemeChild()
        }
     }
 
