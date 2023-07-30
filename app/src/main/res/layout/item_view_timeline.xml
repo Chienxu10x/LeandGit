@@ -1,59 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="513dp">
+    android:layout_height="503dp"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="@color/gray">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="92dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="11dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/minutes_ago"
-        android:layout_width="89dp"
-        android:layout_height="24dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <RelativeLayout
-        android:id="@+id/frame_13"
-        android:layout_width="99dp"
-        android:layout_height="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
+        android:id="@+id/RelativeLayoutTimeLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/imageViewTimelineFace"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/green_1"/>
 
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf="@+id/imageViewTimelineFace">
+            <TextView
+                android:id="@+id/textViewNameTimeline"
+                android:layout_width="92dp"
+                android:layout_height="24dp"
 
+                android:text="Name"/>
+            <TextView
+                android:id="@+id/textViewTimes"
+                android:layout_width="92dp"
+                android:layout_height="24dp"
+                android:text="Name"
+                />
+
+        </LinearLayout>
+        <Button
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_width="99dp"
+            android:layout_height="38dp"
+            android:text="Get theme"
+            android:textSize="10dp"/>
+
+        
+    </RelativeLayout>
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/textView2"
-        android:layout_width="343dp"
+        android:layout_width="match_parent"
         android:layout_height="38dp"
-        app:layout_constraintBottom_toTopOf="@+id/view1"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/blue"
+        />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view1"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="405dp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:paddingTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/image_timeline"
+            android:layout_width="164dp"
+            android:layout_height="355.11dp"
+            android:layout_alignParentStart="true"
+            android:background="@color/green_1"/>
+
+        <ImageView
+            android:id="@+id/image_timeline2"
+            android:layout_width="164dp"
+            android:layout_height="355.11dp"
+            android:layout_alignParentEnd="true"
+            android:background="@color/green_2"/>
+
+    </RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

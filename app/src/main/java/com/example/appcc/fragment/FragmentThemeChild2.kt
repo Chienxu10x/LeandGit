@@ -15,4 +15,6 @@ class FragmentThemeChild2 : Fragment() {
         return inflater.inflate(R.layout.fragment_theme_child2, container, false)
     }
 
+
+
 }

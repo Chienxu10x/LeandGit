@@ -28,8 +28,6 @@ class IconsFragment : Fragment(), OnTabNameChangedListener {
             val list : List<String> = listOf(
                 "Chuỗi 1",
                 "Chuỗi 1",
-
-
                 )
 
             val recyclerView: RecyclerView = view.findViewById(R.id.recyclerview_icon)
