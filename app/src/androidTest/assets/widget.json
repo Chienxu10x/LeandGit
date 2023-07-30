@@ -1,0 +1,246 @@
+{
+  "widgets": [
+    {
+      "title": "Dark Moon",
+      "widget": [
+        {
+          "clock": "Widget/widget1/widget_1.webp",
+          "calendar": "Widget/widget1/widget_2.webp",
+          "text_font": "Font/Pacifico-Regular.ttf",
+          "number_font": "Font/roboto_black.ttf",
+          "text_color_1": "#A0615C",
+          "text_color_2": "#80A0615C",
+          "number_color_1": "#80A0615C",
+          "number_color_2": "#A0615C",
+
+          "widget": [
+            "Widget/widget1/widget_3.webp",
+            "Widget/widget1/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget1/widget_5.webp",
+            "Widget/widget1/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget1/widget_7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Dark Green",
+      "widget": [
+        {
+          "clock": "Widget/widget2/widget_1.webp",
+          "calendar": "Widget/widget2/widget_2.webp",
+          "text_font": "Font/Chonburi-Regular.ttf",
+          "number_font": "Font/Chonburi-Regular.ttf",
+          "text_color_1": "#593B9F",
+          "text_color_2": "#593B9F",
+          "number_color_1": "#593B9F",
+          "number_color_2": "#FFFFFF",
+          "widget": [
+            "Widget/widget2/widget_3.webp",
+            "Widget/widget2/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget2/widget_5.webp",
+            "Widget/widget2/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget2/widget_7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Flower",
+      "widget": [
+        {
+          "clock": "Widget/widget3/widget_1.webp",
+          "calendar": "Widget/widget3/widget_2.webp",
+          "text_font": "Font/Thabit.ttf",
+          "number_font": "Font/roboto_black.ttf",
+          "text_color_1": "#105C5A",
+          "text_color_2": "#BDA068",
+          "number_color_1": "#BDA068",
+          "number_color_2": "#105C5A",
+          "widget": [
+            "Widget/widget3/widget_3.webp",
+            "Widget/widget3/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget3/widget_5.webp",
+            "Widget/widget3/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget3/widget_7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Girl",
+      "widget": [
+        {
+          "clock": "Widget/widget4/widget_1.webp",
+          "calendar": "Widget/widget4/widget_2.webp",
+          "text_font": "Font/Pacifico-Regular.ttf",
+          "number_font": "Font/roboto_black.ttf",
+          "text_color_1": "#FFFFFF",
+          "text_color_2": "#B44463",
+          "number_color_1": "#B44463",
+          "number_color_2": "#B44463",
+          "widget": [
+            "Widget/widget4/widget_3.webp",
+            "Widget/widget4/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget4/widget_5.webp",
+            "Widget/widget4/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget4/widget_7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Cute",
+      "widget": [
+        {
+          "clock": "Widget/widget5/widget_1.webp",
+          "calendar": "Widget/widget5/widget_2.webp",
+          "text_font": "Font/roboto_black.ttf",
+          "number_font": "Font/Chonburi-Regular.ttf",
+          "text_color_1": "#A0615C",
+          "text_color_2": "#A0615C",
+          "number_color_1": "#C09C7E",
+          "number_color_2": "#A27B5A",
+          "widget": [
+            "Widget/widget5/widget_3.webp",
+            "Widget/widget5/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget5/widget_5.webp",
+            "Widget/widget5/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget5/widget_7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Autumn",
+      "widget": [
+        {
+          "clock": "Widget/widget6/widget_1.webp",
+          "calendar": "Widget/widget6/widget_2.webp",
+          "text_font": "Font/Pacifico-Regular.ttf",
+          "number_font": "Font/roboto_black.ttf",
+          "text_color_1": "#888B54",
+          "text_color_2": "#D58B22",
+          "number_color_1": "#BEE6F9",
+          "number_color_2": "#007183",
+          "widget": [
+            "Widget/widget6/widget_3.webp",
+            "Widget/widget6/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget6/widget_5.webp",
+            "Widget/widget6/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget6/widget_7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Violet",
+      "widget": [
+        {
+          "clock": "Widget/widget7/widget_1.webp",
+          "calendar": "Widget/widget7/widget_2.webp",
+          "text_font": "Font/Thabit.ttf",
+          "number_font": "Font/Dokdo-Regular.ttf",
+          "text_color_1": "#FFFFFF",
+          "text_color_2": "#FFFFFF",
+          "number_color_1": "#A70A0F",
+          "number_color_2": "#E0A460",
+          "widget": [
+            "Widget/widget7/widget_3.webp",
+            "Widget/widget7/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget7/widget_5.webp",
+            "Widget/widget7/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget7/widget_7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Summer",
+      "widget": [
+        {
+          "clock": "Widget/widget8/widget_1.webp",
+          "calendar": "Widget/widget8/widget_2.webp",
+          "text_font": "Font/Thabit.ttf",
+          "number_font": "Font/roboto_black.ttf",
+          "text_color_1": "#FA8895",
+          "text_color_2": "#DC606F",
+          "number_color_1": "#DC606F",
+          "number_color_2": "#FA8895",
+          "widget": [
+            "Widget/widget8/widget_3.webp",
+            "Widget/widget8/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget8/widget_5.webp",
+            "Widget/widget8/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget8/widget_7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Sea",
+      "widget": [
+        {
+          "clock": "Widget/widget9/widget_1.webp",
+          "calendar": "Widget/widget9/widget_2.webp",
+          "text_font": "Font/Thabit.ttf",
+          "number_font": "Font/roboto_black.ttf",
+          "text_color_1": "#FA8895",
+          "text_color_2": "#DC606F",
+          "number_color_1": "#DC606F",
+          "number_color_2": "#FA8895",
+          "widget": [
+            "Widget/widget9/widget_3.webp",
+            "Widget/widget9/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget9/widget_5.webp",
+            "Widget/widget9/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget9/widget_7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Rainbow",
+      "widget": [
+        {
+          "clock": "Widget/widget10/widget_1.webp",
+          "calendar": "Widget/widget10/widget_2.webp",
+          "text_font": "Font/Thabit.ttf",
+          "number_font": "Font/roboto_black.ttf",
+          "text_color_1": "#FA8895",
+          "text_color_2": "#DC606F",
+          "number_color_1": "#DC606F",
+          "number_color_2": "#FA8895",
+          "widget": [
+            "Widget/widget10/widget_3.webp",
+            "Widget/widget10/widget_4.webp"
+          ],
+          "long_widget": [
+            "Widget/widget10/widget_5.webp",
+            "Widget/widget10/widget_6.webp"
+          ],
+          "big_widget": "Widget/widget10/widget_7.webp"
+        }
+      ]
+    }
+
+  ]
+}

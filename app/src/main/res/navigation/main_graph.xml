@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/themes_fragment">
+
+    <fragment
+        android:id="@+id/themes_fragment"
+        android:name="com.example.appcc.fragment.ThemesFragment"
+        android:label="@string/themes"
+        tools:layout="@layout/fragment_themes" >
+        <action
+            android:id="@+id/action_themes_fragment_to_wallpaper_fragment"
+            app:destination="@id/wallpaper_fragment" />
+        <action
+            android:id="@+id/action_themes_fragment_to_timeline_fragment"
+            app:destination="@id/timeline_fragment" />
+        <action
+            android:id="@+id/action_themes_fragment_to_widgets_fragment"
+            app:destination="@id/widgets_fragment" />
+        <action
+            android:id="@+id/action_themes_fragment_to_icons_fragment"
+            app:destination="@id/icons_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/icons_fragment"
+        android:name="com.example.appcc.fragment.IconsFragment"
+        android:label="@string/icons"
+        tools:layout="@layout/fragment_icons" />
+    <fragment
+        android:id="@+id/wallpaper_fragment"
+        android:name="com.example.appcc.fragment.WallpaperFragment"
+        android:label="@string/wallpaper"
+        tools:layout="@layout/fragment_wallpaper" />
+    <fragment
+        android:id="@+id/timeline_fragment"
+        android:name="com.example.appcc.fragment.TimelineFragment"
+        android:label="@string/timeline"
+        tools:layout="@layout/fragment_timeline" />
+    <fragment
+        android:id="@+id/widgets_fragment"
+        android:name="com.example.appcc.fragment.WidgetsFragment"
+        android:label="@string/widgets"
+        tools:layout="@layout/fragment_widgets" />
+</navigation>

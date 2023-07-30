@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="@dimen/size_36"
+        android:layout_height="@dimen/size_36"
+        android:layout_marginStart="@dimen/size_36"
+        android:layout_marginTop="@dimen/size_36"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/back"
+        android:padding="@dimen/size_6"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="@dimen/size_10"
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_login"
+        android:layout_width="@dimen/size_200"
+        android:layout_height="@dimen/size_200"
+        android:src="@drawable/image_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_google"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_60"
+        android:layout_margin="@dimen/size_26"
+        android:background="@drawable/background_button_login"
+        android:contentDescription="@string/continue_with_google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_login"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/tv_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/work_sans_semibold"
+        android:text="@string/continue_with_google"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintBottom_toBottomOf="@id/btn_google"
+        app:layout_constraintEnd_toEndOf="@id/btn_google"
+        app:layout_constraintStart_toStartOf="@id/btn_google"
+        app:layout_constraintTop_toTopOf="@id/btn_google" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/size_40"
+        android:layout_height="@dimen/size_40"
+        android:layout_marginEnd="@dimen/size_12"
+        android:src="@drawable/ic_google"
+        app:layout_constraintBottom_toBottomOf="@id/btn_google"
+        app:layout_constraintEnd_toStartOf="@id/tv_google"
+        app:layout_constraintTop_toTopOf="@id/btn_google" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_60"
+        android:layout_margin="@dimen/size_26"
+        android:background="@drawable/background_button_login"
+        android:contentDescription="@string/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_google" />
+
+    <TextView
+        android:id="@+id/tv_facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/work_sans_semibold"
+        android:text="@string/continue_with_facebook"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintBottom_toBottomOf="@id/btn_facebook"
+        app:layout_constraintEnd_toEndOf="@id/btn_facebook"
+        app:layout_constraintStart_toStartOf="@id/btn_facebook"
+        app:layout_constraintTop_toTopOf="@id/btn_facebook" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/size_40"
+        android:layout_height="@dimen/size_40"
+        android:layout_marginEnd="@dimen/size_12"
+        android:src="@drawable/ic_facebook"
+        app:layout_constraintBottom_toBottomOf="@id/btn_facebook"
+        app:layout_constraintEnd_toStartOf="@id/tv_facebook"
+        app:layout_constraintTop_toTopOf="@id/btn_facebook" />
+
+    <LinearLayout
+        android:id="@+id/container_agree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_20"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_facebook">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/checkbox_color"
+            android:gravity="center" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans_semibold"
+            android:text="@string/i_agree_to_my_theme"
+            android:textColor="#00181A" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="@string/privacy_policy"
+        android:textAllCaps="false"
+        android:textColor="#E68257"
+        app:fontFamily="@font/work_sans_semibold"
+        app:layout_constraintEnd_toStartOf="@id/btn_term"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_agree" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="@string/term_of_use"
+        android:textAllCaps="false"
+        android:textColor="#E68257"
+        app:fontFamily="@font/work_sans_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_privacy"
+        app:layout_constraintTop_toBottomOf="@id/container_agree" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-40dp"
+        android:src="@drawable/image_deco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

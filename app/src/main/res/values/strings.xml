@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AppCC</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="themes">Themes</string>
+    <string name="icons">Icons</string>
+    <string name="widgets">Widgets</string>
+    <string name="timeline">Timeline</string>
+    <string name="wallpaper">Wallpaper</string>
+    <string name="back">Back</string>
+    <string name="title">Title</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="i_agree_to_my_theme">I agree to My Theme</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="term_of_use">Term of Use</string>
+</resources>

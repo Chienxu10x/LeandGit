@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/themes_fragment"
+        android:contentDescription="@string/themes"
+        android:icon="@drawable/ic_theme"
+        android:title="@string/themes" />
+    <item
+        android:id="@+id/icons_fragment"
+        android:contentDescription="@string/icons"
+        android:icon="@drawable/ic_icon"
+        android:title="@string/icons" />
+    <item
+        android:id="@+id/widgets_fragment"
+        android:contentDescription="@string/widgets"
+        android:icon="@drawable/ic_widget"
+        android:title="@string/widgets" />
+    <item
+        android:id="@+id/timeline_fragment"
+        android:contentDescription="@string/timeline"
+        android:icon="@drawable/ic_timeline"
+        android:title="@string/timeline" />
+    <item
+        android:id="@+id/wallpaper_fragment"
+        android:contentDescription="@string/wallpaper"
+        android:icon="@drawable/ic_wallpaper"
+        android:title="@string/wallpaper" />
+</menu>
