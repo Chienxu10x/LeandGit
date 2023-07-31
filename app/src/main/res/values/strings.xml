@@ -23,7 +23,6 @@
     <string name="i_agree_to_my_theme">I agree to My Theme</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="term_of_use">Term of Use</string>
-    <string name="app_name">IconKit</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
