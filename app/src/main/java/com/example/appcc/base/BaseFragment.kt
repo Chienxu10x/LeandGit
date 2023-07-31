@@ -1,5 +1,6 @@
 package com.example.appcc.base
 
+import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -7,10 +8,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 abstract class BaseFragment(@LayoutRes layout: Int) : Fragment(layout) {
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 //        LogInstance.e("___________Fragment " + this@BaseFragment::class)
-//    }
+    }
 //
 //    override fun onDestroy() {
 //        super.onDestroy()
