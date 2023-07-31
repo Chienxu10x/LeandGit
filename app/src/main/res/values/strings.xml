@@ -7,11 +7,58 @@
     <string name="widgets">Widgets</string>
     <string name="timeline">Timeline</string>
     <string name="wallpaper">Wallpaper</string>
+    <string name="setting">Setting</string>
     <string name="back">Back</string>
+    <string name="iconkit_premium">Premium Upgrade</string>
+    <string name="icon_kit_havefun">Have Fun Using the App without Ads</string>
     <string name="title">Title</string>
+    <string name="upagrade">upagrade</string>
+    <string name="general">General</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="share_this_app">Share this App</string>
+    <string name="write_a_review">Write a Review</string>
+    <string name="about_us">About Us</string>
     <string name="continue_with_google">Continue with Google</string>
     <string name="continue_with_facebook">Continue with Facebook</string>
     <string name="i_agree_to_my_theme">I agree to My Theme</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="term_of_use">Term of Use</string>
+    <string name="app_name">IconKit</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="about_logolab">About Logolab</string>
+    <string name="go_premium">Go Premium</string>
+    <string name="theme">Theme</string>
+    <string name="install">Install</string>
+    <string name="txt_related_app">Create Icon</string>
+    <string name="txt_please_select_the_app_associated_with_this_icon">Please select the app associated with this icon</string>
+
+    <string name="remove_the_watermark">One more step</string>
+    <string name="explan_android_8">Since Android 8.0, to add widget to your home screen, need to do it manually.</string>
+    <string name="explan_android_8_icon">Since Android 8.0, the phone system will automatically insert a corner watermark to the Shortcut icon.</string>
+    <string name="following_this_step_to_create_your_own_widget">Following this step to create your own Widget:</string>
+    <string name="step_1">Go to your desktop, press &amp; hold a blank space, then click “Widgets” from the popup menu</string>
+    <string name="step_2">Find your widget IconKit in widget page, touch &amp; hold it and drag it to your desktop</string>
+    <string name="step_3">The widget of it will be changed to your last Widget you chosen before. After that you can use your Widget.</string>
+    <string name="if_this_is_case">If this is the case, you can remove it by using Widget icon.</string>
+    <string name="go_to_desktop_to_add_a_widget">Go to Desktop to Add a Widget</string>
+    <string name="set_as_wallpaper">Set Wallpaper</string>
+    <string name="get_theme">Get Theme</string>
+    <string name="in_app_text">- Payment will be charged to Google Account at confirmation of purchase\n - Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the period\n - If you want to continue the service, your subscription should be continued.\n - Payment will be charged to Google Account at confirmation of purchase\n - Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period</string>
+    <string name="install_all_icons">Install All Icons</string>
+
+    <string name="lock_screen">Set wallpaper home screen</string>
+    <string name="home_screen">Set wallpaper lock screen</string>
+    <string name="all_screen">Set wallpaper all screen</string>
+
+    <string name="id_admod_banner">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="buy_premium_success">you have successfully purchased the premium package.</string>
+    <string name="buy_premium_fail">Error, purchase failed!</string>
 </resources>

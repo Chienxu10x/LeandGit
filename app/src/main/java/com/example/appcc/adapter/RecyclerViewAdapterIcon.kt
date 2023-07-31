@@ -14,7 +14,6 @@ class RecyclerViewAdapterIcon(private val list: List<String> ):
         // Định nghĩa các view trong item layout
         val textThemeIcon: TextView = itemView.findViewById(R.id.textIcon)
 
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
