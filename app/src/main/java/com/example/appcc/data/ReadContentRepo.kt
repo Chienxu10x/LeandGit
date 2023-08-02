@@ -7,7 +7,7 @@ import com.google.gson.Gson
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
+
 class ReadContentRepo @Inject constructor(
 ) {
     fun readDataIcon(context: Context): Theme {

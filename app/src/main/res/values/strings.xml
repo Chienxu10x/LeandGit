@@ -15,9 +15,12 @@
     <string name="upagrade">upagrade</string>
     <string name="general">General</string>
     <string name="contact_us">Contact Us</string>
-    <string name="share_this_app">Share this App</string>
-    <string name="write_a_review">Write a Review</string>
+    <string name="share">Share</string>
+    <string name="faq">FAQ</string>
+    <string name="review">Review</string>
     <string name="about_us">About Us</string>
+    <string name="team_of_use">Term of Use</string>
+    <string name="language">Language</string>
     <string name="continue_with_google">Continue with Google</string>
     <string name="continue_with_facebook">Continue with Facebook</string>
     <string name="i_agree_to_my_theme">I agree to My Theme</string>
@@ -60,4 +63,5 @@
     <string name="id_admod_banner">ca-app-pub-3940256099942544/6300978111</string>
     <string name="buy_premium_success">you have successfully purchased the premium package.</string>
     <string name="buy_premium_fail">Error, purchase failed!</string>
+    <string name="upagrade_now">upagrade</string>
 </resources>
