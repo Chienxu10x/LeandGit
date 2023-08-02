@@ -18,6 +18,14 @@ class PrivacyPolicyFragment : BaseFragment(R.layout.fragment_privacy_policy) {
         return binding.root
     }
 
+    override fun bindView() {
+        TODO("Not yet implemented")
+    }
+
+    override fun observeData() {
+        TODO("Not yet implemented")
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
