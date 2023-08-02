@@ -12,6 +12,8 @@ import com.example.appcc.adapter.ViewPagerAdapterTheme
 import com.example.appcc.base.BaseFragment
 import com.example.kittheme.extension.navigateTo
 import com.example.kittheme.model.ContentX
+import androidx.navigation.fragment.findNavController
+
 
 class ThemesFragment : BaseFragment(R.layout.fragment_themes) {
 
@@ -42,15 +44,15 @@ class ThemesFragment : BaseFragment(R.layout.fragment_themes) {
 
     }
 
-//
+
 //    fun toDetail(contentX: ContentX){
 //
-//        val action : NavDirections = MainFra.actionMainToDetail(contentX)
+//        val action : NavDirections = FragmetThemeChildDirections.actionFragmetThemeChildToFragmentThemeDetail(contentX)
 //        navigateTo(action)
 //    }
 //
 //    fun toInfor(type: Long){
-//        val action = MainF.actionMainToInfor(type)
+//        val action : NavDirections = FragmetThemeChildDirections.actionMainToInfor(type)
 //        navigateTo(action)
 //
 //    }

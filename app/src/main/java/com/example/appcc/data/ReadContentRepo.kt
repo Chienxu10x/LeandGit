@@ -8,7 +8,11 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 
+<<<<<<< HEAD
 class ReadContentRepo constructor(
+=======
+class ReadContentRepo @Inject constructor(
+>>>>>>> 8d2493c4efecda73576d07ed7f1b7125625b13ef
 ) {
 //    fun readDataIcon(context: Context): Theme {
 //        val res = ResourceUtils.loadData(context, "contents.json")

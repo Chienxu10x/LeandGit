@@ -2,21 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/theme_detail"
-    app:startDestination="@id/fragmetThemeChild">
+    android:id="@+id/theme_detail">
 
-    <fragment
-        android:id="@+id/fragmetThemeChild"
-        android:name="com.example.appcc.fragment.FragmetThemeChild"
-        android:label="fragment_fragmet_theme_child"
-        tools:layout="@layout/fragment_fragmet_theme_child" >
-        <action
-            android:id="@+id/action_fragmetThemeChild_to_fragmentThemeDetail"
-            app:destination="@id/fragmentThemeDetail" />
-    </fragment>
     <fragment
         android:id="@+id/fragmentThemeDetail"
         android:name="com.example.appcc.fragment.FragmentThemeDetail"
         android:label="fragment_theme_detail"
         tools:layout="@layout/fragment_theme_detail" />
+    <include app:graph="@navigation/theme_detail" />
 </navigation>
