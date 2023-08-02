@@ -5,11 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
 import androidx.viewpager2.widget.ViewPager2
 import com.example.appcc.R
 import com.example.appcc.adapter.ViewPagerAdapterTheme
+import com.example.appcc.base.BaseFragment
+import com.example.kittheme.extension.navigateTo
+import com.example.kittheme.model.ContentX
 
-class ThemesFragment : Fragment() {
+class ThemesFragment : BaseFragment(R.layout.fragment_themes) {
 
     private lateinit var viewPagerAdapterTheme: ViewPagerAdapterTheme
     private lateinit var viewPager: ViewPager2
@@ -21,6 +25,14 @@ class ThemesFragment : Fragment() {
 
     }
 
+    override fun bindView() {
+        TODO("Not yet implemented")
+    }
+
+    override fun observeData() {
+        TODO("Not yet implemented")
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewPagerAdapterTheme = ViewPagerAdapterTheme(this)
@@ -29,4 +41,17 @@ class ThemesFragment : Fragment() {
 
 
     }
+
+//
+//    fun toDetail(contentX: ContentX){
+//
+//        val action : NavDirections = MainFra.actionMainToDetail(contentX)
+//        navigateTo(action)
+//    }
+//
+//    fun toInfor(type: Long){
+//        val action = MainF.actionMainToInfor(type)
+//        navigateTo(action)
+//
+//    }
 }

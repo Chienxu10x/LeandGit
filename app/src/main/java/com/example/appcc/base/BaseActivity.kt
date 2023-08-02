@@ -1,31 +1,32 @@
 package com.example.appcc.base
 
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.BindingAdapter
 import com.example.appcc.databinding.ActivityMainBinding
+import com.example.appcc.extension.visibble
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import dagger.hilt.android.AndroidEntryPoint
 
 
-@AndroidEntryPoint
 abstract class BaseActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
-        this.window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-        )
-        super.onCreate(savedInstanceState)
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+//        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+//        this.window.setFlags(
+//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//        )
+//        super.onCreate(savedInstanceState)
 //        bindView()
 //        observeData()
-//        LogInstance.e("___________Activity " + this@BaseActivity::class)
-    }
-
+////        LogInstance.e("___________Activity " + this@BaseActivity::class)
+//    }
+//
 //    abstract fun bindView()
 //    abstract fun observeData()
 //    abstract fun onBottomViewProvides(): BottomNavigationView?
