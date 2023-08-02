@@ -15,19 +15,14 @@ abstract class BaseFragment(@LayoutRes layout: Int) : Fragment(layout) {
 
 //        LogInstance.e("___________Fragment " + this@BaseFragment::class)
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        (requireActivity() as BaseActivity).showBottomView()
+        bindView()
+        observeData()
+    }
 //
-//    override fun onDestroy() {
-//        super.onDestroy()
-//    }
-//
-//    protected fun showLoading() {
-//    }
-//
-//    protected fun dismissLoading() {
-//    }
-//
-//    abstract fun bindView()
-//    abstract fun observeData()
+
 //
         //LogInstance.e("___________Fragment " + this@BaseFragment::class)
 override fun onDestroy() {
@@ -46,12 +41,7 @@ override fun onDestroy() {
 
 
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        (requireActivity() as BaseActivity).showBottomView()
-//        bindView()
-//        observeData()
-//    }
+
 //
 //    protected fun hideBottomView() {
 //        (requireActivity() as BaseActivity).onBottomViewProvides()?.gone()

@@ -89,12 +89,14 @@ Unlock all features"
                         android:layout_width="@dimen/_50sdp"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_login_signup" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/contact_us"
+                        android:text="@string/login_signup"
                         android:textSize="@dimen/_14ssp"
                         android:textStyle="bold" />
 
@@ -104,6 +106,7 @@ Unlock all features"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_arrow_right" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ln_EarnReward"
                     android:layout_width="match_parent"
@@ -118,11 +121,12 @@ Unlock all features"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/contact_us"
+                        android:text="@string/earn_reward"
                         android:textSize="@dimen/_14ssp"
                         android:textStyle="bold" />
 
@@ -132,6 +136,7 @@ Unlock all features"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_arrow_right" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ln_Favourite"
                     android:layout_width="match_parent"
@@ -146,11 +151,12 @@ Unlock all features"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/contact_us"
+                        android:text="@string/favourite"
                         android:textSize="@dimen/_14ssp"
                         android:textStyle="bold" />
 
@@ -160,6 +166,7 @@ Unlock all features"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_arrow_right" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ln_MyTimelines"
                     android:layout_width="match_parent"
@@ -174,11 +181,12 @@ Unlock all features"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/contact_us"
+                        android:text="@string/my_timelines"
                         android:textSize="@dimen/_14ssp"
                         android:textStyle="bold" />
 
@@ -188,16 +196,18 @@ Unlock all features"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_arrow_right" />
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingVertical="@dimen/_5sdp"
                     android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingVertical="@dimen/_5sdp"
                     android:text="@string/general"
                     android:textAllCaps="true"
                     android:textColor="@color/gray_text"
                     android:textSize="@dimen/_14ssp"
                     android:textStyle="bold" />
+
                 <LinearLayout
                     android:id="@+id/ln_policy"
                     android:layout_width="match_parent"
@@ -212,6 +222,7 @@ Unlock all features"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -228,7 +239,7 @@ Unlock all features"
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/ln_about"
+                    android:id="@+id/ln_termOfUse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -241,6 +252,7 @@ Unlock all features"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -264,11 +276,13 @@ Unlock all features"
                     android:background="@drawable/r10_white"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="@dimen/_50sdp"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -298,6 +312,7 @@ Unlock all features"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -305,6 +320,7 @@ Unlock all features"
                         android:text="@string/share"
                         android:textSize="@dimen/_14ssp"
                         android:textStyle="bold" />
+
                     <ImageView
                         android:layout_width="@dimen/_50sdp"
                         android:layout_height="@dimen/_50sdp"
@@ -326,6 +342,7 @@ Unlock all features"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -342,7 +359,7 @@ Unlock all features"
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/ln_fanpage"
+                    android:id="@+id/ln_language"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8sdp"
@@ -355,6 +372,7 @@ Unlock all features"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -369,6 +387,7 @@ Unlock all features"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_arrow_right" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ln_FAQ"
                     android:layout_width="match_parent"
@@ -383,6 +402,7 @@ Unlock all features"
                         android:layout_height="@dimen/_50sdp"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_star" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

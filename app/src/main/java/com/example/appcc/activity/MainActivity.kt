@@ -3,6 +3,7 @@ package com.example.appcc.activity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -35,17 +36,13 @@ class MainActivity : BaseActivity() {
             super.onOptionsItemSelected(item)
         }
     }
+    fun hideNavigationView() {
+        binding.navBottom.visibility = View.GONE
+    }
 
-//    override fun bindView() {
-//        TODO("Not yet implemented")
-//    }
-//
-//    override fun observeData() {
-//        TODO("Not yet implemented")
-//    }
-//
-//    override fun onBottomViewProvides(): BottomNavigationView? {
-//        TODO("Not yet implemented")
-//    }
+    fun showNavigationView() {
+        binding.navBottom.visibility = View.VISIBLE
+    }
+
 
 }

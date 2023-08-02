@@ -14,7 +14,11 @@
     <string name="title">Title</string>
     <string name="upagrade">upagrade</string>
     <string name="general">General</string>
+    <string name="login_signup">Login/Signup</string>
     <string name="contact_us">Contact Us</string>
+    <string name="my_timelines">My Timelines</string>
+    <string name="favourite">Favourite</string>
+    <string name="earn_reward">Earn reward</string>
     <string name="share">Share</string>
     <string name="faq">FAQ</string>
     <string name="review">Review</string>
