@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.appcc.extension.gone
 import com.example.appcc.extension.visibble
 
-abstract class BaseFragment(@LayoutRes layout: Int) : Fragment(layout) {
+abstract class BaseFragment(layout: Int) : Fragment(layout) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
