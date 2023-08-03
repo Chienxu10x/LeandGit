@@ -22,7 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ThemesFragment : BaseFragment(R.layout.fragment_themes) {
 private lateinit var binding: FragmentThemesBinding
-    private val iconViewModel : IconViewModel by activityViewModels()
+//    private val iconViewModel : IconViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -55,20 +55,20 @@ private lateinit var binding: FragmentThemesBinding
     }
 
     override fun observeData() {
-        iconViewModel.currentTheme.observe(this){
-            recyclerAdapterTheme.submitList(it.content)
-            binding.recyclerviewTheme.adapter = recyclerAdapterTheme
-        }
-
-        iconViewModel.allTheme.observe(requireActivity()){
-            binding.tabMenu.removeAllTabs()
-            it.contents.forEach{
-                val tab = binding.tabMenu.newTab()
-                tab.text = it.title
-                binding.tabMenu.addTab(tab)
-            }
-        }
-        iconViewModel.loadAllResource(requireContext())
+//        iconViewModel.currentTheme.observe(this){
+//            recyclerAdapterTheme.submitList(it.content)
+//            binding.recyclerviewTheme.adapter = recyclerAdapterTheme
+//        }
+//
+//        iconViewModel.allTheme.observe(requireActivity()){
+//            binding.tabMenu.removeAllTabs()
+//            it.contents.forEach{
+//                val tab = binding.tabMenu.newTab()
+//                tab.text = it.title
+//                binding.tabMenu.addTab(tab)
+//            }
+//        }
+//        iconViewModel.loadAllResource(requireContext())
 
     }
 
