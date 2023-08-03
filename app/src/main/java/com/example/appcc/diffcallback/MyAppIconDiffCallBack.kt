@@ -1,7 +1,7 @@
-package com.example.kittheme.diffcallback
+package com.example.appcc.diffcallback
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.kittheme.model.MyAppIcon
+import com.example.appcc.model.MyAppIcon
 
 class MyAppIconDiffCallBack(): DiffUtil.ItemCallback<MyAppIcon>() {
     override fun areItemsTheSame(oldItem: MyAppIcon, newItem: MyAppIcon): Boolean {

@@ -1,19 +1,17 @@
 package com.example.appcc.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appcc.R
-import com.example.appcc.adapter.OnTabNameChangedListener
-import com.example.appcc.adapter.RecyclerAdapterTheme
 import com.example.appcc.adapter.RecyclerViewAdapterIcon
 
 
-class IconsFragment : Fragment(), OnTabNameChangedListener {
+class IconsFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,8 +36,6 @@ class IconsFragment : Fragment(), OnTabNameChangedListener {
 
     }
 
-    override fun onTabNameChanged(position: Int, newName: String) {
-    }
 
 
 }

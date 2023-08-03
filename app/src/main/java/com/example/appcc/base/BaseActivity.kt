@@ -11,26 +11,27 @@ import androidx.databinding.BindingAdapter
 import com.example.appcc.databinding.ActivityMainBinding
 import com.example.appcc.extension.visibble
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
+abstract class BaseActivity(@LayoutRes layoutRes: Int) : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+        this.window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        )
+        super.onCreate(savedInstanceState)
+        bindView()
+        observeData()
+//        LogInstance.e("___________Activity " + this@BaseActivity::class)
+    }
 
-abstract class BaseActivity : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-//        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
-//        this.window.setFlags(
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//        )
-//        super.onCreate(savedInstanceState)
-//        bindView()
-//        observeData()
-////        LogInstance.e("___________Activity " + this@BaseActivity::class)
-//    }
-//
-//    abstract fun bindView()
-//    abstract fun observeData()
+    abstract fun bindView()
+    abstract fun observeData()
 //    abstract fun onBottomViewProvides(): BottomNavigationView?
-//
+
 //    fun hideBottomView() {
 //        onBottomViewProvides()?.visibble()
 //    }
@@ -38,14 +39,14 @@ abstract class BaseActivity : AppCompatActivity() {
 //    fun showBottomView() {
 //        onBottomViewProvides()?.visibble()
 //    }
-//
-//    fun hideKeyboard() {
-//        val imm: InputMethodManager =
-//            getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-//        var view: View? = currentFocus
-//        if (view == null) {
-//            view = View(this)
-//        }
-//        imm.hideSoftInputFromWindow(view.windowToken, 0)
-//    }
+
+    fun hideKeyboard() {
+        val imm: InputMethodManager =
+            getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        var view: View? = currentFocus
+        if (view == null) {
+            view = View(this)
+        }
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
 }

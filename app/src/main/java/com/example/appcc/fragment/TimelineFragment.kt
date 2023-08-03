@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.example.appcc.R
-import com.example.appcc.adapter.ViewPagerAdapterTheme
 import com.example.appcc.adapter.ViewPagerAdapterTimeline
 
 class TimelineFragment : Fragment() {

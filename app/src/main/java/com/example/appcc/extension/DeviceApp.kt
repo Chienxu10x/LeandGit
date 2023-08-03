@@ -1,4 +1,4 @@
-package com.example.kittheme.extension
+package com.example.appcc.extension
 
 import android.content.pm.PackageManager
 import android.os.Build

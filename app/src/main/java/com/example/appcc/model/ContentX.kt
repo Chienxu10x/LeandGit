@@ -1,4 +1,4 @@
-package com.example.kittheme.model
+package com.example.appcc.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

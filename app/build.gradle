@@ -7,7 +7,7 @@ plugins {
 }
 apply plugin: 'com.android.application'
 apply plugin: "androidx.navigation.safeargs"
-
+apply plugin: 'com.google.dagger.hilt.android'
 android {
     namespace 'com.example.appcc'
     compileSdk 33
@@ -63,24 +63,29 @@ dependencies {
 
 // Hilt & Dagger
 dependencies {
-//    implementation 'com.google.dagger:hilt-android:2.46.1'
-//    kapt 'com.google.dagger:hilt-compiler:2.46.1'
-//
+   implementation 'com.google.dagger:hilt-android:2.46.1'
+    kapt 'com.google.dagger:hilt-compiler:2.46.1'
+
 //    // For instrumentation tests
-//    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.46.1'
-//    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.46.1'
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.46.1'
+    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.46.1'
 //
-//    // DI
+//    // For local unit tests
+    testImplementation 'com.google.dagger:hilt-android-testing:2.46.1'
+    kaptTest 'com.google.dagger:hilt-compiler:2.46.1'
+
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+
+////DI
+//    implementation "com.google.dagger:hilt-android:2.30.1-alpha"
+//
 //    kapt "com.google.dagger:hilt-android-compiler:2.30.1-alpha"
 //    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
-//    kapt 'androidx.hilt:hilt-compiler:1.0.0'
-    implementation "com.google.dagger:hilt-android:2.30.1-alpha"
-
-    kapt "com.google.dagger:hilt-android-compiler:2.30.1-alpha"
-    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
-    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha03'
-
-    // For local unit tests
+//    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha03'
+//
+//    // DataBinding and ViewModel
+//    kapt 'com.android.databinding:compiler:3.1.4'
+//    implementation "android.arch.lifecycle:extensions:1.1.1"
 
 }
 
@@ -162,6 +167,15 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+
+
+    //ssp sdp
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+
+
 }
 
 

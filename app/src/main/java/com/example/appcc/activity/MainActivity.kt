@@ -17,24 +17,36 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : BaseActivity() {
+@AndroidEntryPoint
+class MainActivity : BaseActivity(R.layout.activity_main) {
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun bindView() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.navBottom.setupWithNavController(findNavController(R.id.nav_container))
         setSupportActionBar(binding.myToolbar)
-
-
-
     }
-    fun clickShowDrawerLayout(view: View){
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
-//        appBarConfiguration.
+
+    override fun observeData() {
     }
+
+//    override fun onBottomViewProvides(): BottomNavigationView? {
+//        return null
+//    }
+
+//    override fun bindView() {
+//        TODO("Not yet implemented")
+//    }
+//
+//    override fun observeData() {
+//        TODO("Not yet implemented")
+//    }
+//
+//    override fun onBottomViewProvides(): BottomNavigationView? {
+//        TODO("Not yet implemented")
+//    }
 
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
@@ -50,16 +62,5 @@ class MainActivity : BaseActivity() {
         }
     }
 
-//    override fun bindView() {
-//        TODO("Not yet implemented")
-//    }
-//
-//    override fun observeData() {
-//        TODO("Not yet implemented")
-//    }
-//
-//    override fun onBottomViewProvides(): BottomNavigationView? {
-//        TODO("Not yet implemented")
-//    }
 
 }
