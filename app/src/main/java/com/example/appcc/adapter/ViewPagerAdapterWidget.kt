@@ -3,7 +3,6 @@ package com.example.appcc.adapter
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.appcc.fragment.FragmentWidgetChild
-import com.example.appcc.fragment.FragmetThemeChild
 
 class ViewPagerAdapterWidget(fragment: Fragment) : FragmentStateAdapter(fragment) {
 

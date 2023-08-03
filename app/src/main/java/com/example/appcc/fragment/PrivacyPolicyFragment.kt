@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import com.example.appcc.R
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.FragmentPrivacyPolicyBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PrivacyPolicyFragment : BaseFragment(R.layout.fragment_privacy_policy) {
     private lateinit var binding: FragmentPrivacyPolicyBinding
 
@@ -19,14 +21,16 @@ class PrivacyPolicyFragment : BaseFragment(R.layout.fragment_privacy_policy) {
     }
 
     override fun bindView() {
-        TODO("Not yet implemented")
+
     }
 
     override fun observeData() {
-        TODO("Not yet implemented")
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
     }
+
 }

@@ -1,4 +1,4 @@
-package com.example.kittheme.extension
+package com.example.appcc.extension
 
 import android.content.Context
 import android.content.res.AssetManager

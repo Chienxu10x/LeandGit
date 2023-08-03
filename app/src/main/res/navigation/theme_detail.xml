@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/theme_detail"
     app:startDestination="@id/fragmetThemeChild">
-
     <fragment
         android:id="@+id/fragmetThemeChild"
         android:name="com.example.appcc.fragment.FragmetThemeChild"

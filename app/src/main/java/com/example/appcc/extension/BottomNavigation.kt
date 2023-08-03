@@ -1,10 +1,8 @@
-package com.example.kittheme.extension
+package com.example.appcc.extension
 
 import android.content.Intent
 import android.util.SparseArray
 import androidx.annotation.IdRes
-import androidx.core.util.forEach
-import androidx.core.util.set
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
@@ -13,7 +11,6 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.example.appcc.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 fun BottomNavigationView.setupWithNavController(

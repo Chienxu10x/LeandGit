@@ -6,11 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.appcc.R
+import com.example.appcc.base.BaseFragment
 
-class WallpaperFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_wallpaper, container, false)
+class WallpaperFragment : BaseFragment(R.layout.fragment_wallpaper) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
+    override fun bindView() {
+        TODO("Not yet implemented")
+    }
+
+    override fun observeData() {
+        TODO("Not yet implemented")
+    }
+
 }

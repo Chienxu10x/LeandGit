@@ -1,4 +1,6 @@
 <resources>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <string name="app_name">AppCC</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -14,7 +16,11 @@
     <string name="title">Title</string>
     <string name="upagrade">upagrade</string>
     <string name="general">General</string>
+    <string name="login_signup">Login/Signup</string>
     <string name="contact_us">Contact Us</string>
+    <string name="my_timelines">My Timelines</string>
+    <string name="favourite">Favourite</string>
+    <string name="earn_reward">Earn reward</string>
     <string name="share">Share</string>
     <string name="faq">FAQ</string>
     <string name="review">Review</string>
@@ -64,4 +70,5 @@
     <string name="buy_premium_success">you have successfully purchased the premium package.</string>
     <string name="buy_premium_fail">Error, purchase failed!</string>
     <string name="upagrade_now">upagrade</string>
+    <string name="app_decs">Theme</string>
 </resources>

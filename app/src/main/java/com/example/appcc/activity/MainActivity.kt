@@ -1,40 +1,52 @@
 package com.example.appcc.activity
 
-import android.os.Bundle
-import android.view.Menu
+
+
+import android.content.Intent
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
+import android.widget.Toast
+
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.fragment.app.Fragment
+
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+
 import androidx.navigation.ui.setupWithNavController
 import com.example.appcc.R
 import com.example.appcc.base.BaseActivity
 import com.example.appcc.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.appcc.fragment.PrivacyPolicyFragment
+import com.example.appcc.fragment.SettingFragment
+
 import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : BaseActivity() {
+@AndroidEntryPoint
+class MainActivity : BaseActivity(R.layout.activity_main) {
     private lateinit var binding: ActivityMainBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private lateinit var appBarConfiguration: AppBarConfiguration
+
+    override fun bindView() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.navBottom.setupWithNavController(findNavController(R.id.nav_container))
         setSupportActionBar(binding.myToolbar)
-    }
 
-
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.action_menu -> {
-            // User chose the "Settings" item, show the app settings UI...
-            true
+        binding.menuSetting.setOnClickListener {
+//           val intent =Intent(this@MainActivity,SettingActivity::class.java)
+//           startActivity(intent)
+            replaceFragemtSetting(SettingFragment())
         }
 
-        else -> {
-            // If we got here, the user's action was not recognized.
-            // Invoke the superclass to handle it.
-            super.onOptionsItemSelected(item)
-        }
     }
+
+    override fun observeData() {
+    }
+}
+//    override fun onBottomViewProvides(): BottomNavigationView? {
+//        return null
+//    }
 
 //    override fun bindView() {
 //        TODO("Not yet implemented")
@@ -48,4 +60,10 @@ class MainActivity : BaseActivity() {
 //        TODO("Not yet implemented")
 //    }
 
-}
+
+
+
+
+
+
+
