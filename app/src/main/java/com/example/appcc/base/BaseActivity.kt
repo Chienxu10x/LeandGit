@@ -9,6 +9,10 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.appcc.R
+import androidx.databinding.BindingAdapter
+import com.example.appcc.databinding.ActivityMainBinding
+import com.example.appcc.extension.visibble
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,17 +31,9 @@ abstract class BaseActivity(@LayoutRes layoutRes: Int) : AppCompatActivity() {
 //        LogInstance.e("___________Activity " + this@BaseActivity::class)
     }
 
-    abstract fun bindView()
+//        LogInstance.e("___________Activity " + this@BaseActivity::class)
+abstract fun bindView()
     abstract fun observeData()
-//    abstract fun onBottomViewProvides(): BottomNavigationView?
-
-//    fun hideBottomView() {
-//        onBottomViewProvides()?.visibble()
-//    }
-//
-//    fun showBottomView() {
-//        onBottomViewProvides()?.visibble()
-//    }
 
     fun hideKeyboard() {
         val imm: InputMethodManager =
@@ -57,5 +53,18 @@ abstract class BaseActivity(@LayoutRes layoutRes: Int) : AppCompatActivity() {
     fun removeFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().remove(fragment).commit()
     }
+    }
 
-}
+
+//    abstract fun onBottomViewProvides(): BottomNavigationView?
+
+//    fun hideBottomView() {
+//        onBottomViewProvides()?.visibble()
+//    }
+//
+//    fun showBottomView() {
+//        onBottomViewProvides()?.visibble()
+//    }
+
+
+

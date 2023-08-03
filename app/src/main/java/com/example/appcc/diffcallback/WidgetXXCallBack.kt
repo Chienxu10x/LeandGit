@@ -1,7 +1,7 @@
-package com.example.kittheme.diffcallback
+package com.example.appcc.diffcallback
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.kittheme.model.WidgetXX
+import com.example.appcc.model.WidgetXX
 
 class WidgetXXCallBack() : DiffUtil.ItemCallback<WidgetXX>() {
     override fun areItemsTheSame(oldItem: WidgetXX, newItem: WidgetXX): Boolean {

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -32,7 +34,7 @@ android {
         jvmTarget = "1.8"
     }
 
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    tasks.withType(KotlinCompile).configureEach {
         kotlinOptions {
             jvmTarget = "1.8"
         }
@@ -52,9 +54,9 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -64,14 +66,9 @@ dependencies {
 // Hilt & Dagger
 dependencies {
 
-//    // DI
+//    // For local unit tests
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
 
-//
-//    implementation "com.google.dagger:hilt-android:2.30.1-alpha"
-//
-//    kapt "com.google.dagger:hilt-android-compiler:2.30.1-alpha"
-//    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
-//    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha03'
     implementation 'com.google.dagger:hilt-android:2.46.1'
     kapt 'com.google.dagger:hilt-compiler:2.46.1'
 
@@ -83,6 +80,11 @@ dependencies {
     testImplementation 'com.google.dagger:hilt-android-testing:2.46.1'
     kaptTest 'com.google.dagger:hilt-compiler:2.46.1'
     // For local unit tests
+
+//    // DataBinding and ViewModel
+    kapt 'com.android.databinding:compiler:3.1.4'
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+
 
 }
 
@@ -129,8 +131,6 @@ dependencies {
 
 dependencies {
     implementation "androidx.fragment:fragment-ktx:1.6.1"
-    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }
 kapt {
@@ -155,8 +155,8 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
     // Gson
-    implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
-    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
+    implementation 'com.google.code.gson:gson:2.10.1'
 
 
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
@@ -165,12 +165,15 @@ dependencies {
 
 
     //Glide
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
 
 
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+
+
 }
 
 

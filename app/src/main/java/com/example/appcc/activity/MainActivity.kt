@@ -26,25 +26,43 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : BaseActivity(R.layout.activity_main) {
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var toggle: ActionBarDrawerToggle
 
     override fun bindView() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.navBottom.setupWithNavController(findNavController(R.id.nav_container))
         setSupportActionBar(binding.myToolbar)
-        binding.menuSetting.setOnClickListener{
+
+        binding.menuSetting.setOnClickListener {
 //           val intent =Intent(this@MainActivity,SettingActivity::class.java)
 //           startActivity(intent)
             replaceFragemtSetting(SettingFragment())
-            }
         }
-
-    override fun observeData() {
 
     }
 
+    override fun observeData() {
+    }
 }
+//    override fun onBottomViewProvides(): BottomNavigationView? {
+//        return null
+//    }
+
+//    override fun bindView() {
+//        TODO("Not yet implemented")
+//    }
+//
+//    override fun observeData() {
+//        TODO("Not yet implemented")
+//    }
+//
+//    override fun onBottomViewProvides(): BottomNavigationView? {
+//        TODO("Not yet implemented")
+//    }
+
+
+
+
 
 
 

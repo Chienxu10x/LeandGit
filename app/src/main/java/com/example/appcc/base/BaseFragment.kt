@@ -16,9 +16,6 @@ abstract class BaseFragment(@LayoutRes layout: Int) : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        LogInstance.e("___________Fragment " + this@BaseFragment::class)
-
-//        LogInstance.e("___________Fragment " + this@BaseFragment::class)
     }
 
 
@@ -36,15 +33,20 @@ abstract class BaseFragment(@LayoutRes layout: Int) : Fragment() {
         super.onDestroy()
     }
 
-    protected fun showLoading() {
-    }
-
-    protected fun dismissLoading() {
-    }
-
     abstract fun bindView()
     abstract fun observeData()
 
 }
+
+
+//
+
+
+//    protected fun hideBottomView() {
+//        (requireActivity() as BaseActivity).onBottomViewProvides()?.gone()
+//    }
+//
+//    protected fun showBottomView() {
+//        (requireActivity() as BaseActivity).onBottomViewProvides()?.visibble()    }
 
 

@@ -1,4 +1,4 @@
-package com.example.kittheme.model
+package com.example.appcc.model
 
 data class WidgetXX(
     val big_widget: String,
