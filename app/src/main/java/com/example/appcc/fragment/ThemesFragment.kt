@@ -28,11 +28,11 @@ class ThemesFragment : BaseFragment(R.layout.fragment_themes) {
     }
 
     override fun bindView() {
-        TODO("Not yet implemented")
+
     }
 
     override fun observeData() {
-        TODO("Not yet implemented")
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

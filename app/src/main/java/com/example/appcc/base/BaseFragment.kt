@@ -8,8 +8,10 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import com.example.appcc.extension.gone
 import com.example.appcc.extension.visibble
+import dagger.hilt.android.AndroidEntryPoint
 
-abstract class BaseFragment(@LayoutRes layout: Int) : Fragment(layout) {
+@AndroidEntryPoint
+abstract class BaseFragment(@LayoutRes layout: Int) : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +22,6 @@ abstract class BaseFragment(@LayoutRes layout: Int) : Fragment(layout) {
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        (requireActivity() as BaseActivity).showBottomView()
@@ -29,11 +30,11 @@ abstract class BaseFragment(@LayoutRes layout: Int) : Fragment(layout) {
     }
 //
 
-//
-        //LogInstance.e("___________Fragment " + this@BaseFragment::class)
-override fun onDestroy() {
-    super.onDestroy()
-}
+    //
+    //LogInstance.e("___________Fragment " + this@BaseFragment::class)
+    override fun onDestroy() {
+        super.onDestroy()
+    }
 
     protected fun showLoading() {
     }
@@ -43,6 +44,7 @@ override fun onDestroy() {
 
     abstract fun bindView()
     abstract fun observeData()
-    }
+
+}
 
 

@@ -70,4 +70,5 @@
     <string name="buy_premium_success">you have successfully purchased the premium package.</string>
     <string name="buy_premium_fail">Error, purchase failed!</string>
     <string name="upagrade_now">upagrade</string>
+    <string name="app_decs">Theme</string>
 </resources>
