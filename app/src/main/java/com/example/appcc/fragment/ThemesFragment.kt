@@ -1,9 +1,11 @@
 package com.example.appcc.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavDirections
@@ -18,11 +20,11 @@ import com.example.appcc.extension.navigateTo
 import com.example.appcc.viewmodel.IconViewModel
 import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.math.log
 
-@AndroidEntryPoint
 class ThemesFragment : BaseFragment(R.layout.fragment_themes) {
 private lateinit var binding: FragmentThemesBinding
-//    private val iconViewModel : IconViewModel by activityViewModels()
+    private val iconViewModel : IconViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,7 +37,7 @@ private lateinit var binding: FragmentThemesBinding
     override fun bindView() {
     binding.tabMenu.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
         override fun onTabSelected(tab: TabLayout.Tab) {
-//                iconViewModel.getThemeByFilter(tab.position)
+                iconViewModel.getThemeByFilter(tab.position)
         }
         override fun onTabUnselected(tab: TabLayout.Tab?) {
         }
@@ -48,33 +50,32 @@ private lateinit var binding: FragmentThemesBinding
 
     }
 
-
-
     private val recyclerAdapterTheme = RecyclerAdapterTheme{
         (requireParentFragment().requireParentFragment() as ThemesFragment).toDetail(it)
     }
 
     override fun observeData() {
-//        iconViewModel.currentTheme.observe(this){
-//            recyclerAdapterTheme.submitList(it.content)
-//            binding.recyclerviewTheme.adapter = recyclerAdapterTheme
-//        }
-//
-//        iconViewModel.allTheme.observe(requireActivity()){
-//            binding.tabMenu.removeAllTabs()
-//            it.contents.forEach{
-//                val tab = binding.tabMenu.newTab()
-//                tab.text = it.title
-//                binding.tabMenu.addTab(tab)
-//            }
-//        }
-//        iconViewModel.loadAllResource(requireContext())
+        iconViewModel.currentTheme.observe(this){
+            recyclerAdapterTheme.submitList(it.content)
+            binding.recyclerviewTheme.adapter = recyclerAdapterTheme
+        }
+
+        iconViewModel.allTheme.observe(requireActivity()){
+            Log.d("TAG", "observeData: "+"a1")
+            binding.tabMenu.removeAllTabs()
+            it.contents.forEach{
+                val tab = binding.tabMenu.newTab()
+                tab.text = it.title
+                binding.tabMenu.addTab(tab)
+            }
+        }
+        iconViewModel.loadAllResource()
 
     }
 
     fun toDetail(contentX: ContentX){
-        val action : NavDirections = FragmetThemeChildDirections.actionFragmetThemeChildToFragmentThemeDetail()
-        navigateTo(action)
+//        val action : NavDirections = FragmetThemeChildDirections.actionFragmetThemeChildToFragmentThemeDetail()
+//        navigateTo(action)
     }
 
     fun toInfor(type: Long){

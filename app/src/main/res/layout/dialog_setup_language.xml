@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/size_20"
+    android:id="@+id/con"
+    android:background="@drawable/background_card_20">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hina"
+        android:gravity="center"
+        android:text="@string/language"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_21"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvVietNameese"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/vietnamese"
+        android:textSize="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/size_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+    <TextView
+        android:id="@+id/tvEnglish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/english"
+        android:textSize="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/size_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvVietNameese"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

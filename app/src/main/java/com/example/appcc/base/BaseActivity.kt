@@ -16,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-abstract class BaseActivity(@LayoutRes layoutRes: Int) : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -25,14 +25,13 @@ abstract class BaseActivity(@LayoutRes layoutRes: Int) : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
         )
         super.onCreate(savedInstanceState)
-
         bindView()
         observeData()
 //        LogInstance.e("___________Activity " + this@BaseActivity::class)
     }
 
-//        LogInstance.e("___________Activity " + this@BaseActivity::class)
-abstract fun bindView()
+    //        LogInstance.e("___________Activity " + this@BaseActivity::class)
+    abstract fun bindView()
     abstract fun observeData()
 
     fun hideKeyboard() {
@@ -44,16 +43,21 @@ abstract fun bindView()
         }
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
+
     fun replaceFragemtSetting(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.drawerLayout, fragment) // R.id.fragment_container là ID của một ViewGroup trong layout của Activity
+        fragmentTransaction.add(
+            R.id.drawerLayout,
+            fragment
+        ) // R.id.fragment_container là ID của một ViewGroup trong layout của Activity
         fragmentTransaction.commit()
     }
+
     fun removeFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().remove(fragment).commit()
     }
-    }
+}
 
 
 //    abstract fun onBottomViewProvides(): BottomNavigationView?

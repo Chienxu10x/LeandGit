@@ -1,5 +1,6 @@
 package com.example.appcc.utils
 
+import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
@@ -181,4 +182,12 @@ fun Context.saveImage(context: Context, bitmap: Bitmap): Boolean {
         e.printStackTrace()
     }
     return false
+}
+fun Activity.resetActivity() {
+    val intent = this.intent
+    this.overridePendingTransition(0, 0)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+    this.finish()
+    this.overridePendingTransition(0, 0)
+    this.startActivity(intent)
 }
