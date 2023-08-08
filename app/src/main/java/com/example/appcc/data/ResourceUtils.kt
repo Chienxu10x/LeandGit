@@ -1,8 +1,10 @@
 package com.example.appcc.data
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import java.io.IOException
 
 object ResourceUtils {
@@ -26,4 +28,10 @@ object ResourceUtils {
 
     fun getBitmapFromAsset(context: Context, path: String): Bitmap =
         context.assets.open(path).use { BitmapFactory.decodeStream(it) }
+//    fun openMail(context: Context) {
+//        val intent = Intent(Intent.ACTION_SENDTO)
+//        intent.data = Uri.parse("mailto:")
+//        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(EMAIL))
+//        startActivity(context, intent)
+//    }
 }

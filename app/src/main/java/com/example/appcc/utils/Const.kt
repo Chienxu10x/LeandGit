@@ -10,4 +10,7 @@ object Const {
     const val OPEN_THEME_DETAIL_COUNT = "open_theme_detail_count"
     const val KEY_IS_VIP = "is_vip"
     const val PRODUCT_LIFETIME = "android.test.purchased"
+    const val ENGLISH = "en"
+    const val VIETNAMESE = "vi"
+    const val LANGUAGE_NOW = "Language"
 }

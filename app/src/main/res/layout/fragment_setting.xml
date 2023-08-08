@@ -37,7 +37,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="SETTING"
+                    android:text="@string/action_settings"
                     android:textSize="@dimen/_18sdp"
                     android:textStyle="bold"/>
                 <ImageView

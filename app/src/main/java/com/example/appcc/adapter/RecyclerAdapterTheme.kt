@@ -1,15 +1,18 @@
 package com.example.appcc.adapter
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.appcc.R
 import com.example.appcc.base.BaseListAdapter
 import com.example.appcc.extension.inflate
 import com.example.appcc.model.ContentX
 import com.example.appcc.diffcallback.ContentXCallBack
+import com.example.appcc.extension.toAssetPath
 
 
 //interface OnItemClickListener {

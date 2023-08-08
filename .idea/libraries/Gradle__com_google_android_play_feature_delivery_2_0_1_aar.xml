@@ -1,11 +1,19 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.android.play:feature-delivery:2.0.1@aar">
     <ANNOTATIONS>
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2407a9f44de232e10c416c56a297c3ad/transformed/feature-delivery-2.0.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2407a9f44de232e10c416c56a297c3ad/transformed/feature-delivery-2.0.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2407a9f44de232e10c416c56a297c3ad/transformed/feature-delivery-2.0.1/AndroidManifest.xml" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0734de17562bebef349f22da3a598673/transformed/feature-delivery-2.0.1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0734de17562bebef349f22da3a598673/transformed/feature-delivery-2.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0734de17562bebef349f22da3a598673/transformed/feature-delivery-2.0.1/AndroidManifest.xml" />
+>>>>>>> 738b8585a31033a0981e0220f02e6965002031b3
     </CLASSES>
     <JAVADOC />
     <SOURCES />

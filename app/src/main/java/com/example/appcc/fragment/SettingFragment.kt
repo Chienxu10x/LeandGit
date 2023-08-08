@@ -11,9 +11,14 @@ import com.example.appcc.BuildConfig
 import com.example.appcc.R
 import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseFragment
+import com.example.appcc.data.DataSave
 import com.example.appcc.databinding.FragmentSettingBinding
+import com.example.appcc.dialog.SetupLanguageDialog
+import com.example.appcc.utils.resetActivity
 import com.example.appcc.utils.shareApp
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SettingFragment : BaseFragment(R.layout.fragment_setting) {
     private lateinit var binding: FragmentSettingBinding
     override fun bindView() {
@@ -34,10 +39,17 @@ class SettingFragment : BaseFragment(R.layout.fragment_setting) {
 
             }
             lnPolicy.setOnClickListener {
-
+                activity?.let { act ->
+                    val privacyView: FragmentPrivacyPolicy = FragmentPrivacyPolicy().onSetupView()
+                    (act as MainActivity).replaceFragemtSetting(privacyView)
+                }
+//                SingletonScreen.getInstance().type = Screen.Document
             }
             lnTermOfUse.setOnClickListener {
-
+                activity?.let { act ->
+                    val termOfUseView: FragmentTermOfUse = FragmentTermOfUse().onSetupView()
+                    (act as MainActivity).replaceFragemtSetting(termOfUseView)
+                }
             }
             lnContact.setOnClickListener {
 
@@ -49,7 +61,10 @@ class SettingFragment : BaseFragment(R.layout.fragment_setting) {
 
             }
             lnLanguage.setOnClickListener {
-
+                val languageDialog =
+                    SetupLanguageDialog(DataSave.language ?: "en", setupLanguage = ::setupLanguage)
+                languageDialog.isCancelable = false
+                languageDialog.show(childFragmentManager, DIALOG_LANGUAGE)
             }
             lnFAQ.setOnClickListener {
 
@@ -78,8 +93,13 @@ class SettingFragment : BaseFragment(R.layout.fragment_setting) {
 
         }
     }
-
+    private fun setupLanguage(lang: String) {
+        if (lang.isNotEmpty()) {
+            DataSave.language = lang
+            activity?.resetActivity()
+        }
+    }
     companion object {
-
+        private const val DIALOG_LANGUAGE = "DIALOG_LANGUAGE"
     }
 }

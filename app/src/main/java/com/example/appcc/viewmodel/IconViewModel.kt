@@ -9,11 +9,12 @@ import com.example.appcc.base.BaseViewModel
 import com.example.kittheme.data.ReadContentRepo
 //import androidx.hilt.lifecycle.ViewModelInject
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 @HiltViewModel
 class IconViewModel @Inject constructor(
-    private val readContentRepo: ReadContentRepo
+    @ApplicationContext private val context: Context, private val readContentRepo: ReadContentRepo
 ): BaseViewModel() {
 
     val allTheme by lazy {
@@ -24,7 +25,7 @@ class IconViewModel @Inject constructor(
         MutableLiveData<Content>()
     }
 
-    fun loadAllResource(context: Context){
+    fun loadAllResource(){
         allTheme.value = readContentRepo.readDataIcon(context)
     }
 
