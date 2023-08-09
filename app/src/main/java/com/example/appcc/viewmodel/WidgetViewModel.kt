@@ -17,7 +17,7 @@ import javax.inject.Inject
 class WidgetViewModel @Inject constructor(
     private val readContentRepo: ReadContentRepo,
     private val dataRepository: DataRepository
-) : BaseViewModel() {
+) : BaseViewModel(){
     val allWidget by lazy {
         MutableLiveData<Widget>()
     }
@@ -73,5 +73,6 @@ class WidgetViewModel @Inject constructor(
     fun getStringCurrentWidge(): String? {
         return dataRepository.getStringCurrentWidgetPosition()
     }
+
 
 }

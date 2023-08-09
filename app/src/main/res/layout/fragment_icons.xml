@@ -5,39 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="710dp"
     android:orientation="vertical"
+    android:background="#F1F1F1"
     tools:context=".fragment.IconsFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabMenu"
         android:layout_width="match_parent"
-        android:layout_height="101dp"
-        android:background="@color/pink_1"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_icon"
-        android:layout_width="343dp"
         android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:background="@color/gray_1"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabGravity="fill"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorGravity="stretch"
+        app:tabInlineLabel="false"
+        app:tabMode="scrollable"
+        app:tabRippleColor="@color/transparent"
+        app:tabTextAppearance="@style/MineCustomTabText" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_view"
+        android:layout_width="347dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toTopOf="@+id/tabMenu">
 
-    <Button
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_icon"
+            android:layout_width="347dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_icons" />
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+    <RelativeLayout
         android:id="@+id/button5"
-        android:layout_width="343dp"
+        android:layout_width="347dp"
         android:layout_height="48dp"
         android:layout_gravity="center"
-        android:text="Button"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/shape_item_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/custom_icon"
+            android:layout_width="87dp"
+            android:layout_height="22dp"
+            android:text="Custom Icon"
+            android:textAppearance="@style/custom_icon"
+            android:lineSpacingExtra="6sp"
+            android:translationY="-2.79sp"
+            android:gravity="center_horizontal|top"
+            />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

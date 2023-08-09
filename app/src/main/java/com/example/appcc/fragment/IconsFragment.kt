@@ -1,38 +1,76 @@
 package com.example.appcc.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.appcc.R
-import com.example.appcc.adapter.RecyclerViewAdapterIcon
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavDirections
+import com.example.appcc.adapter.RecyclerAdapterIcon
+import com.example.appcc.adapter.RecyclerAdapterTheme
+import com.example.appcc.base.BaseFragment
+import com.example.appcc.databinding.FragmentIconsBinding
+import com.example.appcc.extension.navigateTo
+import com.example.appcc.model.ContentX
+import com.example.appcc.viewmodel.IconsViewModel
+import com.google.android.material.tabs.TabLayout
 
 
-class IconsFragment : Fragment() {
-
+class IconsFragment :BaseFragment() {
+    private lateinit var binding : FragmentIconsBinding
+    private val iconViewModel : IconsViewModel by activityViewModels()
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_icons, container, false)
+        binding = FragmentIconsBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+
+    override fun bindView() {
+        binding.tabMenu.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                iconViewModel.getThemeByFilter(0)
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+
+        })
+
+
+    }
+    private val recyclerAdapterIcon = RecyclerAdapterIcon{
+        toDetail(it)
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            val list : List<String> = listOf(
-                "Chuỗi 1",
-                "Chuỗi 1",
-                )
+    override fun observeData() {
+        iconViewModel.currentTheme.observe(this){
+            recyclerAdapterIcon.submitList(it.content)
 
-            val recyclerView: RecyclerView = view.findViewById(R.id.recyclerview_icon)
+            binding.recyclerviewIcon.adapter = recyclerAdapterIcon
+        }
+        iconViewModel.allTheme.observe(this){
+            binding.tabMenu.removeAllTabs()
+            it.contents.forEach{
+                val tab = binding.tabMenu.newTab()
+                tab.text = it.title
+                binding.tabMenu.addTab(tab)
+            }
+        }
+        iconViewModel.loadAllResource(requireContext())
 
-            val adapter = RecyclerViewAdapterIcon(list)
-            recyclerView.adapter = adapter
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    private fun toDetail(contentX: ContentX){
+            val action : NavDirections = IconsFragmentDirections.actionIconsFragmentToFragmentAppLauncher2(contentX)
+            navigateTo(action)
 
     }
 

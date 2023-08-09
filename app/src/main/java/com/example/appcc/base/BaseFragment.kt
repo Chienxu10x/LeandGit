@@ -6,6 +6,7 @@ import android.view.View
 
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import com.example.appcc.R
 import com.example.appcc.extension.gone
 import com.example.appcc.extension.visibble
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,6 +37,7 @@ abstract class BaseFragment : Fragment() {
 
     abstract fun bindView()
     abstract fun observeData()
+
 
 }
 

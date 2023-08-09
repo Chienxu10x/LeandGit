@@ -103,8 +103,9 @@ class WidgetsFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentWidgetsBinding.inflate(layoutInflater)
+        binding= FragmentWidgetsBinding.inflate(layoutInflater)
         return binding.root
     }
+
 
 }

@@ -34,7 +34,7 @@ class IconViewModel @Inject constructor(
         MutableLiveData<Content>()
     }
 
-    fun loadAllResource(){
+    fun loadAllResource(context: Context){
         allTheme.value = readContentRepo.readDataIcon(context)
     }
 

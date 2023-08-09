@@ -39,7 +39,7 @@
                        android:id="@+id/themes"
                        android:layout_width="78dp"
                        android:layout_height="28dp"
-                       android:text="@string/themes"
+                       android:text="Text"
                        android:layout_marginTop="14dp"
                        android:layout_marginStart="76.5dp"
                        android:textAppearance="@style/themes"
@@ -100,7 +100,6 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                app:elevation="@dimen/size_10"
-               android:background="@color/white"
                app:itemIconTint="@color/bottom_color_nav"
                app:itemTextColor="@color/bottom_color_nav"
                app:labelVisibilityMode="labeled"
@@ -108,7 +107,8 @@
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toBottomOf="@id/nav_container"
-               app:menu="@menu/main_menu" />
+               app:menu="@menu/main_menu"
+               android:background="@color/white"/>
        </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

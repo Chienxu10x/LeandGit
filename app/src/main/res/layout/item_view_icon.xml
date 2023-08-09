@@ -6,61 +6,102 @@
     android:layout_width="343dp"
     android:layout_height="56dp">
 
-
-    <Button
-        android:id="@+id/button4"
+    <CheckBox
+        android:checked="false"
+        android:enabled="false"
+        android:buttonTint="@color/blue"
+        android:id="@+id/btn_check"
         android:layout_width="24dp"
         android:layout_height="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_icon_material"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintStart_toEndOf="@+id/btn_check"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:background="@drawable/ic_transger_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="91dp"
-        android:background="@color/blue"/>
+        tools:layout_editor_absoluteX="91dp" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+
+    <FrameLayout
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/edit_fill"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        android:background="@color/gray_1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_plus_blank"/>
+        <ImageView
+            android:id="@+id/iv_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_gravity="top|end"
+            android:background="@drawable/r10_close"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_close" />
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/button3"
+
+
+    <RelativeLayout
+        android:id="@+id/edit_fill"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginEnd="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#510524"
-        />
+        android:background="@drawable/r_icon_edit">
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="6dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/ic_edit"
+            />
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/button2"
+    <RelativeLayout
+        android:id="@+id/ln_install"
         android:layout_width="67dp"
         android:layout_height="38dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/r_icon_button">
+        <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/install"
+            android:layout_width="43dp"
+            android:layout_height="22dp"
+            android:text="@string/install"
+            android:textAppearance="@style/install"
+            android:lineSpacingExtra="6sp"
+            android:translationY="-2.79sp"
+            android:gravity="right|top"
+            />
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

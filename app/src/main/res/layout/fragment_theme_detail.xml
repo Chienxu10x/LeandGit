@@ -1,44 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.FragmentThemeDetail"
-    android:background="@color/green_1"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/green_1">
 
-    >
-    <RelativeLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpTheme"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:gravity="center"
+        android:orientation="vertical">
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:id="@+id/tabTheme"
+            android:background="@color/transparent"
+            app:tabIndicatorColor="@color/transparent"/>
+        <TextView
+            android:background="@color/green_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvGetTheme"
+            android:layout_marginBottom="@dimen/_70sdp"
+            android:backgroundTint="@color/black"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_50sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="@string/get_theme"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+    </LinearLayout>
+</FrameLayout>
 
-        <Button
-
-            android:layout_width="128dp"
-            android:layout_height="46dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="120dp"
-            android:text="Custom"/>
-        <Button
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="120dp"
-            />
-
-        <Button
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_width="128dp"
-            android:layout_height="46dp"
-            android:layout_marginBottom="120dp"
-            android:text="GetTime"
-            />
-
-    </RelativeLayout>
 
 
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".fragment.FragmentThemeDetail"-->
+<!--    android:id="@+id/image_theme_detail"-->
+<!--    android:background="@drawable/image_deco"-->
+
+<!--    >-->
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:padding="16dp">-->
+
+<!--        <Button-->
+
+<!--            android:layout_width="128dp"-->
+<!--            android:layout_height="46dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="120dp"-->
+<!--            android:text="Custom"/>-->
+<!--        <Button-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_marginBottom="120dp"-->
+<!--            />-->
+
+<!--        <Button-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_width="128dp"-->
+<!--            android:layout_height="46dp"-->
+<!--            android:layout_marginBottom="120dp"-->
+<!--            android:text="GetTime"-->
+<!--            />-->
+
+<!--    </RelativeLayout>-->
 
 
-</RelativeLayout>
+
+
+<!--</RelativeLayout>-->

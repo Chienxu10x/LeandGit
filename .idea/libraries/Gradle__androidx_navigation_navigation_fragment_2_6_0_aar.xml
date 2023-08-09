@@ -2,8 +2,8 @@
   <library name="Gradle: androidx.navigation:navigation-fragment:2.6.0@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/57db09c71bc3fd6593450c525d464c42/transformed/navigation-fragment-2.6.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/57db09c71bc3fd6593450c525d464c42/transformed/navigation-fragment-2.6.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/57db09c71bc3fd6593450c525d464c42/transformed/navigation-fragment-2.6.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/57db09c71bc3fd6593450c525d464c42/transformed/navigation-fragment-2.6.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

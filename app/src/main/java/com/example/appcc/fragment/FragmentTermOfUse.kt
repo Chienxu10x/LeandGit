@@ -26,7 +26,6 @@ class FragmentTermOfUse : BaseFragment() {
 
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,17 +34,14 @@ class FragmentTermOfUse : BaseFragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
-
     fun onSetupView(): FragmentTermOfUse {
         return FragmentTermOfUse()
     }
-
     companion object {
         fun onSetupView(): FragmentTermOfUse {
             return FragmentTermOfUse()
         }
     }
-
     private fun onBackPressed() {
         activity?.let { act ->
             act.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
