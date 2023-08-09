@@ -5,26 +5,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.example.appcc.R
 import com.example.appcc.adapter.ViewPagerAdapterWidget
+import com.example.appcc.base.BaseFragment
+import com.example.appcc.databinding.FragmentThemesBinding
+import com.example.appcc.databinding.FragmentWidgetsBinding
+import com.example.appcc.viewmodel.WidgetViewModel
 
-class WidgetsFragment : Fragment() {
+class WidgetsFragment : BaseFragment() {
+    private lateinit var binding : FragmentWidgetsBinding
+    private val widgetViewModel: WidgetViewModel by activityViewModels()
 
-    private lateinit var viewPagerAdapterWidget: ViewPagerAdapterWidget
-    private lateinit var viewPager: ViewPager2
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_widgets, container, false)
+        binding = FragmentWidgetsBinding.inflate(layoutInflater)
+        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewPagerAdapterWidget = ViewPagerAdapterWidget(this)
-        viewPager = view.findViewById(R.id.viewPageWidget)
-        viewPager.adapter = viewPagerAdapterWidget
+    override fun bindView() {
+        widgetViewModel.loadAllResource(requireContext())
+
+
+    }
+
+    override fun observeData() {
+        widgetViewModel.allWidget.observe(this) {
+            binding.tabMenu.removeAllTabs()
+            it.widgets.forEach {
+                val tab = binding.tabMenu.newTab()
+                tab.text = it.title
+                binding.tabMenu.addTab(tab)
+            }
+        }
     }
 
 

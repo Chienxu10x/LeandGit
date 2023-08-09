@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.appcc.R
 import com.example.appcc.adapter.ViewPagerAdapterTimeline
+import com.example.appcc.databinding.ActivityMainBinding
+import com.example.appcc.databinding.FragmentIconsBinding
 
 class TimelineFragment : Fragment() {
 
@@ -25,4 +28,6 @@ class TimelineFragment : Fragment() {
         viewPager = view.findViewById(R.id.viewPageTimeline)
         viewPager.adapter = viewPagerAdapterTimeline
     }
+
+
 }

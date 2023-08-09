@@ -17,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.appcc.R
 import com.example.appcc.base.BaseActivity
 import com.example.appcc.databinding.ActivityMainBinding
+import com.example.appcc.fragment.IconsFragment
 import com.example.appcc.fragment.PrivacyPolicyFragment
 import com.example.appcc.fragment.SettingFragment
 
@@ -24,7 +25,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var appBarConfiguration: AppBarConfiguration
     override fun bindView() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -36,6 +36,15 @@ class MainActivity : BaseActivity() {
 //           startActivity(intent)
             replaceFragemtSetting(SettingFragment())
         }
+
+
+
+
+
+
+
+
+
 
     }
 

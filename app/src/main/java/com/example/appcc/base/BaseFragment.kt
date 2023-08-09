@@ -6,12 +6,13 @@ import android.view.View
 
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import com.example.appcc.R
 import com.example.appcc.extension.gone
 import com.example.appcc.extension.visibble
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-abstract class BaseFragment(@LayoutRes layout: Int) : Fragment() {
+abstract class BaseFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,7 @@ abstract class BaseFragment(@LayoutRes layout: Int) : Fragment() {
 
     abstract fun bindView()
     abstract fun observeData()
+
 
 }
 

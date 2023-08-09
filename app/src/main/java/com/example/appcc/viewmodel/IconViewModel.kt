@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class IconViewModel @Inject constructor(
-    @ApplicationContext private val context: Context, private val readContentRepo: ReadContentRepo
+     private val readContentRepo: ReadContentRepo
 ): BaseViewModel() {
 
     val allTheme by lazy {
@@ -25,7 +25,7 @@ class IconViewModel @Inject constructor(
         MutableLiveData<Content>()
     }
 
-    fun loadAllResource(){
+    fun loadAllResource(context: Context){
         allTheme.value = readContentRepo.readDataIcon(context)
     }
 

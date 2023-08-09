@@ -22,6 +22,14 @@
         <action
             android:id="@+id/action_themes_fragment_to_icons_fragment"
             app:destination="@id/icons_fragment" />
+        <action
+            android:id="@+id/action_themes_fragment_to_fragmentThemeDetail"
+            android:label="ThemeDetailFragment"
+            app:destination="@id/fragmentThemeDetail">
+            <argument
+                android:name="contentx"
+                app:argType="com.example.appcc.model.ContentX" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/icons_fragment"
@@ -43,4 +51,9 @@
         android:name="com.example.appcc.fragment.WidgetsFragment"
         android:label="@string/widgets"
         tools:layout="@layout/fragment_widgets" />
+    <fragment
+        android:id="@+id/fragmentThemeDetail"
+        android:name="com.example.appcc.fragment.FragmentThemeDetail"
+        android:label="fragment_theme_detail"
+        tools:layout="@layout/fragment_theme_detail" />
 </navigation>

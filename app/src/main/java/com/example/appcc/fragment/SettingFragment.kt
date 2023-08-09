@@ -19,7 +19,7 @@ import com.example.appcc.utils.shareApp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SettingFragment : BaseFragment(R.layout.fragment_setting) {
+class SettingFragment : BaseFragment() {
     private lateinit var binding: FragmentSettingBinding
     override fun bindView() {
         binding.apply {

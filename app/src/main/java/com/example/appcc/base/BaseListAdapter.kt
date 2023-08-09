@@ -18,6 +18,5 @@ abstract class BaseListAdapter<T>(diffCallback: DiffUtil.ItemCallback<T>) :
         } else {
             super.submitList(list)
         }
-
     }
 }

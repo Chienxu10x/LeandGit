@@ -13,7 +13,7 @@ import com.example.appcc.databinding.FragmentPrivacyPolicy2Binding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FragmentPrivacyPolicy : BaseFragment(R.layout.fragment_privacy_policy2) {
+class FragmentPrivacyPolicy : BaseFragment() {
     private lateinit var binding: FragmentPrivacyPolicy2Binding
     override fun bindView() {
         binding.imageBack.setOnClickListener {
