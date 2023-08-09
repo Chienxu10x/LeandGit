@@ -10,9 +10,8 @@ import com.example.appcc.databinding.FragmentPrivacyPolicyBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PrivacyPolicyFragment : BaseFragment(R.layout.fragment_privacy_policy) {
+class PrivacyPolicyFragment : BaseFragment() {
     private lateinit var binding: FragmentPrivacyPolicyBinding
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {

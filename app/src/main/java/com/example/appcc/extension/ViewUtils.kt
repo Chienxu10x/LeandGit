@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,7 +23,7 @@ import com.bumptech.glide.request.transition.Transition
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
-
+val Context.dataStore by preferencesDataStore(name = "DATA_STORE")
 fun View.layouInflater(): LayoutInflater = LayoutInflater.from(this.context)
 fun View.gone() {
     this.visibility = View.GONE

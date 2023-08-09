@@ -22,7 +22,7 @@ import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.log
 
-class ThemesFragment : BaseFragment(R.layout.fragment_themes) {
+class ThemesFragment : BaseFragment() {
 private lateinit var binding: FragmentThemesBinding
     private val iconViewModel : IconViewModel by activityViewModels()
     override fun onCreateView(
@@ -56,16 +56,18 @@ private lateinit var binding: FragmentThemesBinding
 
     override fun observeData() {
         iconViewModel.currentTheme.observe(this){
+            Log.d("TAG", "observeData: "+"a0")
             recyclerAdapterTheme.submitList(it.content)
+            Log.d("TAG", "observeData: "+it.content.get(0).previews)
             binding.recyclerviewTheme.adapter = recyclerAdapterTheme
         }
 
         iconViewModel.allTheme.observe(requireActivity()){
-            Log.d("TAG", "observeData: "+"a1")
             binding.tabMenu.removeAllTabs()
             it.contents.forEach{
                 val tab = binding.tabMenu.newTab()
                 tab.text = it.title
+//                Log.d("TAG", "observeData: "+it.content.get(0).previews)
                 binding.tabMenu.addTab(tab)
             }
         }

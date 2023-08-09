@@ -11,14 +11,15 @@ import com.example.appcc.extension.visibble
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-abstract class BaseFragment(@LayoutRes layout: Int) : Fragment() {
+abstract class BaseFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
-
-
+    override fun onStart() {
+        super.onStart()
+        bindView()
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        (requireActivity() as BaseActivity).showBottomView()

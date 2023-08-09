@@ -14,7 +14,7 @@ import com.example.appcc.databinding.FragmentTermOfUseBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FragmentTermOfUse : BaseFragment(R.layout.fragment_term_of_use) {
+class FragmentTermOfUse : BaseFragment() {
     private lateinit var binding: FragmentTermOfUseBinding
     override fun bindView() {
         binding.imageBack.setOnClickListener {

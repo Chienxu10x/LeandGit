@@ -15,6 +15,7 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
+                <arg>$MODULE_DIR$/../../../app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debugAndroidTest/R.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ac9c3ce34c9ee7bc44d41f370198e8ca/transformed/junit-1.1.5-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/12fda78775270d4243eae10600678dc1/transformed/espresso-core-3.5.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/4d13f6841616819a2182837f1b99e687/transformed/hilt-android-testing-2.47-api.jar</arg>
@@ -215,6 +216,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debugAndroidTest/out" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debugAndroidTest/out" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debugAndroidTest/out" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debugAndroidTest/out" isTestSource="true" generated="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug">
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug" type="java-test-resource" />
@@ -223,13 +225,16 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../../app/build/generated/source/kapt/debugAndroidTest">
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/kapt/debugAndroidTest" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/kapt/debugAndroidTest" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/kapt/debugAndroidTest" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/kapt/debugAndroidTest" isTestSource="true" generated="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../../app/build/generated/source/kaptKotlin/debugAndroidTest">
+      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/kaptKotlin/debugAndroidTest" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/kaptKotlin/debugAndroidTest" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/kaptKotlin/debugAndroidTest" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/kaptKotlin/debugAndroidTest" isTestSource="true" generated="true" />

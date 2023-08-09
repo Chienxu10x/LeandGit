@@ -8,17 +8,17 @@ import android.view.ViewGroup
 import com.example.appcc.R
 import com.example.appcc.base.BaseFragment
 
-class WallpaperFragment : BaseFragment(R.layout.fragment_wallpaper) {
+class WallpaperFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
     override fun bindView() {
-        TODO("Not yet implemented")
+
     }
 
     override fun observeData() {
-        TODO("Not yet implemented")
+
     }
 
 }

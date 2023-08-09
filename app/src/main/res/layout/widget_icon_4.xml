@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ln_widget"
+    android:layout_width="@dimen/_224sdp"
+    android:layout_height="@dimen/_112sdp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:src="@drawable/widget_2"
+            android:id="@+id/iv_app"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:text="10:00"
+            android:textSize="@dimen/_40ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_date_of_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:text="Friday"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="bold" />
+    </FrameLayout>
+</LinearLayout>

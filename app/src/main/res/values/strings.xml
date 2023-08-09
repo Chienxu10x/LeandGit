@@ -74,4 +74,6 @@
     <string name="buy_premium_fail">Error, purchase failed!</string>
     <string name="upagrade_now">upagrade</string>
     <string name="app_decs">Theme</string>
+    <string name="set_widget">Set Widget</string>
+    <string name="share_now">Chia sẻ ngay</string>
 </resources>

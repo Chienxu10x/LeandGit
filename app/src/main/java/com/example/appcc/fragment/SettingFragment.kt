@@ -19,7 +19,7 @@ import com.example.appcc.utils.shareApp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SettingFragment : BaseFragment(R.layout.fragment_setting) {
+class SettingFragment : BaseFragment() {
     private lateinit var binding: FragmentSettingBinding
     override fun bindView() {
         binding.apply {
@@ -41,14 +41,14 @@ class SettingFragment : BaseFragment(R.layout.fragment_setting) {
             lnPolicy.setOnClickListener {
                 activity?.let { act ->
                     val privacyView: FragmentPrivacyPolicy = FragmentPrivacyPolicy().onSetupView()
-                    (act as MainActivity).replaceFragemtSetting(privacyView)
+                    (act as MainActivity).replaceFragment(privacyView)
                 }
 //                SingletonScreen.getInstance().type = Screen.Document
             }
             lnTermOfUse.setOnClickListener {
                 activity?.let { act ->
                     val termOfUseView: FragmentTermOfUse = FragmentTermOfUse().onSetupView()
-                    (act as MainActivity).replaceFragemtSetting(termOfUseView)
+                    (act as MainActivity).replaceFragment(termOfUseView)
                 }
             }
             lnContact.setOnClickListener {
