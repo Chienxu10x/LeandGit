@@ -40,4 +40,14 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#00181A</item>
     </style>
+
+    <style name="select_all">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#E68257</item>
+    </style>
+
+    <style name="install">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#E68257</item>
+    </style>
 </resources>
