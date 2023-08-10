@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frame_113"
-    android:layout_width="343dp"
+    android:layout_width="match_parent"
     android:layout_height="60dp">
 
     <CheckBox
         android:layout_gravity="center_vertical"
         android:checked="false"
         android:enabled="false"
-        android:buttonTint="@color/blue"
+        android:button="@drawable/custom_checkbok_icon"
         android:id="@+id/btn_check"
         android:layout_width="24dp"
         android:layout_height="24dp"
