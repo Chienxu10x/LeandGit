@@ -177,4 +177,8 @@ kapt {
     correctErrorTypes true
 }
 
+dependencies {
+    implementation'org.greenrobot:eventbus:3.3.1'
+}
+
 

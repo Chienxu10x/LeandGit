@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frame_113"
     android:layout_width="343dp"
-    android:layout_height="56dp">
+    android:layout_height="60dp">
 
     <CheckBox
+        android:layout_gravity="center_vertical"
         android:checked="false"
         android:enabled="false"
         android:buttonTint="@color/blue"
@@ -19,15 +20,16 @@
 
 
     <ImageView
+        android:layout_marginStart="10dp"
+        android:layout_gravity="center_vertical"
         android:id="@+id/iv_icon_material"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/btn_check"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="18dp"
         android:id="@+id/imageView4"
         android:layout_width="24dp"
         android:layout_height="24dp"
@@ -38,6 +40,8 @@
 
 
     <FrameLayout
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="18dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,6 +66,8 @@
 
 
     <RelativeLayout
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10dp"
         android:id="@+id/edit_fill"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -86,9 +92,7 @@
         android:id="@+id/ln_install"
         android:layout_width="67dp"
         android:layout_height="38dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center_vertical"
         android:background="@drawable/r_icon_button">
         <TextView
             android:layout_centerInParent="true"
@@ -104,5 +108,5 @@
     </RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 
