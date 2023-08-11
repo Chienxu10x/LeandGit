@@ -25,7 +25,7 @@
             app:tabGravity="fill"
             app:tabTextColor="@color/white"
             app:tabIndicator="@drawable/tab_indi"
-            app:tabIndicatorColor="@color/yellow_1"
+            app:tabIndicatorColor="#E68257"
             app:tabIndicatorFullWidth="true"
             app:tabIndicatorGravity="stretch"
             app:tabInlineLabel="false"

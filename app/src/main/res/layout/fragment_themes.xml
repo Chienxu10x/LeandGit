@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment.ThemesFragment"
-    android:id="@+id/fragment_theme">
+    android:id="@+id/fragment_theme"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabMenu"
         android:layout_width="match_parent"
@@ -15,11 +17,11 @@
         android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginBottom="@dimen/_8sdp"
-        android:background="@color/background"
         app:tabGravity="fill"
-        app:tabTextColor="@color/white"
+        app:tabTextColor="@color/black"
+        app:itemTextColor="@color/tabtable_text_color"
         app:tabIndicator="@drawable/tab_indi"
-        app:tabIndicatorColor="@color/yellow_1"
+        app:tabIndicatorColor="#E68257"
         app:tabIndicatorFullWidth="true"
         app:tabIndicatorGravity="stretch"
         app:tabInlineLabel="false"
@@ -27,20 +29,22 @@
         app:tabRippleColor="@color/transparent"
         app:tabTextAppearance="@style/MineCustomTabText" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_theme"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="10sp"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:itemCount="1"
-        tools:listitem="@layout/item_view_main"
-        />
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
 
-
+            android:id="@+id/recyclerview_theme"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_view_main"
+            />
+    </RelativeLayout>
 </LinearLayout>

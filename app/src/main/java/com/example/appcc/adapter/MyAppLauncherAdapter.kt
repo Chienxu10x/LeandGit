@@ -19,7 +19,7 @@ import com.example.appcc.extension.visibble
 import com.example.appcc.model.MyAppIcon
 
 
-class MyAppLauncherAdapter(val onItemClick: (position: Int, flag: Int) -> Unit) :
+class MyAppLauncherAdapter(val onItemClick: (position: Int, flag: Int) -> Unit,) :
     BaseListAdapter<MyAppIcon>(
         MyAppIconDiffCallBack()
     ) {
@@ -37,6 +37,7 @@ class MyAppLauncherAdapter(val onItemClick: (position: Int, flag: Int) -> Unit) 
             val iv_remove : ImageView = findViewById(R.id.iv_remove)
             val btn_check : CheckBox = findViewById(R.id.btn_check)
             val ln_install : RelativeLayout = findViewById(R.id.ln_install)
+            val rl_install : RelativeLayout = findViewById(R.id.rl_install)
 
 
             Glide.with(this).load(item.icon.toAssetPath()).into(iv_icon_material)
@@ -66,9 +67,15 @@ class MyAppLauncherAdapter(val onItemClick: (position: Int, flag: Int) -> Unit) 
                 onItemClick(position, FLAG_ADD_ICON)
             }
 
+            rl_install.setOnClickListener {
+                onItemClick(position, FLAG_ADD_ICON)
+            }
+
+
             ln_install.setOnClickListener {
                 onItemClick(position, FLAG_INSTALL)
             }
+
 
             btn_check.setOnClickListener {
                 val isChecked = btn_check.isChecked

@@ -8,8 +8,6 @@
           "isLock": false,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_1/wallpaper1.png",
-          "wallpaper1": "Wallpaper/wallpaper_1/wallpaper2.png",
-          "wallpaper2": "Wallpaper/wallpaper_1/wallpaper3.png",
           "previews": [
             "Preview/preview1/preview_1.webp",
             "Preview/preview1/preview_2.webp",
@@ -62,8 +60,6 @@
           "isLock": false,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_2/wallpaper2.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview2/preview_1.webp",
             "Preview/preview2/preview_2.webp",
@@ -117,8 +113,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_3/wallpaper3.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview3/preview_1.webp",
             "Preview/preview3/preview_2.webp",
@@ -171,8 +165,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_4/wallpaper4.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview4/preview_1.webp",
             "Preview/preview4/preview_2.webp",
@@ -225,8 +217,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_5/wallpaper5.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview5/preview_1.webp",
             "Preview/preview5/preview_2.webp",
@@ -279,8 +269,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_6/wallpaper6.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview6/preview_1.webp",
             "Preview/preview6/preview_2.webp",
@@ -333,8 +321,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_7/wallpaper7.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview7/preview_1.webp",
             "Preview/preview7/preview_2.webp",
@@ -387,8 +373,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_8/wallpaper8.png",
-          "wallpaper1": "Wallpaper/wallpaper_8/wallpaper81.png",
-          "wallpaper2": "Wallpaper/wallpaper_8/wallpaper82.png",
           "previews": [
             "Preview/preview8/preview_1.webp",
             "Preview/preview8/preview_2.webp",
@@ -441,8 +425,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_9/wallpaper9.png",
-          "wallpaper1": "Wallpaper/wallpaper_9/wallpaper91.png",
-          "wallpaper2": "Wallpaper/wallpaper_9/wallpaper92.png",
           "previews": [
             "Preview/preview9/preview_1.webp",
             "Preview/preview9/preview_2.webp",
@@ -495,8 +477,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_10/wallpaper10.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview10/preview_1.webp",
             "Preview/preview10/preview_2.webp",
@@ -554,8 +534,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_3/wallpaper3.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview3/preview_1.webp",
             "Preview/preview3/preview_2.webp",
@@ -608,8 +586,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_6/wallpaper6.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview6/preview_1.webp",
             "Preview/preview6/preview_2.webp",
@@ -662,8 +638,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_9/wallpaper9.png",
-          "wallpaper1": "Wallpaper/wallpaper_9/wallpaper91.png",
-          "wallpaper2": "Wallpaper/wallpaper_9/wallpaper92.png",
           "previews": [
             "Preview/preview9/preview_1.webp",
             "Preview/preview9/preview_2.webp",
@@ -722,8 +696,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_4/wallpaper4.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview4/preview_1.webp",
             "Preview/preview4/preview_2.webp",
@@ -776,8 +748,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_5/wallpaper5.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview5/preview_1.webp",
             "Preview/preview5/preview_2.webp",
@@ -830,8 +800,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_8/wallpaper8.png",
-          "wallpaper1": "Wallpaper/wallpaper_8/wallpaper81.png",
-          "wallpaper2": "Wallpaper/wallpaper_8/wallpaper82.png",
           "previews": [
             "Preview/preview8/preview_1.webp",
             "Preview/preview8/preview_2.webp",
@@ -889,8 +857,6 @@
           "isLock": false,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_1/wallpaper1.png",
-          "wallpaper1": "Wallpaper/wallpaper_1/wallpaper2.png",
-          "wallpaper2": "Wallpaper/wallpaper_1/wallpaper3.png",
           "previews": [
             "Preview/preview1/preview_1.webp",
             "Preview/preview1/preview_2.webp",
@@ -943,8 +909,6 @@
           "isLock": false,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_2/wallpaper2.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview2/preview_1.webp",
             "Preview/preview2/preview_2.webp",
@@ -1003,8 +967,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_7/wallpaper7.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview7/preview_1.webp",
             "Preview/preview7/preview_2.webp",
@@ -1057,8 +1019,6 @@
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_3/wallpaper3.png",
-          "wallpaper1": null,
-          "wallpaper2": null,
           "previews": [
             "Preview/preview3/preview_1.webp",
             "Preview/preview3/preview_2.webp",

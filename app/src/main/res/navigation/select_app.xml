@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/select_app"
+    app:startDestination="@id/fragmentSelectApp">
+
+    <fragment
+        android:id="@+id/fragmentSelectApp"
+        android:name="com.example.appcc.fragment.FragmentSelectApp"
+        android:label="fragment_select_app"
+        tools:layout="@layout/fragment_select_app">
+        <argument
+            android:name="imgPath"
+            app:argType="string">
+        </argument>
+    </fragment>
+
+</navigation>

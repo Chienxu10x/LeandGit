@@ -1,12 +1,12 @@
 package com.example.appcc.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.appcc.CreateIconEvent
 import com.example.appcc.adapter.MyAppLauncherAdapter
@@ -20,6 +20,7 @@ import com.example.appcc.extension.isPackageInstalled
 import com.example.appcc.extension.visibble
 import com.example.appcc.model.MyAppIcon
 import com.example.appcc.viewmodel.ShortcutViewModel
+import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import java.util.Locale
@@ -44,6 +45,9 @@ class FragmentIconDetail : BaseFragment() {
             MyAppLauncherAdapter.FLAG_ADD_ICON -> {
                 changeIconPosition = position
 //                loadingView.visibble()
+                val action =
+                    FragmentIconDetailDirections.actionFragmentAppLauncher2ToSelectApp(someList[position].icon)
+                findNavController().navigate(action)
                 someList[position].check = false
             }
 
@@ -739,16 +743,16 @@ class FragmentIconDetail : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        if (!EventBus.getDefault().isRegistered(this)) {
-//            EventBus.getDefault().register(this)
-//        }
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this)
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-//        if (EventBus.getDefault().isRegistered(this)) {
-//            EventBus.getDefault().unregister(this)
-//        }
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this)
+        }
     }
 
 

@@ -29,7 +29,6 @@
             android:id="@+id/action_themes_fragment_to_fragmentThemeDetail"
             android:label="ThemeDetailFragment"
             app:destination="@id/fragmentThemeDetail">
-
             <argument
                 android:name="contentx"
                 app:argType="com.example.appcc.model.ContentX" />
@@ -79,7 +78,8 @@
             />
         <action
             android:id="@+id/action_fragmentThemeDetail_to_fragmentAppLauncher2"
-            app:destination="@id/fragmentAppLauncher2" >
+            app:destination="@id/fragmentAppLauncher2">
+
             <argument
                 android:name="contentx"
                 app:argType="com.example.appcc.model.ContentX"
@@ -94,6 +94,27 @@
         <argument
             android:name="contentx"
             app:argType="com.example.appcc.model.ContentX" />
+        <action
+            android:id="@+id/action_fragmentAppLauncher2_to_select_app"
+            app:destination="@id/select_app">
+            <argument
+                android:name="imgPath"
+                app:argType="string">
+            </argument>
+        </action>
+
 
     </fragment>
+    <include app:graph="@navigation/select_app" />
+    <fragment
+        android:id="@+id/fragmentGetTheme"
+        android:name="com.example.appcc.fragment.FragmentGetTheme"
+        android:label="fragment_get_theme"
+        tools:layout="@layout/fragment_get_theme">
+        <argument
+            android:name="contentx"
+            app:argType="com.example.appcc.model.ContentX"
+            />
+    </fragment>
+
 </navigation>

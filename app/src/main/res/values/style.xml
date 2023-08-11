@@ -55,4 +55,10 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#E68257</item>
     </style>
+
+    <style name="install_the">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
 </resources>
