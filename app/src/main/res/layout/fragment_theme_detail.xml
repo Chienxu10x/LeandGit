@@ -9,6 +9,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/image_theme_item"/>
+
+    <Button
+        android:id="@+id/btn_get_theme"
+        android:layout_width="129dp"
+        android:layout_height="46dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="620dp"
+        android:background="@drawable/v_button_theme"
+        android:clipToOutline="true"
+        android:text="Get Theme">
+
+    </Button>
 </FrameLayout>
 
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/select_all"
+                style="@style/select_all"
+                android:text="Select All"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/_14sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp">
+            </TextView>
+            <TextView
+                android:textSize="@dimen/_14sdp"
+                android:id="@+id/unchecked"
+                android:visibility="gone"
+                style="@style/select_all"
+                android:text="Unselect All"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp">
+            </TextView>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_view_icon" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_install_all"
+        android:layout_width="343dp"
+        android:layout_height="48dp"
+        android:text="Custom Icon"
+        android:textAppearance="@style/custom_icon"
+        android:lineSpacingExtra="6sp"
+        android:translationY="-2.79sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="559dp"
+        android:clipToOutline="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/v_icon_text_install"
+        />
+</FrameLayout>
