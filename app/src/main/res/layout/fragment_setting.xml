@@ -65,7 +65,7 @@
                         android:layout_width="0dp"
                         android:layout_height="@dimen/size_80"
                         android:layout_weight="0.25"
-                        android:src="@drawable/ic_star"
+                        android:src="@drawable/frame_12118"
                         android:scaleType="centerCrop"
                         />
                     <TextView
@@ -106,11 +106,11 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_login_signup" />
+                        android:src="@drawable/sign_in_squre" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -137,10 +137,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/gift" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -167,10 +167,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/favorites" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -197,10 +197,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/user" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -238,10 +238,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/lock" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -268,10 +268,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/question" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -298,10 +298,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/phone_fill" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -328,10 +328,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/share_1" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -358,10 +358,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/edit_fill" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -388,10 +388,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/globe" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -418,10 +418,10 @@ Unlock all features"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
                         android:padding="@dimen/_18sdp"
-                        android:src="@drawable/ic_star" />
+                        android:src="@drawable/help_1" />
 
                     <TextView
                         android:layout_width="0dp"

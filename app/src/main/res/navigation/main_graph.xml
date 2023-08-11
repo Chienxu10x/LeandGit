@@ -10,6 +10,9 @@
         android:name="com.example.appcc.fragment.ThemesFragment"
         android:label="@string/themes"
         tools:layout="@layout/fragment_themes" >
+        <argument
+            android:name="contentx"
+            app:argType="com.example.appcc.model.ContentX" />
         <action
             android:id="@+id/action_themes_fragment_to_wallpaper_fragment"
             app:destination="@id/wallpaper_fragment" />
@@ -26,6 +29,7 @@
             android:id="@+id/action_themes_fragment_to_fragmentThemeDetail"
             android:label="ThemeDetailFragment"
             app:destination="@id/fragmentThemeDetail">
+
             <argument
                 android:name="contentx"
                 app:argType="com.example.appcc.model.ContentX" />
@@ -36,6 +40,10 @@
         android:name="com.example.appcc.fragment.IconsFragment"
         android:label="@string/icons"
         tools:layout="@layout/fragment_icons" >
+        <argument
+            android:name="contentx"
+            app:argType="com.example.appcc.model.ContentX"
+            />
         <action
             android:id="@+id/action_icons_fragment_to_fragmentAppLauncher2"
             app:destination="@id/fragmentAppLauncher2">
@@ -65,26 +73,27 @@
         android:name="com.example.appcc.fragment.FragmentThemeDetail"
         android:label="fragment_theme_detail"
         tools:layout="@layout/fragment_theme_detail" >
+        <argument
+            android:name="contentx"
+            app:argType="com.example.appcc.model.ContentX"
+            />
         <action
-            android:id="@+id/action_fragmentThemeDetail_to_themes_fragment"
-            app:destination="@id/themes_fragment" />
+            android:id="@+id/action_fragmentThemeDetail_to_fragmentAppLauncher2"
+            app:destination="@id/fragmentAppLauncher2" >
+            <argument
+                android:name="contentx"
+                app:argType="com.example.appcc.model.ContentX"
+                />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/fragmentAppLauncher2"
-        android:name="com.example.appcc.fragment.FragmentAppLauncher"
+        android:name="com.example.appcc.fragment.FragmentIconDetail"
         android:label="fragment_app_launcher2"
         tools:layout="@layout/fragment_app_launcher" >
         <argument
             android:name="contentx"
             app:argType="com.example.appcc.model.ContentX" />
-        <action
-            android:id="@+id/action_fragmentAppLauncher2_to_icon_change"
-            app:destination="@id/icon_change">
-            <argument
-                android:name="imgPath"
-                app:argType="string" />
-        </action>
 
     </fragment>
-    <include app:graph="@navigation/icon_change" />
 </navigation>

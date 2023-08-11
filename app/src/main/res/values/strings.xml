@@ -76,4 +76,7 @@
     <string name="app_decs">Theme</string>
     <string name="set_widget">Set Widget</string>
     <string name="share_now">Chia sẻ ngay</string>
+    <string name="custom">Custom</string>
+    <string name="customizer">Customizer</string>
+    <string name="apply">Apply</string>
 </resources>

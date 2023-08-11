@@ -1,6 +1,7 @@
 package com.example.appcc.viewmodel
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.appcc.model.Content
@@ -36,6 +37,7 @@ class IconViewModel @Inject constructor(
 
     fun loadAllResource(context: Context){
         allTheme.value = readContentRepo.readDataIcon(context)
+        Log.d("TAG", "loadAllResource: "+allTheme.value)
     }
 
 

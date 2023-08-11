@@ -44,6 +44,7 @@ private lateinit var binding: FragmentThemesBinding
         binding.tabMenu.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab) {
                 iconViewModel.getThemeByFilter(tab.position)
+//                nested_view.fullScroll(View.FOCUS_UP)
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {
             }
