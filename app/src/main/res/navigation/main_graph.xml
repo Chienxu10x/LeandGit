@@ -64,7 +64,11 @@
         android:id="@+id/fragmentThemeDetail"
         android:name="com.example.appcc.fragment.FragmentThemeDetail"
         android:label="fragment_theme_detail"
-        tools:layout="@layout/fragment_theme_detail" />
+        tools:layout="@layout/fragment_theme_detail" >
+        <action
+            android:id="@+id/action_fragmentThemeDetail_to_themes_fragment"
+            app:destination="@id/themes_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentAppLauncher2"
         android:name="com.example.appcc.fragment.FragmentAppLauncher"

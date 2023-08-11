@@ -29,7 +29,7 @@ class MainActivity : BaseActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.navBottom.setupWithNavController(findNavController(R.id.nav_container))
-//        setSupportActionBar(binding.myToolbar)
+        setSupportActionBar(binding.myToolbar)
 
         binding.menuSetting.setOnClickListener {
 //           val intent =Intent(this@MainActivity,SettingActivity::class.java)

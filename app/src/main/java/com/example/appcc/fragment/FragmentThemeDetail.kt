@@ -69,8 +69,11 @@ class FragmentThemeDetail : BaseFragment() {
 //            binding.vpTheme.setCurrentItem(tab.position, true)
 //        }.attach()
     }
-
+    fun onSetupView():FragmentThemeDetail{
+        return FragmentThemeDetail()
+    }
     override fun observeData() {
+
     }
 
 

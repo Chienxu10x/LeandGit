@@ -57,6 +57,10 @@ private lateinit var binding: FragmentThemesBinding
     }
 
     private val recyclerAdapterTheme = RecyclerAdapterTheme{
+//        activity?.let { act ->
+//            val privacyView: FragmentThemeDetail = FragmentThemeDetail().onSetupView()
+//            (act as MainActivity).replaceFragment(privacyView)
+//        }
         toDetail(it)
     }
 
