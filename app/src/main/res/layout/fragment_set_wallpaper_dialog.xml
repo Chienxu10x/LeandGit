@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_top_corner_white"
+    tools:context=".dialog.SetWallpaperDialog">
+
+    <TextView
+        android:id="@+id/home_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/rippe_effect"
+        android:fontFamily="@font/hina"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/lock_screen"
+        android:textSize="@dimen/_20sdp" />
+
+    <TextView
+        android:background="@drawable/rippe_effect"
+        android:id="@+id/lock_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/hina"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/home_screen"
+        android:textSize="@dimen/_20sdp" />
+
+    <TextView
+        android:background="@drawable/rippe_effect"
+        android:id="@+id/all_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/hina"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/all_screen"
+        android:textSize="@dimen/_20sdp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/gray"></View>
+
+    <TextView
+        android:background="@drawable/rippe_effect"
+        android:id="@+id/close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/hina"
+        android:gravity="center"
+        android:text="Close"
+        android:textSize="@dimen/_20sdp" />
+</LinearLayout>

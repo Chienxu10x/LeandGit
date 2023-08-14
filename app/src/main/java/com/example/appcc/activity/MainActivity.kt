@@ -50,6 +50,20 @@ class MainActivity : BaseActivity() {
 
     override fun observeData() {
     }
+    fun hideNavigationView() {
+        binding.navBottom.visibility = View.GONE
+    }
+
+    fun showNavigationView() {
+        binding.navBottom.visibility = View.VISIBLE
+    }
+    fun hideToolBar() {
+        binding.myToolbar.visibility = View.GONE
+    }
+
+    fun showToolBar() {
+        binding.myToolbar.visibility = View.VISIBLE
+    }
 }
 //    override fun onBottomViewProvides(): BottomNavigationView? {
 //        return null

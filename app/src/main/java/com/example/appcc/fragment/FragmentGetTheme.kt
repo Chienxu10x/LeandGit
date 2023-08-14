@@ -15,15 +15,12 @@ import com.google.android.material.tabs.TabLayoutMediator
 class FragmentGetTheme : BaseFragment() {
     private lateinit var binding : FragmentGetThemeBinding
     val arg: FragmentGetThemeArgs by navArgs()
-
         override fun bindView() {
+
             val item = arg.contentx
-            Log.d("TAGTT", "bindView: " + item)
             val fragmentsList = listOf(FragmentIconDetail2(item), WidgetsFragment(), FragmentSetWallPaper(item)) // Replace with your fragment instances
             val viewPagerAdapter = ViewPagerAdapter(requireActivity(), fragmentsList)
             binding.viewPager.adapter = viewPagerAdapter
-
-
             val tabLayout = binding.tabLayout  // Get a reference to the TabLayout
             TabLayoutMediator(tabLayout, binding.viewPager) { tab, position ->
                 // Configure the tabs here
@@ -50,4 +47,8 @@ class FragmentGetTheme : BaseFragment() {
         return binding.root
     }
 
+    override fun onStop() {
+        super.onStop()
+
+    }
 }

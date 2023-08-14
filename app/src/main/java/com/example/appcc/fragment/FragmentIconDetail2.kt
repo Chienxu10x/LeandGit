@@ -1,11 +1,13 @@
 package com.example.appcc.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.appcc.CreateIconEvent
@@ -28,19 +30,19 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import java.util.Locale
 
-class FragmentIconDetail2(contentX: ContentX) : BaseFragment() {
+class FragmentIconDetail2(private val contentX: ContentX) : BaseFragment() {
     private lateinit var binding: FragmentIconDetail2Binding
     private val shortcutViewModel: ShortcutViewModel by activityViewModels()
     val someList = mutableListOf<MyAppIcon>()
+
 //    val arg: FragmentIconDetailArgs by navArgs()
-    val arg = contentX
     private var changeIconPosition = -1
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentIconDetail2Binding.inflate(layoutInflater)
+        binding = FragmentIconDetail2Binding.inflate(layoutInflater,container,false)
         return binding.root
     }
 
@@ -136,7 +138,8 @@ class FragmentIconDetail2(contentX: ContentX) : BaseFragment() {
     }
 
     override fun bindView() {
-
+        val arg = contentX
+        Log.d("TAG", "bindView: "+arg)
         if (someList.isEmpty()) {
             arg.icon.forEach {
                 someList.add(MyAppIcon(it, ""))
@@ -719,10 +722,11 @@ class FragmentIconDetail2(contentX: ContentX) : BaseFragment() {
 
     private var showToast = true
     override fun observeData() {
-        shortcutViewModel.showLoading.observe(this) {
-            if (!it) {
+        shortcutViewModel.showLoading.observe(this, Observer {
+            if (!it){
+
             }
-        }
+        })
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -736,6 +740,8 @@ class FragmentIconDetail2(contentX: ContentX) : BaseFragment() {
 
 
             }
+
+            else -> {}
         }
     }
 
@@ -754,9 +760,21 @@ class FragmentIconDetail2(contentX: ContentX) : BaseFragment() {
 
     override fun onDestroy() {
         super.onDestroy()
+        requireActivity().supportFragmentManager.beginTransaction().remove(this@FragmentIconDetail2).commit()
         if (EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().unregister(this)
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("TAG", "onStop: "+"aaaaa")
+//        requireActivity().supportFragmentManager.beginTransaction().remove(this@FragmentIconDetail2).commit()
     }
 
 

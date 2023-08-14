@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.navArgs
@@ -26,6 +27,7 @@ import com.example.appcc.dialog.ThemeDetailDialog
 import com.example.appcc.extension.navigateTo
 import com.example.appcc.extension.toAssetPath
 import com.example.appcc.model.ContentX
+import com.example.appcc.model.MyAppIcon
 import com.google.android.material.tabs.TabLayoutMediator
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -34,7 +36,8 @@ import java.io.InputStream
 class FragmentThemeDetail : BaseFragment() {
     private lateinit var binding: FragmentThemeDetailBinding
     val arg: ThemesFragmentArgs by navArgs()
-
+//    var item = mutableListOf<ContentX>()
+//    private var item: Observer<ContentX>? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,8 +48,8 @@ class FragmentThemeDetail : BaseFragment() {
     }
 
     override fun bindView() {
-        val item = arg.contentx
-        Log.d("TAGV", "bindView: " + item)
+       val item = arg.contentx
+//        Log.d("TAGV", "bindView: " + item)
         Glide.with(this).load(Uri.parse(item.previews[0].toAssetPath()))
             .into(binding.imageThemeItem)
         binding.apply {
@@ -56,8 +59,7 @@ class FragmentThemeDetail : BaseFragment() {
                 dialogTheme.show(childFragmentManager,DIALOG_THEME)
             }
             btnGetTheme.setOnClickListener {
-                val action = FragmentThemeDetailDirections.actionFragmentThemeDetailToFragmentAppLauncher2(item)
-                findNavController().navigate(action)
+              toGetTheme(item)
             }
         }
     }
@@ -73,10 +75,13 @@ class FragmentThemeDetail : BaseFragment() {
     }
 
     fun toGetTheme(contextx : ContentX){
-        val action : NavDirections = FragmentThemeDetailDirections.actionFragmentThemeDetailToFragmentAppLauncher2(contextx)
+        val action : NavDirections = FragmentThemeDetailDirections.actionFragmentThemeDetailToFragmentGetTheme(contextx)
         navigateTo(action)
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
     companion object {
         private const val DIALOG_THEME = "DIALOG_THEME"
     }

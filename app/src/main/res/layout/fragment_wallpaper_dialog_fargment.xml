@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/bg_top_corner_white"
-    tools:context=".dialog.WallpaperDialogFargment">
+    tools:context=".dialog.WallpaperDialog">
 
     <LinearLayout
         android:layout_width="match_parent"

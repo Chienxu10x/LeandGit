@@ -33,7 +33,7 @@ class IconsFragment :BaseFragment() {
     override fun bindView() {
         binding.tabMenu.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab) {
-                iconViewModel.getThemeByFilter(0)
+                iconViewModel.getThemeByFilter(tab.position)
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {
             }

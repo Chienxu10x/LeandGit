@@ -77,14 +77,8 @@
             app:argType="com.example.appcc.model.ContentX"
             />
         <action
-            android:id="@+id/action_fragmentThemeDetail_to_fragmentAppLauncher2"
-            app:destination="@id/fragmentAppLauncher2">
-
-            <argument
-                android:name="contentx"
-                app:argType="com.example.appcc.model.ContentX"
-                />
-        </action>
+            android:id="@+id/action_fragmentThemeDetail_to_fragmentGetTheme"
+            app:destination="@id/fragmentGetTheme" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAppLauncher2"

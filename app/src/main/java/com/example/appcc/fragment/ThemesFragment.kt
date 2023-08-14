@@ -5,9 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavDirections
@@ -44,7 +46,7 @@ private lateinit var binding: FragmentThemesBinding
         binding.tabMenu.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab) {
                 iconViewModel.getThemeByFilter(tab.position)
-//                nested_view.fullScroll(View.FOCUS_UP)
+//                binding.fragmentTheme.fullScroll(View.FOCUS_UP)
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {
             }
@@ -67,9 +69,8 @@ private lateinit var binding: FragmentThemesBinding
 
     override fun observeData() {
         iconViewModel.currentTheme.observe(this){
-            Log.d("TAG", "observeData: "+"a0")
+            Log.d("TAG", "observeData: "+"a5")
             recyclerAdapterTheme.submitList(it.content)
-            Log.d("TAG", "observeData: "+it.content.get(0).previews)
             binding.recyclerviewTheme.adapter = recyclerAdapterTheme
         }
 
@@ -89,9 +90,29 @@ private lateinit var binding: FragmentThemesBinding
 
     }
 
+    override fun baseBackPressed() {
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    Log.d("aaaa", "handleOnBackPressed: aaaa")
+                    onBackPressed()
+                }
+            })
+
+    }
+    private fun onBackPressed() {
+        activity?.let { act ->
+            act.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+//            act.window.statusBarColor = ContextCompat.getColor(act, R.color.blue)
+            showInBaseNavigationView()
+            showIntoolBar()
+        }
+    }
     fun toDetail(contentX: ContentX){
         val action : NavDirections = ThemesFragmentDirections.actionThemesFragmentToFragmentThemeDetail(contentX)
         navigateTo(action)
+        hideInBaseNavigationView()
+        hideInBaseToolBar()
     }
 
     fun toInfor(type: Long){

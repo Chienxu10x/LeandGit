@@ -13,18 +13,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/r_button_theme">
+
         <TextView
-            android:layout_centerInParent="true"
-            android:id="@+id/get_theme"
+            android:id="@+id/get_themew"
             android:layout_width="75dp"
             android:layout_height="22dp"
+            android:layout_centerInParent="true"
+            android:gravity="right|top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/see_detail"
+            android:textAppearance="@style/get_theme"
+            android:translationY="-2.79sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/buttonTheme1"
+        android:layout_width="99dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/get_themew1"
+            android:layout_width="75dp"
+            android:layout_height="22dp"
+            android:layout_centerInParent="true"
+            android:lineSpacingExtra="6sp"
             android:text="@string/get_theme"
             android:textAppearance="@style/get_theme"
-            android:lineSpacingExtra="6sp"
-            android:translationY="-2.79sp"
-            android:gravity="right|top"/>
+            android:translationY="-2.79sp" />
     </RelativeLayout>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageview_main1"
+            android:id="@+id/imageview_mainw"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +62,7 @@
             app:layout_constraintWidth_percent="0.45"/>
 
         <ImageView
-            android:id="@+id/imageview_main2"
+            android:id="@+id/imageview_mainw2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"

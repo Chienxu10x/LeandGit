@@ -37,7 +37,7 @@ class IconViewModel @Inject constructor(
 
     fun loadAllResource(context: Context){
         allTheme.value = readContentRepo.readDataIcon(context)
-        Log.d("TAG", "loadAllResource: "+allTheme.value)
+//        Log.d("TAG", "loadAllResource: "+allTheme.value)
     }
 
 
