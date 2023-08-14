@@ -43,7 +43,7 @@ class WidgetsFragment1 : BaseFragment() {
                  widgetViewModel.setStringCurrentWidget(icon1)
                  Log.d("TAG", "bindView: 1 "+currentWidget)
                  Log.d("TAG", "bindView: 2 "+icon1)
-                 var detailWidgets: DetailWidgetsFargment =DetailWidgetsFargment().setUpView()
+                 var detailWidgets: DetailWidgetsFargment = DetailWidgetsFargment().setUpView()
                  (act as MainActivity).replaceFragment(detailWidgets)
              }
 
@@ -53,7 +53,7 @@ class WidgetsFragment1 : BaseFragment() {
                 widgetViewModel.setStringCurrentWidget(icon2)
                 Log.d("TAG", "bindView: 1 "+currentWidget)
                 Log.d("TAG", "bindView: 2 "+icon1)
-                var detailWidgets: DetailWidgetsFargment =DetailWidgetsFargment().setUpView()
+                var detailWidgets: DetailWidgetsFargment = DetailWidgetsFargment().setUpView()
                 (act as MainActivity).replaceFragment(detailWidgets)
             }
 
@@ -63,7 +63,7 @@ class WidgetsFragment1 : BaseFragment() {
                 widgetViewModel.setStringCurrentWidget(icon3)
                 Log.d("TAG", "bindView: 1 "+currentWidget)
                 Log.d("TAG", "bindView: 2 "+icon1)
-                var detailWidgets: DetailWidgetsFargment =DetailWidgetsFargment().setUpView()
+                var detailWidgets: DetailWidgetsFargment = DetailWidgetsFargment().setUpView()
                 (act as MainActivity).replaceFragment(detailWidgets)
             }
 
@@ -73,7 +73,7 @@ class WidgetsFragment1 : BaseFragment() {
                 widgetViewModel.setStringCurrentWidget(icon4)
                 Log.d("TAG", "bindView: 1 "+currentWidget)
                 Log.d("TAG", "bindView: 2 "+icon1)
-                var detailWidgets: DetailWidgetsFargment =DetailWidgetsFargment().setUpView()
+                var detailWidgets: DetailWidgetsFargment = DetailWidgetsFargment().setUpView()
                 (act as MainActivity).replaceFragment(detailWidgets)
             }
 
@@ -83,7 +83,7 @@ class WidgetsFragment1 : BaseFragment() {
                 widgetViewModel.setStringCurrentWidget(icon5)
                 Log.d("TAG", "bindView: 1 "+currentWidget)
                 Log.d("TAG", "bindView: 2 "+icon1)
-                var detailWidgets: DetailWidgetsFargment =DetailWidgetsFargment().setUpView()
+                var detailWidgets: DetailWidgetsFargment = DetailWidgetsFargment().setUpView()
                 (act as MainActivity).replaceFragment(detailWidgets)
             }
 
@@ -93,7 +93,7 @@ class WidgetsFragment1 : BaseFragment() {
                 widgetViewModel.setStringCurrentWidget(icon6)
                 Log.d("TAG", "bindView: 1 "+currentWidget)
                 Log.d("TAG", "bindView: 2 "+icon1)
-                var detailWidgets: DetailWidgetsFargment =DetailWidgetsFargment().setUpView()
+                var detailWidgets: DetailWidgetsFargment = DetailWidgetsFargment().setUpView()
                 (act as MainActivity).replaceFragment(detailWidgets)
             }
 
@@ -103,7 +103,7 @@ class WidgetsFragment1 : BaseFragment() {
                 widgetViewModel.setStringCurrentWidget(icon7)
                 Log.d("TAG", "bindView: 1 "+currentWidget)
                 Log.d("TAG", "bindView: 2 "+icon1)
-                var detailWidgets: DetailWidgetsFargment =DetailWidgetsFargment().setUpView()
+                var detailWidgets: DetailWidgetsFargment = DetailWidgetsFargment().setUpView()
                 (act as MainActivity).replaceFragment(detailWidgets)
             }
 

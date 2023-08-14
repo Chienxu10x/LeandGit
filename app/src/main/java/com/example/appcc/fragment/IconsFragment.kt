@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavDirections
+import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.RecyclerAdapterIcon
 import com.example.appcc.adapter.RecyclerAdapterTheme
 import com.example.appcc.base.BaseFragment
@@ -44,8 +45,11 @@ class IconsFragment :BaseFragment() {
         })
     }
     private val recyclerAdapterIcon = RecyclerAdapterIcon{
-        toDetail(it)
-
+//        toDetail(it)
+        activity?.let {act->
+            var fragmentIconDetail: FragmentIconDetail = FragmentIconDetail(it).setUpView()
+            (act as MainActivity).replaceFragment(fragmentIconDetail)
+        }
     }
 
     override fun observeData() {
@@ -66,11 +70,13 @@ class IconsFragment :BaseFragment() {
 
     }
 
-    private fun toDetail(contentX: ContentX){
-            val action : NavDirections = IconsFragmentDirections.actionIconsFragmentToFragmentAppLauncher2(contentX)
-            navigateTo(action)
+//    private fun toDetail(contentX: ContentX){
+//            val action : NavDirections = IconsFragmentDirections.actionIconsFragmentToFragmentAppLauncher2(contentX)
+//            navigateTo(action)
+//
+//    }
 
-    }
+
 
 
 

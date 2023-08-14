@@ -1,6 +1,7 @@
 package com.example.appcc.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.appcc.CreateIconEvent
+import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.MyAppLauncherAdapter
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.FragmentAppLauncherBinding
@@ -47,14 +49,20 @@ class FragmentIconDetail2(contentX: ContentX) : BaseFragment() {
 
 
 
+
+
     val adapter = MyAppLauncherAdapter { position, flag ->
         when (flag) {
             MyAppLauncherAdapter.FLAG_ADD_ICON -> {
                 changeIconPosition = position
 //                loadingView.visibble()
-                val action =
-                    FragmentIconDetailDirections.actionFragmentAppLauncher2ToSelectApp(someList[position].icon)
-                findNavController().navigate(action)
+//                val action =
+//                    FragmentIconDetailDirections.actionFragmentAppLauncher2ToSelectApp(someList[position].icon)
+//                findNavController().navigate(action)
+                activity?.let {act->
+                    var fragmentSelectApp2: FragmentSelectApp2 = FragmentSelectApp2(someList[position].icon).setUpView()
+                    (act as MainActivity).replaceFragment(fragmentSelectApp2)
+                }
                 someList[position].check = false
             }
 
@@ -728,7 +736,6 @@ class FragmentIconDetail2(contentX: ContentX) : BaseFragment() {
 //        }
         shortcutViewModel.showLoading.observe(this, Observer {
             if (!it){
-
             }
         })
 

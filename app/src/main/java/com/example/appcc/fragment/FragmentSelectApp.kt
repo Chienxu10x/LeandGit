@@ -1,6 +1,7 @@
 package com.example.appcc.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,7 @@ class FragmentSelectApp : BaseFragment() {
 
     override fun bindView() {
         val imagePath = args.imgPath
+        Log.d("TAG", "bindView: " + imagePath)
         Glide.with(this).load(imagePath.toAssetPath()).into(binding.imgApp)
         appIconViewModel.loadListApp(requireContext())
         adapter = SelectAppSpinerAdapter(requireContext())
