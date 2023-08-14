@@ -18,6 +18,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.appcc.R
+import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.base.BaseFragmentStateAdapter
 import com.example.appcc.databinding.FragmentGetThemeBinding
@@ -36,7 +37,8 @@ import java.io.InputStream
 class FragmentThemeDetail : BaseFragment() {
     private lateinit var binding: FragmentThemeDetailBinding
     val arg: ThemesFragmentArgs by navArgs()
-//    var item = mutableListOf<ContentX>()
+
+    //    var item = mutableListOf<ContentX>()
 //    private var item: Observer<ContentX>? = null
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,42 +50,41 @@ class FragmentThemeDetail : BaseFragment() {
     }
 
     override fun bindView() {
-       val item = arg.contentx
+        val item = arg.contentx
 //        Log.d("TAGV", "bindView: " + item)
         Glide.with(this).load(Uri.parse(item.previews[0].toAssetPath()))
             .into(binding.imageThemeItem)
         binding.apply {
             btnCustom.setOnClickListener {
                 val dialogTheme = ThemeDetailDialog()
-                dialogTheme.isCancelable=false
-                dialogTheme.show(childFragmentManager,DIALOG_THEME)
+                dialogTheme.isCancelable = false
+                dialogTheme.show(childFragmentManager, DIALOG_THEME)
             }
-            btnGetTheme.setOnClickListener {
-              toGetTheme(item)
+            binding.btnGetTheme.setOnClickListener {
+//            toGetTheme(item)
+                activity?.let { act ->
+                    var fragmentGetTheme: FragmentGetTheme = FragmentGetTheme(item).setUpView()
+                    (act as MainActivity).replaceFragment(fragmentGetTheme)
+                }
             }
+        }
+
+        fun onSetupView(): FragmentThemeDetail {
+            return FragmentThemeDetail()
+
         }
     }
-
-    fun onSetupView(): FragmentThemeDetail {
-        return FragmentThemeDetail()
-
-        }
-
 
     override fun observeData() {
 
     }
 
-    fun toGetTheme(contextx : ContentX){
-        val action : NavDirections = FragmentThemeDetailDirections.actionFragmentThemeDetailToFragmentGetTheme(contextx)
-        navigateTo(action)
-    }
+//    fun toGetTheme(contextx : ContentX){
+//        val action : NavDirections = FragmentThemeDetailDirections.actionFragmentThemeDetailToFragmentGetTheme(contextx)
+//        navigateTo(action)
+//    }
 
-    override fun onResume() {
-        super.onResume()
-    }
     companion object {
         private const val DIALOG_THEME = "DIALOG_THEME"
     }
-
 }

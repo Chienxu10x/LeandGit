@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="32dp">
+
             <RelativeLayout
                 android:id="@+id/btn_back"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/ic_exit"/>
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/ic_exit" />
         </RelativeLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
             <TextView
                 android:id="@+id/select_all"
                 style="@style/select_all"
@@ -46,6 +50,8 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:id="@+id/rv_launcher"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -58,14 +64,17 @@
         android:id="@+id/tv_install_all"
         android:layout_width="343dp"
         android:layout_height="48dp"
-        android:text="Custom Icon"
-        android:textAppearance="@style/custom_icon"
-        android:lineSpacingExtra="6sp"
-        android:translationY="-2.79sp"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="559dp"
-        android:clipToOutline="true"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/v_icon_text_install"
+        android:clipToOutline="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="6sp"
+        android:text="Custom Icon"
+        android:textAppearance="@style/custom_icon"
+        android:translationY="-2.79sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="12dp"
         />
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

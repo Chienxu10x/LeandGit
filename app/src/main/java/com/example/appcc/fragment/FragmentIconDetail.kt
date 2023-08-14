@@ -4,20 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.appcc.CreateIconEvent
+import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.MyAppLauncherAdapter
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.FragmentAppLauncherBinding
+import com.example.appcc.databinding.FragmentIconDetail2Binding
 import com.example.appcc.extension.createShortcut
 import com.example.appcc.extension.getBitmapFromAsset
 import com.example.appcc.extension.getDeviceName
 import com.example.appcc.extension.gone
 import com.example.appcc.extension.isPackageInstalled
 import com.example.appcc.extension.visibble
+import com.example.appcc.model.ContentX
 import com.example.appcc.model.MyAppIcon
 import com.example.appcc.viewmodel.ShortcutViewModel
 import org.greenrobot.eventbus.EventBus
@@ -25,11 +30,12 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import java.util.Locale
 
-class FragmentIconDetail : BaseFragment() {
+class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
     private lateinit var binding: FragmentAppLauncherBinding
     private val shortcutViewModel: ShortcutViewModel by activityViewModels()
     val someList = mutableListOf<MyAppIcon>()
-    val arg: FragmentIconDetailArgs by navArgs()
+    //    val arg: FragmentIconDetailArgs by navArgs()
+    val arg = contentX
     private var changeIconPosition = -1
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,14 +46,22 @@ class FragmentIconDetail : BaseFragment() {
         return binding.root
     }
 
+    fun setUpView(): FragmentIconDetail {
+        return FragmentIconDetail(arg)
+    }
+
     val adapter = MyAppLauncherAdapter { position, flag ->
         when (flag) {
             MyAppLauncherAdapter.FLAG_ADD_ICON -> {
                 changeIconPosition = position
 //                loadingView.visibble()
-                val action =
-                    FragmentIconDetailDirections.actionFragmentAppLauncher2ToSelectApp(someList[position].icon)
-                findNavController().navigate(action)
+//                val action =
+//                    FragmentIconDetailDirections.actionFragmentAppLauncher2ToSelectApp(someList[position].icon)
+//                findNavController().navigate(action)
+                activity?.let {act->
+                    var fragmentSelectApp2: FragmentSelectApp2 = FragmentSelectApp2(someList[position].icon).setUpView()
+                    (act as MainActivity).replaceFragment(fragmentSelectApp2)
+                }
                 someList[position].check = false
             }
 
@@ -132,9 +146,9 @@ class FragmentIconDetail : BaseFragment() {
     }
 
     override fun bindView() {
-        val contentX = arg.contentx
+
         if (someList.isEmpty()) {
-            contentX.icon.forEach {
+            arg.icon.forEach {
                 someList.add(MyAppIcon(it, ""))
             }
 
@@ -693,7 +707,7 @@ class FragmentIconDetail : BaseFragment() {
         }
 
         binding.btnBack.setOnClickListener {
-            requireActivity().onBackPressed()
+            onBackPress()
         }
 
         binding.tvInstallAll.setOnClickListener {
@@ -715,10 +729,15 @@ class FragmentIconDetail : BaseFragment() {
 
     private var showToast = true
     override fun observeData() {
-        shortcutViewModel.showLoading.observe(this) {
-            if (!it) {
+//        shortcutViewModel.showLoading.observe(this) {
+//            if (!it) {
+//            }
+//        }
+        shortcutViewModel.showLoading.observe(this, Observer {
+            if (!it){
             }
-        }
+        })
+
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -754,6 +773,11 @@ class FragmentIconDetail : BaseFragment() {
             EventBus.getDefault().unregister(this)
         }
     }
-
+    private fun onBackPress() {
+        activity?.let { act ->
+            act.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            (act as MainActivity).removeFragment(this)
+        }
+    }
 
 }

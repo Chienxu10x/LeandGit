@@ -76,9 +76,6 @@
             android:name="contentx"
             app:argType="com.example.appcc.model.ContentX"
             />
-        <action
-            android:id="@+id/action_fragmentThemeDetail_to_fragmentGetTheme"
-            app:destination="@id/fragmentGetTheme" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAppLauncher2"
@@ -100,15 +97,5 @@
 
     </fragment>
     <include app:graph="@navigation/select_app" />
-    <fragment
-        android:id="@+id/fragmentGetTheme"
-        android:name="com.example.appcc.fragment.FragmentGetTheme"
-        android:label="fragment_get_theme"
-        tools:layout="@layout/fragment_get_theme">
-        <argument
-            android:name="contentx"
-            app:argType="com.example.appcc.model.ContentX"
-            />
-    </fragment>
 
 </navigation>

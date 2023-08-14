@@ -60,8 +60,9 @@ class FragmentSetWallPaper(contentX: ContentX) : BaseFragment() {
     override fun observeData() {
     }
 
-
     companion object {
         private const val DIALOG_WALLPAPER = "DIALOG_WALLPAPER"
     }
+
+
 }
