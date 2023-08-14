@@ -1,5 +1,4 @@
 package com.example.appcc.adapter
-
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.view.View
@@ -46,9 +45,9 @@ class MyAppLauncherAdapter(val onItemClick: (position: Int, flag: Int) -> Unit,)
                 iv_remove.visibble()
                 btn_check.isEnabled = true
                 btn_check.isChecked = false
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    ln_install.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.black)))
-                }
+//                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+//                    ln_install.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.black)))
+//                }
             } else {
                 Glide.with(this).load(R.drawable.ic_plus_blank).into(iv_add)
                 iv_remove.gone()
@@ -57,9 +56,9 @@ class MyAppLauncherAdapter(val onItemClick: (position: Int, flag: Int) -> Unit,)
             iv_remove.setOnClickListener {
                 onItemClick(position, FLAG_REMOVE)
                 notifyDataSetChanged()
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    ln_install.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.gray_1)))
-                }
+//                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+//                    ln_install.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.gray_1)))
+//                }
                 btn_check.isEnabled = false
                 btn_check.isChecked = false
             }

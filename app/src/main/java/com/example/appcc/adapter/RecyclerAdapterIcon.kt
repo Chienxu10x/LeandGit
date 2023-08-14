@@ -1,6 +1,7 @@
 package com.example.appcc.adapter
 
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.bumptech.glide.Glide
 import com.example.appcc.R
+import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseListAdapter
 import com.example.appcc.diffcallback.ContentXCallBack
 import com.example.appcc.extension.inflate
 import com.example.appcc.extension.toAssetPath
+import com.example.appcc.fragment.DetailWidgetsFargment
+import com.example.appcc.fragment.FragmentIconDetail
+import com.example.appcc.fragment.FragmentIconDetail2
 import com.example.appcc.model.ContentX
 
 class RecyclerAdapterIcon(val onItemClick : (item : ContentX) -> Unit)
@@ -22,6 +27,7 @@ class RecyclerAdapterIcon(val onItemClick : (item : ContentX) -> Unit)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = parent.inflate(R.layout.item_icons)
         return ThemeItemHolder(view)
+
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -60,9 +66,18 @@ class RecyclerAdapterIcon(val onItemClick : (item : ContentX) -> Unit)
             Glide.with(this).load(Uri.parse(item.icon[11].toAssetPath())).into(imageIcon12)
             Glide.with(this).load(Uri.parse(item.icon[12].toAssetPath())).into(imageIcon13)
             Glide.with(this).load(Uri.parse(item.icon[13].toAssetPath())).into(imageIcon14)
-            setOnClickListener { onItemClick(item) }
+            setOnClickListener {
+                onItemClick(item)
+
+            }
+
+
+
+
         }
     }
 
     private inner class ThemeItemHolder(view: View) : RecyclerView.ViewHolder(view)
+
+
 }

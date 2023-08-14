@@ -16,6 +16,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.appcc.R
+import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.base.BaseFragmentStateAdapter
 import com.example.appcc.databinding.FragmentGetThemeBinding
@@ -46,7 +47,11 @@ class FragmentThemeDetail : BaseFragment() {
         Log.d("TAGV", "bindView: " + item)
         Glide.with(this).load(Uri.parse(item.previews[0].toAssetPath())).into(binding.imageThemeItem)
         binding.btnGetTheme.setOnClickListener{
-            toGetTheme(item)
+//            toGetTheme(item)
+            activity?.let {act->
+                var fragmentGetTheme: FragmentGetTheme = FragmentGetTheme(item).setUpView()
+                (act as MainActivity).replaceFragment(fragmentGetTheme)
+            }
         }
     }
 
@@ -54,10 +59,10 @@ class FragmentThemeDetail : BaseFragment() {
 
     }
 
-    fun toGetTheme(contextx : ContentX){
-        val action : NavDirections = FragmentThemeDetailDirections.actionFragmentThemeDetailToFragmentGetTheme(contextx)
-        navigateTo(action)
-    }
+//    fun toGetTheme(contextx : ContentX){
+//        val action : NavDirections = FragmentThemeDetailDirections.actionFragmentThemeDetailToFragmentGetTheme(contextx)
+//        navigateTo(action)
+//    }
 
 
 }

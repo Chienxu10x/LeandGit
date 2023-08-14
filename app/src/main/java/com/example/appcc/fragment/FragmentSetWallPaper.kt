@@ -52,9 +52,9 @@ class FragmentSetWallPaper(contentX: ContentX) : BaseFragment() {
     fun showSelectScreen(bitmap: Bitmap) {
         val dialog = BottomSheetDialog(requireContext(), R.style.BottomSheetTheme)
         val view = layoutInflater.inflate(R.layout.custom_sheet_wallpaper, null)
-        val lock_screen = view.findViewById<TextView>(R.id.lock_screen)
-        val home_screen = view.findViewById<TextView>(R.id.home_screen)
-        val all_screen = view.findViewById<TextView>(R.id.all_screen)
+        val lockScreen = view.findViewById<TextView>(R.id.lock_screen)
+        val homeScreen = view.findViewById<TextView>(R.id.home_screen)
+        val allScreen  = view.findViewById<TextView>(R.id.all_screen)
         val close = view.findViewById<TextView>(R.id.close)
 
         close.setOnClickListener {
@@ -66,15 +66,15 @@ class FragmentSetWallPaper(contentX: ContentX) : BaseFragment() {
 //            home_screen.gone()
 //        }
 
-        all_screen.setOnClickListener {
+        allScreen.setOnClickListener {
             setWallpaperAll(bitmap)
         }
 
-        lock_screen.setOnClickListener {
+        lockScreen.setOnClickListener {
             setWallpaperLock(bitmap)
         }
 
-        home_screen.setOnClickListener {
+        homeScreen.setOnClickListener {
             setWallpaperHome(bitmap)
         }
         dialog.setContentView(view)
@@ -83,12 +83,10 @@ class FragmentSetWallPaper(contentX: ContentX) : BaseFragment() {
 
     fun setWallpaperAll(bitmap: Bitmap) {
         WallpaperManager.getInstance(requireContext()).setBitmap(bitmap)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            WallpaperManager.getInstance(requireContext()).setBitmap(
-                bitmap, null,
-                true, WallpaperManager.FLAG_LOCK
-            )
-        }
+        WallpaperManager.getInstance(requireContext()).setBitmap(
+            bitmap, null,
+            true, WallpaperManager.FLAG_LOCK
+        )
         Toast.makeText(
             requireContext(),
             "Background is set, scroll to right to change app icon",
@@ -97,16 +95,8 @@ class FragmentSetWallPaper(contentX: ContentX) : BaseFragment() {
     }
 
     fun setWallpaperLock(bitmap: Bitmap) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            WallpaperManager.getInstance(requireContext())
-                .setBitmap(bitmap, null, false, WallpaperManager.FLAG_LOCK)
-        } else {
-            val baos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-            val ip: InputStream = ByteArrayInputStream(baos.toByteArray())
-            WallpaperManager.getInstance(requireContext())
-                .setStream(ip)
-        }
+        WallpaperManager.getInstance(requireContext())
+            .setBitmap(bitmap, null, false, WallpaperManager.FLAG_LOCK)
         Toast.makeText(
             requireContext(),
             "Background is set lock screen, scroll to right to change app icon",
@@ -114,17 +104,27 @@ class FragmentSetWallPaper(contentX: ContentX) : BaseFragment() {
         ).show()
     }
 
+//    fun setWallpaperHome(bitmap: Bitmap) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            WallpaperManager.getInstance(requireContext())
+//                .setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM)
+//        } else {
+//            val baos = ByteArrayOutputStream()
+//            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+//            val ip: InputStream = ByteArrayInputStream(baos.toByteArray())
+//            WallpaperManager.getInstance(requireContext())
+//                .setStream(ip)
+//        }
+//        Toast.makeText(
+//            requireContext(),
+//            "Background is set home screen, scroll to right to change app icon",
+//            Toast.LENGTH_SHORT
+//        ).show()
+//    }
+
     fun setWallpaperHome(bitmap: Bitmap) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            WallpaperManager.getInstance(requireContext())
-                .setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM)
-        } else {
-            val baos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-            val ip: InputStream = ByteArrayInputStream(baos.toByteArray())
-            WallpaperManager.getInstance(requireContext())
-                .setStream(ip)
-        }
+        WallpaperManager.getInstance(requireContext())
+            .setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM)
         Toast.makeText(
             requireContext(),
             "Background is set home screen, scroll to right to change app icon",

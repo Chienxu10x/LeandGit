@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.appcc.CreateIconEvent
@@ -43,6 +44,8 @@ class FragmentIconDetail2(contentX: ContentX) : BaseFragment() {
         binding = FragmentIconDetail2Binding.inflate(layoutInflater)
         return binding.root
     }
+
+
 
     val adapter = MyAppLauncherAdapter { position, flag ->
         when (flag) {
@@ -719,10 +722,16 @@ class FragmentIconDetail2(contentX: ContentX) : BaseFragment() {
 
     private var showToast = true
     override fun observeData() {
-        shortcutViewModel.showLoading.observe(this) {
-            if (!it) {
+//        shortcutViewModel.showLoading.observe(this) {
+//            if (!it) {
+//            }
+//        }
+        shortcutViewModel.showLoading.observe(this, Observer {
+            if (!it){
+
             }
-        }
+        })
+
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

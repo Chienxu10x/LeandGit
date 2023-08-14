@@ -56,4 +56,9 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
+    <style name="themes1">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frame_113"
     android:layout_width="match_parent"
-    android:layout_height="60dp">
+    android:layout_height="80dp">
 
     <CheckBox
         android:layout_gravity="center_vertical"
@@ -33,7 +33,7 @@
         android:id="@+id/imageView4"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:background="@drawable/ic_transger_light"
+        android:background="@drawable/icon_transfer_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="91dp" />
@@ -55,10 +55,10 @@
             android:background="@drawable/ic_plus_blank"/>
         <ImageView
             android:id="@+id/iv_remove"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/r_icon_remove"
             android:layout_gravity="top|end"
-            android:background="@drawable/r10_close"
             android:padding="@dimen/_4sdp"
             android:src="@drawable/ic_close" />
     </FrameLayout>
@@ -83,7 +83,7 @@
             android:layout_marginLeft="6dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="6dp"
-            android:background="@drawable/ic_edit"
+            android:background="@drawable/icon_edit_icon"
             />
     </RelativeLayout>
 
@@ -100,9 +100,7 @@
             android:layout_height="22dp"
             android:text="@string/install"
             android:textAppearance="@style/install"
-            android:lineSpacingExtra="6sp"
-            android:translationY="-2.79sp"
-            android:gravity="right|top"
+            android:gravity="center_horizontal|center_vertical"
             />
     </RelativeLayout>
 

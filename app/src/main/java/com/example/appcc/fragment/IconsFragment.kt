@@ -42,8 +42,6 @@ class IconsFragment :BaseFragment() {
             }
 
         })
-
-
     }
     private val recyclerAdapterIcon = RecyclerAdapterIcon{
         toDetail(it)

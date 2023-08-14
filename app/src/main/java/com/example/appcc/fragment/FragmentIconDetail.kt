@@ -756,5 +756,10 @@ class FragmentIconDetail : BaseFragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+    }
+
 
 }
