@@ -23,20 +23,17 @@ class AppWidget7 : AppWidgetProvider() {
     }
 
     private fun updateAppWidget(
-        context: Context,
-        appWidgetManager: AppWidgetManager,
+        context: Context, appWidgetManager: AppWidgetManager,
         appWidgetId : Int
-    ) {
-        val views = RemoteViews(context.packageName, R.layout.widget_icon_7)
+    ){
+        val views = RemoteViews(context.packageName, R.layout.widget_icon_3)
         val currentWidget = dataRepository.getCurrentWidget()
         val bitmap = context.getBitmapFromAsset("Widget/widget$currentWidget/widget_7.webp")
         views.setImageViewBitmap(R.id.iv_app, bitmap)
-
-        val pendingIntent: PendingIntent = Intent(context,
-        MainActivity::class.java).let {
-            intent ->
-            PendingIntent.getActivity(context, 0, intent,0)
-        }
+        val pendingIntent : PendingIntent = Intent(context, MainActivity::class.java)
+            .let { intent ->
+                PendingIntent.getActivity(context, 0,intent, PendingIntent.FLAG_IMMUTABLE)
+            }
         views.setOnClickPendingIntent(R.id.iv_app, pendingIntent)
         appWidgetManager.updateAppWidget(appWidgetId, views)
     }
@@ -48,7 +45,7 @@ class AppWidget7 : AppWidgetProvider() {
     ) {
         super.onUpdate(context, appWidgetManager, appWidgetIds)
         if(appWidgetIds!!.isNotEmpty()){
-            updateAppWidget(context!!, appWidgetManager!!, appWidgetIds[appWidgetIds.size-1])
+            updateAppWidget(context!!, appWidgetManager!!, appWidgetIds!![appWidgetIds.size-1])
         }
     }
 }

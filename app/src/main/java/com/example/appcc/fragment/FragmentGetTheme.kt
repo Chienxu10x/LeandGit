@@ -13,16 +13,20 @@ import com.example.appcc.adapter.ViewPagerAdapter
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.FragmentGetThemeBinding
 import com.example.appcc.model.ContentX
+import com.example.appcc.model.WidgetXX
 import com.google.android.material.tabs.TabLayoutMediator
 
 class FragmentGetTheme(contentX: ContentX) : BaseFragment() {
     private lateinit var binding : FragmentGetThemeBinding
     val contentX = contentX
 
-    override fun bindView() {
 
+
+
+
+    override fun bindView() {
 //        Log.d("TAGTT", "bindView: " + item)
-        val fragmentsList = listOf(FragmentIconDetail2(contentX), WidgetsFragment(), FragmentSetWallPaper(contentX)) // Replace with your fragment instances
+        val fragmentsList = listOf(FragmentIconDetail2(contentX), DetailWidgetsFragment(contentX), FragmentSetWallPaper(contentX)) // Replace with your fragment instances
         val viewPagerAdapter = ViewPagerAdapter(requireActivity(), fragmentsList)
         binding.viewPager.adapter = viewPagerAdapter
 

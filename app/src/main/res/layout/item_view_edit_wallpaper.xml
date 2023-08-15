@@ -19,11 +19,11 @@
             android:layout_width="75dp"
             android:layout_height="22dp"
             android:layout_centerInParent="true"
-            android:gravity="right|top"
+            android:gravity="center"
             android:lineSpacingExtra="6sp"
             android:text="@string/see_detail"
             android:textAppearance="@style/get_theme"
-            android:translationY="-2.79sp" />
+        />
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/buttonTheme1"

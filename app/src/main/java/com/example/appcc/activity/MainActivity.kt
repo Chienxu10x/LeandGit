@@ -17,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.appcc.R
 import com.example.appcc.base.BaseActivity
 import com.example.appcc.databinding.ActivityMainBinding
+import com.example.appcc.fragment.FragmentCoinDetails
 import com.example.appcc.fragment.IconsFragment
 import com.example.appcc.fragment.PrivacyPolicyFragment
 import com.example.appcc.fragment.SettingFragment
@@ -36,6 +37,16 @@ class MainActivity : BaseActivity() {
 //           startActivity(intent)
             replaceFragment(SettingFragment())
         }
+
+        binding.btnReplaceCoin.setOnClickListener{
+            replaceFragment(FragmentCoinDetails())
+        }
+
+
+
+
+
+
 
 
 

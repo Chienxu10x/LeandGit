@@ -54,7 +54,7 @@
             <ImageView
                 android:layout_width="8dp"
                 android:layout_height="8dp"
-                android:background="@drawable/ic_theme_down"
+                android:background="@drawable/icon_theme_down"
                 android:layout_gravity="center"/>
 
             <TextView

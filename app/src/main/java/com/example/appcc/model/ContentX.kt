@@ -11,6 +11,5 @@ data class ContentX(
     val previews: List<String>,
     val subtitle: String,
     val title: String,
-    val wallpaper: String
-
+    val wallpaper: String,
     ): Parcelable

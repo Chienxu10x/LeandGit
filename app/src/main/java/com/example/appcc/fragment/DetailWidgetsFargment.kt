@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.example.appcc.R
@@ -26,12 +27,13 @@ class DetailWidgetsFargment : BaseFragment() {
         }
 //        Log.d("TAG", "bindView: "+widgetViewModel.getCurrentWidgetPosion())
 //        Log.d("TAG", "bindView: "+widgetViewModel.getStringCurrentWidge())
+
         Glide.with(this).load(widgetViewModel.getStringCurrentWidge()?.toAssetPath()).placeholder(R.drawable.ic_icon).error(R.drawable.ic_icon).into(binding.ivWidget)
         binding.btnSetWid.setOnClickListener{
             widgetViewModel.setCurrentWidget(widgetViewModel.getCurrentWidgetPosion())
+            Toast.makeText(requireContext(),"OK", Toast.LENGTH_SHORT).show();
+
         }
-
-
     }
 
     override fun observeData() {
