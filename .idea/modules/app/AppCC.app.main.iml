@@ -55,11 +55,11 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/105e47338bd98f4039d6fc590149efd7/transformed/lifecycle-livedata-2.6.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/982bcd59d2cfbe73d2d2dd00edeabdbf/transformed/core-ktx-1.9.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/8f748e1ff1af62ce4d8f8284eabec0a0/transformed/swiperefreshlayout-1.1.0-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/e128add31162af788c961bad8c9a2420/transformed/appcompat-resources-1.6.1-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/6a27a3af29978603e685c77a8e310935/transformed/drawerlayout-1.1.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d077260a3199a38e673d88dac36a5c33/transformed/coordinatorlayout-1.1.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/6a27a3af29978603e685c77a8e310935/transformed/drawerlayout-1.1.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/4a71a8b750b9f509013deb419335fef7/transformed/recyclerview-1.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f8199059cd70e1fe97abfae2d97fe00f/transformed/transition-1.4.1-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/e128add31162af788c961bad8c9a2420/transformed/appcompat-resources-1.6.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/4ca03994ba67f460c13d32e01c344465/transformed/vectordrawable-animated-1.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/b9b5cbdace46cb545ccfa7fb6c050652/transformed/vectordrawable-1.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ffb82bbee0863680e2d9f7a6845a0439/transformed/viewpager-1.0.0-api.jar</arg>
@@ -94,10 +94,10 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.6.4/f955fc8b2ad196e2f4429598440e15f7492eeb2b/kotlinx-coroutines-android-1.6.4.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.8.20/73576ddf378c5b4f1f6b449fe6b119b8183fc078/kotlin-stdlib-jdk8-1.8.20.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-parcelize-runtime/1.8.20/4023f7435cdd59903046f2b4c5161761f9c4d013/kotlin-parcelize-runtime-1.8.20.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/3848481d8346aa502f583111ae1f5b92/transformed/cardview-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a08fb2925e5971dbde654599afd99e59/transformed/cursoradapter-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/8a64ceafc7a1c67c8fb9341c491b5c9d/transformed/savedstate-ktx-1.2.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/5a92f14f9db280cab874e61cf868c183/transformed/savedstate-1.2.1-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/3848481d8346aa502f583111ae1f5b92/transformed/cardview-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/594d4aa7d48b015e0c057b48cf954385/transformed/interpolator-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/4904f3974e2643cc0427c9edc156a9d2/transformed/gifdecoder-4.11.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/08f7fedfb8dbdb201d7dcdc8e5401c03/transformed/exifinterface-1.0.0-api.jar</arg>

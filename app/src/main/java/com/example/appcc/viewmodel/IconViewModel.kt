@@ -9,7 +9,7 @@ import com.example.appcc.model.Theme
 //import androidx.hilt.lifecycle.ViewModelInject
 import com.example.appcc.base.BaseViewModel
 import com.example.appcc.data.DataRepository
-import com.example.kittheme.data.ReadContentRepo
+import com.example.appcc.data.ReadContentRepo
 //import androidx.hilt.lifecycle.ViewModelInject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -44,6 +44,18 @@ class IconViewModel @Inject constructor(
     fun getThemeByFilter(filter: Int){
         currentTheme.value = allTheme.value!!.contents[filter]
     }
+
+    val searchResults by lazy {
+        MutableLiveData<List<Content>>()
+    }
+
+    fun searchTheme(query: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val results = readContentRepo.searchThemes(context, query)
+            searchResults.postValue(results)
+        }
+    }
+
 
 }
 

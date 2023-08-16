@@ -7,7 +7,7 @@ import com.example.appcc.base.BaseViewModel
 import com.example.appcc.data.DataRepository
 import com.example.appcc.model.Widget
 import com.example.appcc.model.WidgetX
-import com.example.kittheme.data.ReadContentRepo
+import com.example.appcc.data.ReadContentRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
