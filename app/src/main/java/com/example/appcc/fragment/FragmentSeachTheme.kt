@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -22,7 +23,7 @@ import com.example.appcc.viewmodel.IconViewModel
 import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
-class FragmentSeachTheme : BaseFragment() {
+class FragmentSeachTheme : BaseFragment(), RecyclerAdapterTheme2.ClickListener {
     private lateinit var binding: FragmentFragmetSeachThemeBinding
     private val iconViewModel : IconViewModel by activityViewModels()
     private lateinit var adapterTheme2: RecyclerAdapterTheme2
@@ -61,9 +62,10 @@ class FragmentSeachTheme : BaseFragment() {
                 it.content[6],
                 it.content[7],
                 it.content[8],
-                it.content[9],
+                it.content[9]
             )
-            adapterTheme2 = RecyclerAdapterTheme2(originalItemList)
+            adapterTheme2 = RecyclerAdapterTheme2(originalItemList, this)
+//            adapterTheme2 = RecyclerAdapterTheme2(originalItemList)
             binding.recyclerviewTheme.adapter = adapterTheme2
 //            Log.d("TAG", "observeData: "+"a5")
 //
@@ -73,7 +75,6 @@ class FragmentSeachTheme : BaseFragment() {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     return false
                 }
-
                 override fun onQueryTextChange(newText: String?): Boolean {
                     val filteredList = originalItemList.filter { item ->
                         // You can customize the filtering logic here
@@ -116,6 +117,17 @@ class FragmentSeachTheme : BaseFragment() {
             act.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
 //            act.window.statusBarColor = ContextCompat.getColor(act, R.color.blue)
             (act as MainActivity).removeFragment(this)
+        }
+    }
+
+    fun replaceFragment(){
+        parentFragmentManager
+    }
+
+    override fun onClickListener(item: ContentX) {
+        activity?.let {act->
+            var fragmentGetTheme: FragmentGetTheme = FragmentGetTheme(item)
+            (act as MainActivity).replaceFragment(fragmentGetTheme)
         }
     }
 
