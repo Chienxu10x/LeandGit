@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.appcc.CreateIconEvent
 import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.MyAppLauncherAdapter
@@ -699,6 +700,7 @@ class FragmentIconDetail2(private val contentX: ContentX) : BaseFragment() {
 
         }
         adapter.submitList(someList)
+        binding.rvLauncher.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         binding.rvLauncher.adapter = adapter
 
         binding.selectAll.setOnClickListener {
