@@ -1,38 +1,23 @@
 package com.example.appcc.fragment
 
-import android.app.WallpaperManager
-import android.content.Context
-import android.graphics.Bitmap
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
+import android.view.WindowManager
+import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.example.appcc.R
 import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseFragment
-import com.example.appcc.base.BaseFragmentStateAdapter
-import com.example.appcc.databinding.FragmentGetThemeBinding
 import com.example.appcc.databinding.FragmentThemeDetailBinding
-import com.example.appcc.databinding.FragmentThemesBinding
 import com.example.appcc.dialog.ThemeDetailDialog
 import com.example.appcc.extension.navigateTo
 import com.example.appcc.extension.toAssetPath
-import com.example.appcc.model.ContentX
-import com.example.appcc.model.MyAppIcon
-import com.google.android.material.tabs.TabLayoutMediator
-import java.io.ByteArrayInputStream
-import java.io.ByteArrayOutputStream
-import java.io.InputStream
 
 class FragmentThemeDetail : BaseFragment() {
     private lateinit var binding: FragmentThemeDetailBinding
@@ -69,20 +54,38 @@ class FragmentThemeDetail : BaseFragment() {
             }
         }
 
-        fun onSetupView(): FragmentThemeDetail {
-            return FragmentThemeDetail()
-
-        }
     }
 
     override fun observeData() {
 
     }
-
-//    fun toGetTheme(contextx : ContentX){
-//        val action : NavDirections = FragmentThemeDetailDirections.actionFragmentThemeDetailToFragmentGetTheme(contextx)
-//        navigateTo(action)
+//    override fun baseBackPressed() {
+//        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner,
+//            object : OnBackPressedCallback(true) {
+//                override fun handleOnBackPressed() {
+//                    Log.d("aaaa", "handleOnBackPressed: aaaa")
+//                    onBackPressed()
+//                }
+//            })
+//
 //    }
+//    private fun onBackPressed() {
+//        activity?.let { act ->
+//            act.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+//            showInBaseNavigationView()
+//            showIntoolBar()
+//
+////            (act as MainActivity).removeFragment(this)
+//        }
+//    }
+    fun onSetupView(): FragmentThemeDetail {
+        return FragmentThemeDetail()
+
+    }
+
+    fun toGetTheme(){
+
+    }
 
     companion object {
         private const val DIALOG_THEME = "DIALOG_THEME"

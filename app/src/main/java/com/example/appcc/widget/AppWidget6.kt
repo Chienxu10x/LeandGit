@@ -34,7 +34,7 @@ class AppWidget6 : AppWidgetProvider() {
             context, MainActivity :: class.java
         ).let {
             intent ->
-            PendingIntent.getActivity(context, 0, intent,0)
+            PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         }
         views.setOnClickPendingIntent(R.id.iv_app, pendingIntent)
         appWidgetManager.updateAppWidget(appWidgetId, views)

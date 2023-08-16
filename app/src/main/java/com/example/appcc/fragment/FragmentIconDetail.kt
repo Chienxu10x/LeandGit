@@ -8,14 +8,11 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.appcc.CreateIconEvent
 import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.MyAppLauncherAdapter
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.FragmentAppLauncherBinding
-import com.example.appcc.databinding.FragmentIconDetail2Binding
 import com.example.appcc.extension.createShortcut
 import com.example.appcc.extension.getBitmapFromAsset
 import com.example.appcc.extension.getDeviceName
@@ -26,6 +23,7 @@ import com.example.appcc.model.ContentX
 import com.example.appcc.model.MyAppIcon
 import com.example.appcc.viewmodel.ShortcutViewModel
 import org.greenrobot.eventbus.EventBus
+//import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import java.util.Locale

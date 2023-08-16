@@ -27,7 +27,10 @@ class SettingFragment : BaseFragment() {
                 onBackPressed()
             }
             lnLoginSignup.setOnClickListener {
-
+                activity?.let { act ->
+                    val privacyView: PrivacyPolicyFragment =PrivacyPolicyFragment().onSetupView()
+                    (act as MainActivity).replaceFragment(privacyView)
+                }
             }
             lnEarnReward.setOnClickListener {
 

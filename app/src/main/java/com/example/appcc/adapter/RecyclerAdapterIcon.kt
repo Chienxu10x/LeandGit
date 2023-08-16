@@ -1,8 +1,6 @@
 package com.example.appcc.adapter
 
 import android.net.Uri
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -11,14 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.bumptech.glide.Glide
 import com.example.appcc.R
-import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseListAdapter
 import com.example.appcc.diffcallback.ContentXCallBack
 import com.example.appcc.extension.inflate
 import com.example.appcc.extension.toAssetPath
-import com.example.appcc.fragment.DetailWidgetsFargment
-import com.example.appcc.fragment.FragmentIconDetail
-import com.example.appcc.fragment.FragmentIconDetail2
 import com.example.appcc.model.ContentX
 
 class RecyclerAdapterIcon(val onItemClick : (item : ContentX) -> Unit)

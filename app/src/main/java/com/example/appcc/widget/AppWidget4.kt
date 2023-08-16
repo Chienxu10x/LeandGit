@@ -44,21 +44,21 @@ class AppWidget4 : AppWidgetProvider() {
         views.setImageViewBitmap(R.id.iv_app, bitmap)
 
         // đặt giờ
-        val date: Calendar = Calendar.getInstance()
-        views.setTextViewText(
-            R.id.tv_hour, SimpleDateFormat("HH:mm").format(date.time)
-        )
-        views.setTextViewText(
-            R.id.tv_date_of_week,
-            date.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.US)
-        )
-        views.setTextColor(R.id.tv_hour, Color.parseColor(dataRepository.getTextColor3()))
-        views.setTextColor(R.id.tv_date_of_week, Color.parseColor(dataRepository.getTextColor4()))
+//        val date: Calendar = Calendar.getInstance()
+//        views.setTextViewText(
+//            R.id.tv_hour, SimpleDateFormat("HH:mm").format(date.time)
+//        )
+//        views.setTextViewText(
+//            R.id.tv_date_of_week,
+//            date.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.US)
+//        )
+//        views.setTextColor(R.id.tv_hour, Color.parseColor(dataRepository.getTextColor3()))
+//        views.setTextColor(R.id.tv_date_of_week, Color.parseColor(dataRepository.getTextColor4()))
 
         //click widget home_screen chạy đến home
         val pendingIntent: PendingIntent = Intent(context, MainActivity::class.java)
             .let { intent ->
-                PendingIntent.getActivity(context, 0, intent, 0)
+                PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
             }
         views.setOnClickPendingIntent(R.id.iv_app, pendingIntent)
         appWidgetManager.updateAppWidget(appWidgetId, views)
@@ -90,7 +90,7 @@ class AppWidget4 : AppWidgetProvider() {
         val alarmIntent: PendingIntent
         alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         alarmIntent = Intent(context, AlarmRecive::class.java).let { intent ->
-            PendingIntent.getBroadcast(context, 0, intent, 0)
+            PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         }
         val calendar: Calendar = Calendar.getInstance().apply {
             timeInMillis = System.currentTimeMillis()

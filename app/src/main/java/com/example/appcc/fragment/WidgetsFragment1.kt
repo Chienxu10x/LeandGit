@@ -19,7 +19,7 @@ import com.example.appcc.extension.toAssetPath
 import com.example.appcc.viewmodel.WidgetViewModel
 
 class WidgetsFragment1 : BaseFragment() {
-    private lateinit var binding: FragmentWidgets1Binding ;
+    private lateinit var binding: FragmentWidgets1Binding
     private val widgetViewModel: WidgetViewModel by activityViewModels()
     var icon1: String = ""
     var icon2: String = ""

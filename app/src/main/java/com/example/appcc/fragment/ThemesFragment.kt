@@ -42,7 +42,6 @@ private lateinit var binding: FragmentThemesBinding
     }
 
     override fun bindView() {
-
         binding.tabMenu.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab) {
                 iconViewModel.getThemeByFilter(tab.position)
@@ -61,7 +60,7 @@ private lateinit var binding: FragmentThemesBinding
 
     private val recyclerAdapterTheme = RecyclerAdapterTheme{
 //        activity?.let { act ->
-//            val privacyView: FragmentThemeDetail = FragmentThemeDetail().onSetupView()
+//            val privacyView: FragmentThemeDetail = FragmentThemeDetail(it).onSetupView()
 //            (act as MainActivity).replaceFragment(privacyView)
 //        }
         toDetail(it)
@@ -88,25 +87,6 @@ private lateinit var binding: FragmentThemesBinding
 
 
 
-    }
-
-    override fun baseBackPressed() {
-        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    Log.d("aaaa", "handleOnBackPressed: aaaa")
-                    onBackPressed()
-                }
-            })
-
-    }
-    private fun onBackPressed() {
-        activity?.let { act ->
-            act.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-//            act.window.statusBarColor = ContextCompat.getColor(act, R.color.blue)
-            showInBaseNavigationView()
-            showIntoolBar()
-        }
     }
     fun toDetail(contentX: ContentX){
         val action : NavDirections = ThemesFragmentDirections.actionThemesFragmentToFragmentThemeDetail(contentX)

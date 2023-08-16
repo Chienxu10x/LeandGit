@@ -24,7 +24,6 @@ abstract class BaseFragment : Fragment() {
         super.onStart()
 //        Log.d("TAG", "onStart: "+"errr")
         bindView()
-        baseBackPressed()
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -64,6 +63,9 @@ abstract class BaseFragment : Fragment() {
         }
     }
     open fun baseBackPressed() {}
+    fun titleToolBar(){
+                (activity as MainActivity).setTitleApp()
+    }
 
 }
 

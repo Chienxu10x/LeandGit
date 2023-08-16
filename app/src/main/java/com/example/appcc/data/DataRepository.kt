@@ -6,13 +6,21 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.example.appcc.extension.dataStore
 import com.example.appcc.viewmodel.IconViewModel
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class DataRepository @Inject constructor(
-    @ApplicationContext context: Context,
+    @ApplicationContext private val context: Context,
     private val settingPref : SharedPreferences
 ) {
 
@@ -77,6 +85,7 @@ class DataRepository @Inject constructor(
     fun setStringCurrentWidgetPosition(current: String?){
         settingPref.edit().putString(StringWidgetPosition,current).apply()
     }
+
 }
 
 

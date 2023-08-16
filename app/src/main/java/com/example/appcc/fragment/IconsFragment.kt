@@ -27,6 +27,7 @@ class IconsFragment :BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentIconsBinding.inflate(layoutInflater)
+//        (activity as MainActivity).setTitleApp("Icons")
         return binding.root
     }
 

@@ -5,6 +5,7 @@ import android.content.Context
 import com.tencent.mmkv.MMKV
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.HiltAndroidApp
+
 @HiltAndroidApp
 class Application : Application() {
     override fun onCreate() {

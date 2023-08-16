@@ -8,13 +8,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.appcc.CreateIconEvent
 import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.MyAppLauncherAdapter
 import com.example.appcc.base.BaseFragment
-import com.example.appcc.databinding.FragmentAppLauncherBinding
 import com.example.appcc.databinding.FragmentIconDetail2Binding
 import com.example.appcc.extension.createShortcut
 import com.example.appcc.extension.getBitmapFromAsset

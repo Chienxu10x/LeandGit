@@ -2,5 +2,18 @@
 <resources>
     <string name="app_name">AppCC</string>
     <string name="share">Chia sẻ</string>
+    <string name="privacy_policy">Chính sách bảo mật</string>
+    <string name="term_of_use">Điều khoản sử dụng</string>
     <string name="action_settings">Cài đặt</string>
+    <string name="close">Đóng</string>
+    <string name="themes">Chủ đề</string>
+    <string name="english">Tiếng anh</string>
+    <string name="vietnamese">Tiếng việt</string>
+    <string name="icons">Biểu tượng</string>
+    <string name="setting">Cài đặt</string>
+    <string name="back">Thoát</string>
+    <string name="title">Tiêu đề</string>
+    <string name="contact_us">Về chúng tôi</string>
+    <string name="favourite">Yêu thích</string>
+    <string name="language">Ngôn ngữ</string>
 </resources>

@@ -39,17 +39,17 @@ class AppWidget1 : AppWidgetProvider() {
         val bitmap = context.getBitmapFromAsset("Widget/widget$currentWidget/widget_1.webp")
         views.setImageViewBitmap(R.id.iv_app, bitmap)
 
-        val date = Calendar.getInstance()
-        views.setTextViewText(
-            R.id.tv_date_of_week,
-            date.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.US)
-        )
-        views.setTextViewText(
-            R.id.tv_date,
-            date.get(Calendar.DATE).toString()
-        )
-        views.setTextColor(R.id.tv_date_of_week, Color.parseColor(dataRepository.getTextColor1()))
-        views.setTextColor(R.id.tv_date, Color.parseColor(dataRepository.getTextColor2()))
+//        val date = Calendar.getInstance()
+//        views.setTextViewText(
+//            R.id.tv_date_of_week,
+//            date.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.US)
+//        )
+//        views.setTextViewText(
+//            R.id.tv_date,
+//            date.get(Calendar.DATE).toString()
+//        )
+//        views.setTextColor(R.id.tv_date_of_week, Color.parseColor(dataRepository.getTextColor1()))
+//        views.setTextColor(R.id.tv_date, Color.parseColor(dataRepository.getTextColor2()))
 
         val pendingIntent: PendingIntent = Intent(context, MainActivity::class.java)
             .let { intent ->

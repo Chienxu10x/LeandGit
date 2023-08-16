@@ -29,30 +29,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="fragmentGetTheme">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="fragmentThemeDetail">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-95" />
-                            <option name="y" value="754" />
+                            <option name="x" value="-440" />
+                            <option name="y" value="721" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_fragmentThemeDetail_to_fragmentGetTheme">
+                            <entry key="action_fragmentThemeDetail_to_themes_fragment2">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -100,8 +88,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="256" />
-                            <option name="y" value="97" />
+                            <option name="x" value="-216" />
+                            <option name="y" value="-69" />
                           </Point>
                         </option>
                         <option name="myPositions">

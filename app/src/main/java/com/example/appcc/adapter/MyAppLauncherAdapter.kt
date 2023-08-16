@@ -85,7 +85,7 @@ class MyAppLauncherAdapter(val onItemClick: (position: Int, flag: Int) -> Unit,)
             if (item.check) {
                 btn_check.isChecked = true
             }
-            if (item.check == false) {
+            if (!item.check) {
                 btn_check.isChecked = false
             }
 

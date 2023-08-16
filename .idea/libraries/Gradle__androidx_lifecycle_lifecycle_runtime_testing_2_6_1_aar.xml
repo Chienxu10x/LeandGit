@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.lifecycle:lifecycle-runtime-testing:2.6.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b915a19a585c61f5992147284f8d68e0/transformed/lifecycle-runtime-testing-2.6.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b915a19a585c61f5992147284f8d68e0/transformed/lifecycle-runtime-testing-2.6.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b915a19a585c61f5992147284f8d68e0/transformed/lifecycle-runtime-testing-2.6.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9464e568df098a869399bb8860174ee1/transformed/lifecycle-runtime-testing-2.6.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9464e568df098a869399bb8860174ee1/transformed/lifecycle-runtime-testing-2.6.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9464e568df098a869399bb8860174ee1/transformed/lifecycle-runtime-testing-2.6.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
