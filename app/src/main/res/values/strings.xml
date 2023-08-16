@@ -80,5 +80,30 @@
     <string name="customizer">Customizer</string>
     <string name="apply">Apply</string>
     <string name="see_detail">See Detail</string>
+
     <string name="default_web_client_id">516736252770-rgs54k20g7s6b80qot7a0d08rr2itdl3.apps.googleusercontent.com</string>
+
+    <string name="category">Category</string>
+    <string name="see_all">See All</string>
+    <string name="current_coi">Current Coi</string>
+    <string name="some_id">70</string>
+    <string name="daily_gift">Daily Gift</string>
+    <string name="check_in_daily">Check in daily for more coins. You can use coins to unlock locked themes</string>
+    <string name="check_in_to_get_100_coins">Check in to get 100 coins</string>
+    <string name="daily_mission">Daily mission</string>
+    <string name="add_any_one">Add any one theme to your favorites</string>
+    <string name="watch_ads_v">Watch ads videos</string>
+    <string name="some_id3">0/5</string>
+    <string name="write_a_rev">Write a review for a theme</string>
+    <string name="access_to_t">Access to the screens</string>
+    <string name="icons_widge">Icons/Widget/Timeline/Wallpaper</string>
+    <string name="follow_us_o">Follow us on social network</string>
+    <string name="facebook_ti">Facebook/TikTok/Instagram/Youtube/Pinterest</string>
+    <string name="share_with_">Share with friends</string>
+    <string name="login_sign_">Login/Sign up</string>
+    <string name="buy_coins">Buy coins</string>
+    <string name="coins">500 coins</string>
+    <string name="day_1">Day 1</string>
+
+
 </resources>

@@ -38,6 +38,7 @@
                             <option name="y" value="721" />
                           </Point>
                         </option>
+<<<<<<< HEAD
                         <option name="myPositions">
                           <map>
                             <entry key="action_fragmentThemeDetail_to_themes_fragment2">
@@ -47,6 +48,8 @@
                             </entry>
                           </map>
                         </option>
+=======
+>>>>>>> 8ea20c59e5b6928c537ab850a5ba986f5ae46d12
                       </LayoutPositions>
                     </value>
                   </entry>

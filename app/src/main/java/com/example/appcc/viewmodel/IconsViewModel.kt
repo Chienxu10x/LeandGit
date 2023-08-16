@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.appcc.base.BaseViewModel
 import com.example.appcc.model.Content
 import com.example.appcc.model.Theme
-import com.example.kittheme.data.ReadContentRepo
+import com.example.appcc.data.ReadContentRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlin.math.log

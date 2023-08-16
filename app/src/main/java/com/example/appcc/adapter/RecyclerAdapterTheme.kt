@@ -25,15 +25,16 @@ import com.example.appcc.extension.toAssetPath
 import com.example.appcc.fragment.FragmentPrivacyPolicy
 
 import com.example.appcc.fragment.FragmentTermOfUse
+import com.example.appcc.model.Theme
 
 class RecyclerAdapterTheme(val onItemClick : (item : ContentX) -> Unit)
     : BaseListAdapter<ContentX>(ContentXCallBack()) {
-
 //    private lateinit var binding: ItemViewMainBinding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = parent.inflate(R.layout.item_view_main)
         return ThemeItemHolder(view)
     }
+
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = getItem(position)
@@ -51,6 +52,7 @@ class RecyclerAdapterTheme(val onItemClick : (item : ContentX) -> Unit)
 
         }
     }
+
 
     private inner class ThemeItemHolder(view : View) : RecyclerView.ViewHolder(view)
 }

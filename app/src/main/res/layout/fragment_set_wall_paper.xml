@@ -8,8 +8,12 @@
 
     <ImageView
         android:id="@+id/img_wall_paper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_width="164dp"
+        android:layout_height="355dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <RelativeLayout
         android:id="@+id/btn_set_wallpaper"
         android:layout_width="343dp"

@@ -68,7 +68,8 @@ private lateinit var binding: FragmentThemesBinding
 
     override fun observeData() {
         iconViewModel.currentTheme.observe(this){
-            Log.d("TAG", "observeData: "+"a5")
+//            Log.d("TAG", "observeData: "+"a5")
+
             recyclerAdapterTheme.submitList(it.content)
             binding.recyclerviewTheme.adapter = recyclerAdapterTheme
         }

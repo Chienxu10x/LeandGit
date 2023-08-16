@@ -66,4 +66,124 @@
         <item name="android:textColor">#00181A</item>
     </style>
 
+    <style name="trending">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
+    <style name="category">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
+    <style name="aesthetic">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#E68257</item>
+    </style>
+
+    <style name="top_downloa">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
+    <style name="k1">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="current_coi">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="some_id">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#E68257</item>
+    </style>
+
+    <style name="daily_gift">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
+    <style name="check_in_da">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#A3A3A3</item>
+    </style>
+    <style name="daily_missi">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+    <style name="some_id2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="add_any_one">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
+    <style name="watch_ads_v">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+    <style name="some_id3">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#A3A3A3</item>
+    </style>
+
+    <style name="icons_widge">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#A3A3A3</item>
+    </style>
+
+    <style name="follow_us_o">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
+    <style name="facebook_ti">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#A3A3A3</item>
+    </style>
+
+    <style name="share_with_">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
+    <style name="login_sign_">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
+    <style name="buy_coins">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
+    <style name="coins">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="some_id4">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="day_1">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#E68257</item>
+    </style>
+    <style name="some_id5">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="coin_detail">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#00181A</item>
+    </style>
+
 </resources>

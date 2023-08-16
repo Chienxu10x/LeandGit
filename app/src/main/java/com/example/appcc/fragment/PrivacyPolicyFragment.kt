@@ -14,7 +14,6 @@ import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.data_login.OnSignInStartedListener
 import com.example.appcc.databinding.FragmentPrivacyPolicyBinding
-import com.example.appcc.viewmodel.AuthViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.common.api.ApiException

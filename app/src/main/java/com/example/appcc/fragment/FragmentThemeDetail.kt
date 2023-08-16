@@ -23,6 +23,7 @@ class FragmentThemeDetail : BaseFragment() {
     private lateinit var binding: FragmentThemeDetailBinding
     val arg: ThemesFragmentArgs by navArgs()
 
+
     //    var item = mutableListOf<ContentX>()
 //    private var item: Observer<ContentX>? = null
     override fun onCreateView(
@@ -36,6 +37,7 @@ class FragmentThemeDetail : BaseFragment() {
 
     override fun bindView() {
         val item = arg.contentx
+        
 //        Log.d("TAGV", "bindView: " + item)
         Glide.with(this).load(Uri.parse(item.previews[0].toAssetPath()))
             .into(binding.imageThemeItem)
