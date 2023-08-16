@@ -24,7 +24,7 @@ class PrivacyPolicyFragment : BaseFragment() {
     private lateinit var binding: FragmentPrivacyPolicyBinding
 //    private val authViewModel: AuthViewModel by lazy {
 //        val factory = AuthViewModel.MainActivityViewModelFactory(
-//            application, // Pass the application context here
+//            requireActivity().application, // Pass the application context here
 //            object : OnSignInStartedListener {
 //                override fun onSignInStarted(client: GoogleSignInClient?) {
 //                    client?.signInIntent?.let { startActivityForResult(it, RC_SIGN_IN) }

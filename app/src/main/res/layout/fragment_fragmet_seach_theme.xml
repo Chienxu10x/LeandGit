@@ -5,10 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.FragmentSeachTheme"
+    android:focusable="true"
+    android:clickable="true"
     android:background="@color/white"
     android:focusable="true"
     android:clickable="true"
     android:orientation="vertical"
+    android:id="@+id/fragment_container_search"
     >
 
     <RelativeLayout

@@ -20,7 +20,10 @@
 //import javax.inject.Inject
 //
 //@HiltViewModel
-//class AuthViewModel @Inject constructor(@ApplicationContext val context: Context, private val listener: OnSignInStartedListener): BaseViewModel() {
+//class AuthViewModel @Inject constructor(
+//    @ApplicationContext val context: Context,
+//    private val listener: OnSignInStartedListener
+//) : BaseViewModel() {
 //    private var auth: FirebaseAuth = Firebase.auth
 //
 //    private val _currentUser = MutableLiveData<FirebaseUser?>()
@@ -44,9 +47,11 @@
 //            }
 //        }
 //    }
+//
 //    fun signIn() {
 //        listener.onSignInStarted(googleSignInClient)
 //    }
+//
 //    class MainActivityViewModelFactory(
 //        private val application: Application,
 //        private val listener: OnSignInStartedListener
