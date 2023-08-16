@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".fragment.FragmentSeachTheme"
     android:background="@color/white"
+    android:focusable="true"
+    android:clickable="true"
     android:orientation="vertical"
     >
 

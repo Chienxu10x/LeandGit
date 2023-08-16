@@ -401,5 +401,4 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.mockito:mockito-core:2.25.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.objenesis:objenesis:2.6" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="AppCC.app.main" />
 </module>
