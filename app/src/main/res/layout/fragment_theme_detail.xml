@@ -10,6 +10,13 @@
         android:layout_height="match_parent"
         android:id="@+id/image_theme_item"
         />
+    <ImageView
+        android:id="@+id/imgshare"
+        android:layout_width="@dimen/size_50"
+        android:layout_height="@dimen/size_50"
+        android:layout_gravity="end"
+        android:layout_margin="10sp"
+        android:src="@drawable/frame_66"/>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

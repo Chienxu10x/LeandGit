@@ -1,39 +1,39 @@
 package com.example.appcc.fragment
 
+import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+import androidx.activity.result.contract.ActivityResultContracts
+import com.example.appcc.R
 import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseFragment
-import com.example.appcc.data_login.OnSignInStartedListener
 import com.example.appcc.databinding.FragmentPrivacyPolicyBinding
+import com.example.appcc.model.UserModel
+import com.example.appcc.utils.Const
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class PrivacyPolicyFragment : BaseFragment() {
     private lateinit var binding: FragmentPrivacyPolicyBinding
-//    private val authViewModel: AuthViewModel by lazy {
-//        val factory = AuthViewModel.MainActivityViewModelFactory(
-//            requireActivity().application, // Pass the application context here
-//            object : OnSignInStartedListener {
-//                override fun onSignInStarted(client: GoogleSignInClient?) {
-//                    client?.signInIntent?.let { startActivityForResult(it, RC_SIGN_IN) }
-//                }
-//            }
-//        )
-//
-//        ViewModelProvider(this, factory).get(AuthViewModel::class.java)
-//    }
+
+//    private val authViewModel: AuthViewModel by viewModels()
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var googleSignInClient: GoogleSignInClient
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -42,20 +42,23 @@ class PrivacyPolicyFragment : BaseFragment() {
     }
 
     override fun bindView() {
+        binding.loading.setVisibility(View.GONE)
+        auth = FirebaseAuth.getInstance()
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_id))
+            .requestEmail()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
         binding.apply {
             btnBack.setOnClickListener {
                 onBackPressed()
             }
             btnGoogle.setOnClickListener {
-//                authViewModel.signIn()
+                binding.loading.setVisibility(View.VISIBLE)
+                sigInGoogle()
             }
 
-//            authViewModel.currentUser.observe(requireActivity(), {
-//                it?.let {
-//                    Log.d("TAG", "bindView: "+it.displayName)
-////                    binding.textView.text = it.displayName
-//                }
-//            })
         }
 
     }
@@ -81,29 +84,51 @@ class PrivacyPolicyFragment : BaseFragment() {
 
         }
     }
+    private val launcher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                handlesResult(task)
+            }
+        }
+    private fun sigInGoogle() {
+        val signInInten = googleSignInClient.signInIntent
+        launcher.launch(signInInten)
+    }
+    private fun handlesResult(task: Task<GoogleSignInAccount>) {
+        if (task.isSuccessful){
+            val account : GoogleSignInAccount?=task.result
+            if (account!=null){
+                updateUI(account)
+            }
+        }else{
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == RC_SIGN_IN && resultCode == Activity.RESULT_OK && data != null) {
-//
-//            // this task is responsible for getting ACCOUNT SELECTED
-//            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-//            try {
-//                val account = task.getResult(ApiException::class.java)!!
-//
-//                authViewModel.firebaseAuthWithGoogle(account.idToken!!)
-//
-//                Toast.makeText(requireActivity(), "Signed In Successfully", Toast.LENGTH_SHORT)
-//                    .show()
-//
-//            } catch (e: ApiException) {
-//                Toast.makeText(requireActivity(), e.localizedMessage, Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//    }
+        }
+    }
+    @SuppressLint("SuspiciousIndentation")
+    private fun updateUI(account: GoogleSignInAccount) {
+        val credential= GoogleAuthProvider.getCredential(account.idToken,null)
+        auth.signInWithCredential(credential).addOnCompleteListener{
+            if (it.isSuccessful){
+                binding.loading.setVisibility(View.VISIBLE)
+                activity?.let {act->
+                 val profile =ProfileUserFragment().onSetupView()
+                    (act as MainActivity).replaceFragment(profile)
+                    (act as MainActivity).removeFragment(this)
+                }
+                val userModel=UserModel(auth.uid.toString(),"",account.displayName.toString(),account.email.toString(),null)
+                val reference: DatabaseReference=FirebaseDatabase.getInstance().getReference(Const.USER)
+                reference.child(auth.uid.toString()).setValue(userModel).addOnCompleteListener {
+                    Log.d("TAG", "updateUI: "+"Thanh cong")
+                }
 
-
+                Log.d("TAG", "updateUI: "+account.email)
+            }else{
+                Log.d("TAG", "updateUI: ")
+            }
+        }
+    }
     companion object {
-        private const val RC_SIGN_IN = 9001
+
     }
 }

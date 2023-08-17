@@ -3,6 +3,11 @@ package com.example.appcc
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.appcc.data.AuthReponsetory
+import com.example.appcc.data.TimeLineRepository
+import com.example.appcc.data.TimeLineRepositoryImpl
+import com.example.appcc.data_login.OnSignInStartedListener
+import com.example.appcc.data_login.OnSignInStartedListenerImpl
+import com.google.firebase.database.FirebaseDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,4 +26,18 @@ object SharedPreferenceModule {
         return context.getSharedPreferences(mySharedPref, Context.MODE_PRIVATE)
     }
 
+    @Provides
+    fun provideSignInStartedListener(@ApplicationContext context: Context): OnSignInStartedListener {
+        return OnSignInStartedListenerImpl(context)
+    }
+
+    @Provides
+    fun provideTimeline(database: FirebaseDatabase): TimeLineRepository {
+        return TimeLineRepositoryImpl(database)
+    }
+
+    @Provides
+    fun providesFirebaseDatabase(): FirebaseDatabase {
+        return FirebaseDatabase.getInstance()
+    }
 }

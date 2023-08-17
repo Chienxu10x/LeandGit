@@ -1,15 +1,14 @@
 package com.example.appcc.model
 
 import android.os.Parcelable
-import androidx.lifecycle.Observer
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ContentX(
-    val icon: List<String>,
-    val isLock: Boolean,
-    val previews: List<String>,
-    val subtitle: String,
-    val title: String,
-    val wallpaper: String,
+    var icon: List<String>,
+    var isLock: Boolean,
+    var previews: List<String>,
+    var subtitle: String,
+    var title: String,
+    var wallpaper: String,
     ): Parcelable

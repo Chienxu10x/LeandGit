@@ -113,6 +113,7 @@ Unlock all features"
                         android:src="@drawable/sign_in_squre" />
 
                     <TextView
+                        android:id="@+id/tvName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -437,11 +438,43 @@ Unlock all features"
                         android:padding="@dimen/_18sdp"
                         android:src="@drawable/ic_arrow_right" />
                 </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ln_Logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/r10_white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
+                    <ImageView
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
+                        android:padding="@dimen/_18sdp"
+                        android:src="@drawable/sign_out_squre" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/logout"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:padding="@dimen/_18sdp"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-
+     <ProgressBar
+         android:id="@+id/loading"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"/>
 </FrameLayout>

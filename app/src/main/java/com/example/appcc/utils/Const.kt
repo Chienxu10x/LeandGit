@@ -13,4 +13,6 @@ object Const {
     const val ENGLISH = "en"
     const val VIETNAMESE = "vi"
     const val LANGUAGE_NOW = "Language"
+    const val TIMELINE = "ContentX"
+    const val USER = "user"
 }

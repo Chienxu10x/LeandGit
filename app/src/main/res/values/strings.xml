@@ -81,7 +81,7 @@
     <string name="apply">Apply</string>
     <string name="see_detail">See Detail</string>
 
-    <string name="default_web_client_id">516736252770-rgs54k20g7s6b80qot7a0d08rr2itdl3.apps.googleusercontent.com</string>
+    <string name="default_id">516736252770-1gqqf5vbn9pehaugdhqgojtoi2m9t6nj.apps.googleusercontent.com</string>
 
     <string name="category">Category</string>
     <string name="see_all">See All</string>
@@ -104,6 +104,10 @@
     <string name="buy_coins">Buy coins</string>
     <string name="coins">500 coins</string>
     <string name="day_1">Day 1</string>
+    <string name="profile">Edit Profile</string>
+    <string name="name">Name</string>
+    <string name="save">SAVE</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

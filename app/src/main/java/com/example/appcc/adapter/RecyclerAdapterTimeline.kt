@@ -1,34 +1,48 @@
 package com.example.appcc.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.appcc.R
+import com.example.appcc.databinding.ItemViewMainBinding
+import com.example.appcc.databinding.ItemViewTimelineBinding
+import com.example.appcc.model.ContentX
 
-class RecyclerAdapterTimeline(private val dataList: List<String>) :
+class RecyclerAdapterTimeline(private val context: Context) :
     RecyclerView.Adapter<RecyclerAdapterTimeline.ViewHolder>() {
+    private var list: MutableList<ContentX> = arrayListOf()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        // Tạo ViewHolder từ layout item_layout.xml
+        val binding =
+            ItemViewTimelineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            // Định nghĩa các view trong item layout
-            val textTheme: TextView = itemView.findViewById(R.id.textViewNameTimeline)
-        }
+        return ViewHolder(binding)
+    }
+    fun updateList(list: MutableList<ContentX>){
+        this.list = list
+        notifyDataSetChanged()
+    }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = list[position]
+        holder.bind(item)
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            // Tạo ViewHolder từ layout item_layout.xml
-            val view =
-                LayoutInflater.from(parent.context).inflate(R.layout.item_view_timeline, parent, false)
-            return ViewHolder(view)
-        }
+    }
 
-        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            // Gắn dữ liệu vào các view bên trong ViewHolder
-            holder.textTheme.text = dataList[position]
+    inner class ViewHolder(val binding: ItemViewTimelineBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: ContentX) {
+            Glide.with(context).load(item.previews[0]).into(binding.imageTimeline)
+            Glide.with(context).load(item.previews[1]).into(binding.imageTimeline2)
         }
+        // Định nghĩa các view trong item layout
+    }
 
-        override fun getItemCount(): Int {
-            // Trả về số lượng phần tử trong danh sách
-            return dataList.size
-        }
+    override fun getItemCount(): Int {
+        // Trả về số lượng phần tử trong danh sách
+        return list.size
+    }
 }

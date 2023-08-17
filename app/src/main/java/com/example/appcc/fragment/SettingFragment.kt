@@ -16,20 +16,39 @@ import com.example.appcc.databinding.FragmentSettingBinding
 import com.example.appcc.dialog.SetupLanguageDialog
 import com.example.appcc.utils.resetActivity
 import com.example.appcc.utils.shareApp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SettingFragment : BaseFragment() {
     private lateinit var binding: FragmentSettingBinding
     override fun bindView() {
+        val user = Firebase.auth.currentUser
+        if (user!=null){
+            binding.lnLogout.setVisibility(View.VISIBLE)
+            binding.tvName.setText(user.displayName)
+        }else{
+            binding.lnLogout.setVisibility(View.GONE)
+            binding.tvName.setText(getString(R.string.login_sign_))
+        }
         binding.apply {
+            loading.setVisibility(View.GONE)
             imageBack.setOnClickListener {
                 onBackPressed()
             }
             lnLoginSignup.setOnClickListener {
                 activity?.let { act ->
-                    val privacyView: PrivacyPolicyFragment =PrivacyPolicyFragment().onSetupView()
-                    (act as MainActivity).replaceFragment(privacyView)
+                    if (user != null) {
+                        val profile =ProfileUserFragment().onSetupView()
+                        (act as MainActivity).replaceFragment(profile)
+                    } else {
+                        val privacyView: PrivacyPolicyFragment =PrivacyPolicyFragment().onSetupView()
+                        (act as MainActivity).replaceFragment(privacyView)
+                    }
+
+
                 }
             }
             lnEarnReward.setOnClickListener {
@@ -72,9 +91,18 @@ class SettingFragment : BaseFragment() {
             lnFAQ.setOnClickListener {
 
             }
+            binding.lnLogout.setOnClickListener {
+                loading.setVisibility(View.VISIBLE)
+                val auth =FirebaseAuth.getInstance()
+                auth.signOut()
+                onBackPressed()
+            }
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
     override fun observeData() {
 
     }

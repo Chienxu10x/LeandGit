@@ -11,23 +11,28 @@ import com.example.appcc.R
 import com.example.appcc.adapter.ViewPagerAdapterTimeline
 import com.example.appcc.databinding.ActivityMainBinding
 import com.example.appcc.databinding.FragmentIconsBinding
+import com.example.appcc.databinding.FragmentTimelineBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class TimelineFragment : Fragment() {
-
+    private lateinit var binding: FragmentTimelineBinding
     private lateinit var viewPagerAdapterTimeline: ViewPagerAdapterTimeline
-    private lateinit var viewPager: ViewPager2
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_timeline, container, false)
+        binding = FragmentTimelineBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewPagerAdapterTimeline = ViewPagerAdapterTimeline(this);
-        viewPager = view.findViewById(R.id.viewPageTimeline)
-        viewPager.adapter = viewPagerAdapterTimeline
+        binding.viewPageTimeline.adapter = viewPagerAdapterTimeline
+        TabLayoutMediator(binding.tableLayoutTimeline, binding.viewPageTimeline) { tab, position ->
+            tab.text = if (position == 0) resources.getString(R.string.theme)
+            else resources.getString(R.string.icons)
+        }.attach()
+
+
     }
-
-
 }

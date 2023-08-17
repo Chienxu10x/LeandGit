@@ -1,39 +1,62 @@
 package com.example.appcc.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appcc.R
 import com.example.appcc.adapter.RecyclerAdapterTheme
 import com.example.appcc.adapter.RecyclerAdapterTimeline
+import com.example.appcc.databinding.FragmentTimelineChildBinding
+import com.example.appcc.model.ContentX
+import com.example.appcc.utils.UiState
+import com.example.appcc.viewmodel.AuthViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FragmentTimelineChild : Fragment() {
-
-
+    private lateinit var binding: FragmentTimelineChildBinding
+    private val authViewModel: AuthViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentTimelineChildBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_timeline_child, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val list : List<String> = listOf(
-            "Chuỗi 1",
-            "Chuỗi 1",
-        )
+        authViewModel.getTimeLine()
+        binding.recyclerviewTimeline.layoutManager = LinearLayoutManager(requireContext())
+        val adapter = RecyclerAdapterTimeline(requireActivity())
+        binding.recyclerviewTimeline.adapter = adapter
+        authViewModel.timeline.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                is UiState.Loading -> {
+//                    binding.progressBar.show()
+                }
 
-        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerview_timeline)
+                is UiState.Failure -> {
+//                    binding.progressBar.hide()
+//                    toast(state.error)
+                    Toast.makeText(requireActivity(),state.error,Toast.LENGTH_SHORT).show()
+                }
 
-
-        val adapter = RecyclerAdapterTimeline(list)
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+                is UiState.Success -> {
+//                    binding.progressBar.hide()
+                    adapter.updateList(state.data.toMutableList())
+                    Log.d("TAG", "onViewCreated: "+state.data.toMutableList())
+//                    adapter.updateList(state.data.toMutableList())
+                }
+            }
+        }
     }
 
 }
