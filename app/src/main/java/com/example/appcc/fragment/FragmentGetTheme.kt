@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import com.example.appcc.activity.MainActivity
@@ -19,21 +20,27 @@ import com.google.android.material.tabs.TabLayoutMediator
 class FragmentGetTheme(contentX: ContentX) : BaseFragment() {
     private lateinit var binding : FragmentGetThemeBinding
     val contentX = contentX
-
-
-
-
-
     override fun bindView() {
-//        Log.d("TAGTT", "bindView: " + item)
-        val fragmentsList = listOf(FragmentIconDetail2(contentX), DetailWidgetsFragment(contentX), FragmentSetWallPaper(contentX)) // Replace with your fragment instances
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupViewPagerAndTabs()
+        setupClickListeners()
+
+    }
+
+    private fun setupViewPagerAndTabs() {
+        val fragmentsList = listOf(
+            FragmentIconDetail2(contentX),
+            DetailWidgetsFragment(contentX),
+            FragmentSetWallPaper(contentX)
+        )
         val viewPagerAdapter = ViewPagerAdapter(requireActivity(), fragmentsList)
         binding.viewPager.adapter = viewPagerAdapter
 
-        val tabLayout = binding.tabLayout  // Get a reference to the TabLayout
+        val tabLayout = binding.tabLayout
         TabLayoutMediator(tabLayout, binding.viewPager) { tab, position ->
-            // Configure the tabs here
-            // You can set tab text or custom views based on your requirements
             tab.text = when (position) {
                 0 -> "Icons"
                 1 -> "Widgets"
@@ -41,16 +48,9 @@ class FragmentGetTheme(contentX: ContentX) : BaseFragment() {
                 else -> ""
             }
         }.attach()
-
-        binding.btnBack.setOnClickListener{
-            onBackPress()
-        }
     }
 
-    override fun observeData() {
-
-    }
-
+    override fun observeData() {}
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,12 +59,32 @@ class FragmentGetTheme(contentX: ContentX) : BaseFragment() {
         binding = FragmentGetThemeBinding.inflate(layoutInflater)
         return binding.root
     }
-    override fun onStop() {
-        super.onStop()
 
+    private fun setupClickListeners() {
+        binding.btnBack.setOnClickListener {
+            onBackPress()
+        }
+
+        binding.btnCoin.setOnClickListener {
+            activity?.let { act ->
+                (act as MainActivity).replaceFragment(FragmentCoinDetails())
+            }
+        }
     }
+
     fun setUpView(): FragmentGetTheme {
         return FragmentGetTheme(contentX)
+    }
+
+    override fun baseBackPressed() {
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    Log.d("aaaa", "handleOnBackPressed: aaaa")
+                    onBackPress()
+                }
+            })
+
     }
 
     private fun onBackPress() {

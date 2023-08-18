@@ -24,12 +24,6 @@ import java.util.Locale
 abstract class BaseActivity : AppCompatActivity() {
     private val iconViewModel: IconViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
-        this.window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-        )
         super.onCreate(savedInstanceState)
         setLanguages()
         bindView()
