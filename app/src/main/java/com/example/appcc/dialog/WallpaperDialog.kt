@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.appcc.R
 import com.example.appcc.adapter.RecyclerAdapterWallpaper
@@ -35,6 +36,7 @@ class WallpaperDialog : BottomSheetDialogFragment() {
 //            val privacyView: FragmentThemeDetail = FragmentThemeDetail().onSetupView()
 //            (act as MainActivity).replaceFragment(privacyView)
 //        }
+        Toast.makeText(requireContext(), "Oke", Toast.LENGTH_SHORT).show()
 
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,7 +61,8 @@ class WallpaperDialog : BottomSheetDialogFragment() {
         }
         iconViewModel.loadAllResource(requireContext())
     }
-    companion object {
+
+    private fun initLister() {
 
     }
 }

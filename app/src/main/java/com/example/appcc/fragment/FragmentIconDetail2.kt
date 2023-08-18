@@ -16,7 +16,7 @@ import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.MyAppLauncherAdapter
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.FragmentIconDetail2Binding
-import com.example.appcc.extension.createShortcut
+//import com.example.appcc.extension.createShortcut
 import com.example.appcc.extension.getBitmapFromAsset
 import com.example.appcc.extension.getDeviceName
 import com.example.appcc.extension.gone
@@ -79,7 +79,7 @@ class FragmentIconDetail2(private val contentX: ContentX) : BaseFragment() {
                 val x = packageManager.getApplicationInfo(someList[position].pkg, 0)
                 val bitmap = requireContext().getBitmapFromAsset(someList[position].icon)
                 bitmap?.let {
-                    createShortcut(requireContext(), x, it, someList[position].label, true)
+//                    createShortcut(requireContext(), x, it, someList[position].label, true)
                 }
             }
 

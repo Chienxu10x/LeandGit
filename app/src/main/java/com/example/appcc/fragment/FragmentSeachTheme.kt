@@ -50,8 +50,8 @@ class FragmentSeachTheme : BaseFragment(), RecyclerAdapterTheme2.ClickListener {
     }
 
     override fun observeData() {
-
         iconViewModel.currentTheme.observe(this){
+
             val originalItemList = listOf<ContentX>(
                 it.content[0],
                 it.content[1],
@@ -82,11 +82,15 @@ class FragmentSeachTheme : BaseFragment(), RecyclerAdapterTheme2.ClickListener {
                     }
                     adapterTheme2.updateData(filteredList)
 //                listTheme(newText)
+                  
                     return true
                 }
 
             })
+
         }
+
+
 
 
 

@@ -1,5 +1,7 @@
 package com.example.appcc.extension
 
+import android.app.Activity
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
@@ -15,6 +17,8 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
+import com.example.appcc.activity.MainActivity
+import com.example.appcc.activity.SuccessActivity
 import com.example.appcc.utils.Utils
 import java.io.ByteArrayOutputStream
 import java.net.URLEncoder
@@ -99,19 +103,19 @@ fun createShortcutApiUpper26(
             .setIntent(intent)
 
     val build = intent2.build()
-//    val intent3 = Intent(context, SuccessActivity::class.java)
-//    intent3.putExtra(Utils.INTENT_BITMAP, bitmap)
-//    intent3.putExtra(Utils.INTENT_LABEL, label)
-//    intent3.putExtra("duplicate", false)
+    val intent3 = Intent(context, MainActivity::class.java)
+    intent3.putExtra(Utils.INTENT_BITMAP, bitmap)
+    intent3.putExtra(Utils.INTENT_LABEL, label)
+    intent3.putExtra("duplicate", false)
 
     val baos = ByteArrayOutputStream()
     bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos) //bm is the bitmap object
     val b: ByteArray = baos.toByteArray()
     val encoded: String = Base64.encodeToString(b, Base64.DEFAULT)
 
-//    val activity =
-//        PendingIntent.getBroadcast(context, 100, intent3, PendingIntent.FLAG_UPDATE_CURRENT)
-//    shortcutManager.requestPinShortcut(build, activity.intentSender)
+    val activity =
+        PendingIntent.getBroadcast(context, 100, intent3, PendingIntent.FLAG_UPDATE_CURRENT)
+    shortcutManager.requestPinShortcut(build, activity.intentSender)
 }
 
 fun createShortcutApiLower26(

@@ -35,9 +35,17 @@ class ThemeDetailDialog : BottomSheetDialogFragment() {
             dialogWallpaper.isCancelable=false
             dialogWallpaper.show(childFragmentManager,DIALOG_WALLPAPER)
         }
+
+        binding.btnIcons.setOnClickListener{
+            isCancelable = true
+            val iconDialog = IconDialog()
+            iconDialog.isCancelable = false
+            iconDialog.show(childFragmentManager, ICON_DIALOG)
+        }
     }
 
     companion object {
         private const val DIALOG_WALLPAPER = "DIALOG_WALLPAPER"
+        private const val ICON_DIALOG = "ICON_DIALOG"
     }
 }
