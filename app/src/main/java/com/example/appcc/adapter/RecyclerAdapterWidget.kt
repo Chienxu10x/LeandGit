@@ -37,13 +37,13 @@ class RecyclerAdapterWidget(val onItemClick : (item : ContentX) -> Unit)
 
 
 
-            Glide.with(this).load(Uri.parse(item.icon[0].toAssetPath())).into(imageIcon1)
-            Glide.with(this).load(Uri.parse(item.icon[1].toAssetPath())).into(imageIcon2)
-            Glide.with(this).load(Uri.parse(item.icon[2].toAssetPath())).into(imageIcon3)
-            Glide.with(this).load(Uri.parse(item.icon[3].toAssetPath())).into(imageIcon4)
-            Glide.with(this).load(Uri.parse(item.icon[4].toAssetPath())).into(imageIcon5)
-            Glide.with(this).load(Uri.parse(item.icon[5].toAssetPath())).into(imageIcon6)
-            Glide.with(this).load(Uri.parse(item.icon[6].toAssetPath())).into(imageIcon7)
+            Glide.with(this).load(Uri.parse(item.icon!![0].toAssetPath())).into(imageIcon1)
+            Glide.with(this).load(Uri.parse(item.icon!![1].toAssetPath())).into(imageIcon2)
+            Glide.with(this).load(Uri.parse(item.icon!![2].toAssetPath())).into(imageIcon3)
+            Glide.with(this).load(Uri.parse(item.icon!![3].toAssetPath())).into(imageIcon4)
+            Glide.with(this).load(Uri.parse(item.icon!![4].toAssetPath())).into(imageIcon5)
+            Glide.with(this).load(Uri.parse(item.icon!![5].toAssetPath())).into(imageIcon6)
+            Glide.with(this).load(Uri.parse(item.icon!![6].toAssetPath())).into(imageIcon7)
             setOnClickListener {
                 onItemClick(item)
 

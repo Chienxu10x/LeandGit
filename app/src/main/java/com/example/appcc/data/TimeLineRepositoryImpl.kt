@@ -16,21 +16,18 @@ import com.google.firebase.ktx.Firebase
 class TimeLineRepositoryImpl(val database: FirebaseDatabase) : TimeLineRepository {
     override fun getTimeLine(result: (UiState<MutableList<ContentX>>) -> Unit) {
         val user = Firebase.auth.currentUser
+        val timeLine : MutableList<ContentX> = arrayListOf()
         if (user != null) {
             database.getReference(Const.USER).addChildEventListener(object : ChildEventListener {
                 override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                     val userModel: UserModel? = snapshot.getValue(UserModel::class.java)
-                    var timeLine : MutableList<ContentX> = arrayListOf()
                     for( i in snapshot.child(TIMELINE).children){
-                        Log.d("Demo1234", "onChildAdded: ${i}")
-                    }
-                    if (userModel != null) {
-                        Log.d("zzz", "onChildAdded: "+userModel)
-                        if (userModel.contentX!=null){
-                            timeLine= userModel.contentX as MutableList<ContentX>
+                        var contenx: ContentX? =i.getValue(ContentX::class.java)
+                        if (contenx != null) {
+                            timeLine.add(contenx)
                         }
-                        result.invoke(UiState.Success(timeLine))
                     }
+                    result.invoke(UiState.Success(timeLine))
 
                 }
 

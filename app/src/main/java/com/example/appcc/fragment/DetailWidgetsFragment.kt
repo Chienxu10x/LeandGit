@@ -31,13 +31,13 @@ class DetailWidgetsFragment(contentX: ContentX) : BaseFragment() {
         return binding.root
     }
     override fun bindView() {
-        Glide.with(this).load(Uri.parse(contentX.previews[3].toAssetPath())).into(binding.ivWidget2)
-        Glide.with(this).load(Uri.parse(contentX.previews[4].toAssetPath())).into(binding.ivWidget1)
-        Glide.with(this).load(Uri.parse(contentX.previews[5].toAssetPath())).into(binding.ivWidget3)
-        Glide.with(this).load(Uri.parse(contentX.previews[6].toAssetPath())).into(binding.ivWidget4)
-        Glide.with(this).load(Uri.parse(contentX.previews[7].toAssetPath())).into(binding.ivWidget5)
-        Glide.with(this).load(Uri.parse(contentX.previews[8].toAssetPath())).into(binding.ivWidget6)
-        Glide.with(this).load(Uri.parse(contentX.previews[9].toAssetPath())).into(binding.ivWidget7)
+        Glide.with(this).load(Uri.parse(contentX.previews!![3].toAssetPath())).into(binding.ivWidget2)
+        Glide.with(this).load(Uri.parse(contentX.previews!![4].toAssetPath())).into(binding.ivWidget1)
+        Glide.with(this).load(Uri.parse(contentX.previews!![5].toAssetPath())).into(binding.ivWidget3)
+        Glide.with(this).load(Uri.parse(contentX.previews!![6].toAssetPath())).into(binding.ivWidget4)
+        Glide.with(this).load(Uri.parse(contentX.previews!![7].toAssetPath())).into(binding.ivWidget5)
+        Glide.with(this).load(Uri.parse(contentX.previews!![8].toAssetPath())).into(binding.ivWidget6)
+        Glide.with(this).load(Uri.parse(contentX.previews!![9].toAssetPath())).into(binding.ivWidget7)
         binding.btnSetWid.setOnClickListener{
             widgetViewModel.setCurrentWidget(widgetViewModel.getCurrentWidgetPosion())
             Toast.makeText(requireContext(),"OK", Toast.LENGTH_SHORT).show();

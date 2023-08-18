@@ -42,8 +42,8 @@ class RecyclerAdapterTheme2(var contents: List<ContentX>, val listener: ClickLis
         holder.itemView.apply {
             val imageviewMain1 : ImageView = findViewById(R.id.imageview_main1)
             val imageviewMain2 : ImageView = findViewById(R.id.imageview_main2)
-            Glide.with(this).load(Uri.parse(data.previews[0].toAssetPath())).into(imageviewMain1)
-            Glide.with(this).load(Uri.parse(data.previews[1].toAssetPath())).into(imageviewMain2)
+            Glide.with(this).load(Uri.parse(data.previews!![0].toAssetPath())).into(imageviewMain1)
+            Glide.with(this).load(Uri.parse(data.previews!![1].toAssetPath())).into(imageviewMain2)
         }
         holder.itemView.setOnClickListener{
             listener.onClickListener(data)

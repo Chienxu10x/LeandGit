@@ -43,7 +43,7 @@ class FragmentThemeDetail : BaseFragment() {
         val item = arg.contentx
         
 //        Log.d("TAGV", "bindView: " + item)
-        Glide.with(this).load(Uri.parse(item.previews[0].toAssetPath()))
+        Glide.with(this).load(Uri.parse(item.previews!![0].toAssetPath()))
             .into(binding.imageThemeItem)
         binding.apply {
             btnCustom.setOnClickListener {

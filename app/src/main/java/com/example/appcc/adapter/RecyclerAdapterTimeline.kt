@@ -1,6 +1,7 @@
 package com.example.appcc.adapter
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.appcc.R
 import com.example.appcc.databinding.ItemViewMainBinding
 import com.example.appcc.databinding.ItemViewTimelineBinding
+import com.example.appcc.extension.toAssetPath
 import com.example.appcc.model.ContentX
 
 class RecyclerAdapterTimeline(private val context: Context) :
@@ -35,8 +37,8 @@ class RecyclerAdapterTimeline(private val context: Context) :
     inner class ViewHolder(val binding: ItemViewTimelineBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ContentX) {
-            Glide.with(context).load(item.previews[0]).into(binding.imageTimeline)
-            Glide.with(context).load(item.previews[1]).into(binding.imageTimeline2)
+            Glide.with(context).load(Uri.parse(item.previews!![0].toAssetPath())).into(binding.imageTimeline)
+            Glide.with(context).load(Uri.parse(item.previews!![1].toAssetPath())).into(binding.imageTimeline2)
         }
         // Định nghĩa các view trong item layout
     }

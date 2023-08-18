@@ -152,7 +152,7 @@ class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
     override fun bindView() {
 
         if (someList.isEmpty()) {
-            arg.icon.forEach {
+            arg.icon!!.forEach {
                 someList.add(MyAppIcon(it, ""))
             }
 

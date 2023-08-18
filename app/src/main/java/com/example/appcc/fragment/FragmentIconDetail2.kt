@@ -150,7 +150,7 @@ class FragmentIconDetail2(private val contentX: ContentX) : BaseFragment() {
         val arg = contentX
         Log.d("TAG", "bindView: "+arg)
         if (someList.isEmpty()) {
-            arg.icon.forEach {
+            arg.icon!!.forEach {
                 someList.add(MyAppIcon(it, ""))
             }
 

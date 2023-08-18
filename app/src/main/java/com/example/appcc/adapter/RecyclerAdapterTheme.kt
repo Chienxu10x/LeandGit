@@ -46,8 +46,8 @@ class RecyclerAdapterTheme(val onItemClick : (item : ContentX) -> Unit)
             val button : RelativeLayout = findViewById(R.id.buttonTheme)
             textView.text = item.title
 
-            Glide.with(this).load(Uri.parse(item.previews[0].toAssetPath())).into(imageviewMain1)
-            Glide.with(this).load(Uri.parse(item.previews[1].toAssetPath())).into(imageviewMain2)
+            Glide.with(this).load(Uri.parse(item.previews!![0].toAssetPath())).into(imageviewMain1)
+            Glide.with(this).load(Uri.parse(item.previews!![1].toAssetPath())).into(imageviewMain2)
             button.setOnClickListener { onItemClick(item) }
 
         }
