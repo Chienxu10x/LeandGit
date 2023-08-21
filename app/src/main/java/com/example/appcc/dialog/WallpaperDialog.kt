@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.appcc.R
+import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.RecyclerAdapterWallpaper
 import com.example.appcc.databinding.FragmentWallpaperDialogFargmentBinding
+import com.example.appcc.fragment.FragmentGetTheme
+import com.example.appcc.fragment.FragmentThemeDetail
 import com.example.appcc.viewmodel.IconsViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -32,11 +35,12 @@ class WallpaperDialog : BottomSheetDialogFragment() {
 
     }
     private val recyclerAdapterWallpaper = RecyclerAdapterWallpaper{
-//        activity?.let { act ->
-//            val privacyView: FragmentThemeDetail = FragmentThemeDetail().onSetupView()
-//            (act as MainActivity).replaceFragment(privacyView)
-//        }
-        Toast.makeText(requireContext(), "Oke", Toast.LENGTH_SHORT).show()
+        dismiss()
+        activity?.let { act ->
+            val privacyView: FragmentGetTheme = FragmentGetTheme(it).onSetupView()
+            (act as MainActivity).replaceFragment(privacyView)
+        }
+        Log.d("vvvv", ": aaaaaaaaaa")
 
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

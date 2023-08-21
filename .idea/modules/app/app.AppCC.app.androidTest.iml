@@ -50,7 +50,9 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/2b93c6ea74b3f02a8fa1f0cd116d7f32/transformed/play-services-auth-api-phone-18.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/2507c5229692b8085ba42ad61a7b8809/transformed/play-services-auth-base-18.0.4-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/b3cd66b122869073e9065bcb92aed5e9/transformed/play-services-fido-20.0.1-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/c6b301fd4618c7d2493501b12ea63f22/transformed/firebase-storage-ktx-20.2.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/c37ca36a463819f14a9738383ebbce09/transformed/firebase-database-ktx-20.2.2-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/8ca2d0492fb11a2b74df79cb1cb7fab1/transformed/firebase-storage-20.2.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/090ac9e92141694f0316a7a5230675b8/transformed/firebase-common-ktx-20.3.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1ad667a2ffae01863c9f1ecd50644a6f/transformed/firebase-database-20.2.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/eca190c9543e8bc58aeb957c3533742e/transformed/firebase-auth-interop-20.0.0-api.jar</arg>
@@ -394,6 +396,8 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-components:17.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-common-ktx:20.3.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.makeramen:roundedimageview:2.3.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-storage-ktx:20.2.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-storage:20.2.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-database-ktx:20.2.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-database:20.2.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-database-collection:18.0.1@aar" level="project" />

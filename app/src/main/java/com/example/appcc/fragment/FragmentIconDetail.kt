@@ -1,6 +1,7 @@
 package com.example.appcc.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,6 +66,7 @@ class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
 
             MyAppLauncherAdapter.FLAG_INSTALL -> {
                 if (someList[position].pkg == "" || someList[position].appIcon == null) {
+                    Log.d("ccc", ": "+someList[1].icon)
                     Toast.makeText(
                         requireContext(),
                         "You must select related app before install icon",

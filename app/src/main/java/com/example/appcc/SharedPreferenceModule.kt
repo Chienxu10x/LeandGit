@@ -8,6 +8,7 @@ import com.example.appcc.data.TimeLineRepositoryImpl
 import com.example.appcc.data_login.OnSignInStartedListener
 import com.example.appcc.data_login.OnSignInStartedListenerImpl
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,12 +33,17 @@ object SharedPreferenceModule {
     }
 
     @Provides
-    fun provideTimeline(database: FirebaseDatabase): TimeLineRepository {
-        return TimeLineRepositoryImpl(database)
+    fun provideTimeline(database: FirebaseDatabase,storage:FirebaseStorage): TimeLineRepository {
+        return TimeLineRepositoryImpl(database,storage)
     }
 
     @Provides
     fun providesFirebaseDatabase(): FirebaseDatabase {
         return FirebaseDatabase.getInstance()
+    }
+
+    @Provides
+    fun provideFirebaseStorage(): FirebaseStorage {
+        return FirebaseStorage.getInstance()
     }
 }

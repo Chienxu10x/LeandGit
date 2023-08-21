@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appcc.R
+import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.RecyclerAdapterTheme
 import com.example.appcc.adapter.RecyclerAdapterTimeline
 import com.example.appcc.databinding.FragmentTimelineChildBinding
@@ -40,23 +41,35 @@ class FragmentTimelineChild : Fragment() {
         authViewModel.timeline.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is UiState.Loading -> {
-//                    binding.progressBar.show()
+                    Log.d("TAG",
+                        "onViewCreated: " +"loading"
+                    )
+                    binding.loading.visibility=View.VISIBLE
                 }
 
                 is UiState.Failure -> {
+                    Log.d("TAG",
+                        "onViewCreated: " +"loading"+state.error
+                    )
 //                    binding.progressBar.hide()
 //                    toast(state.error)
-                    Toast.makeText(requireActivity(),state.error,Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(), state.error, Toast.LENGTH_SHORT).show()
                 }
 
                 is UiState.Success -> {
 //                    binding.progressBar.hide()
+                    binding.loading.visibility=View.GONE
                     adapter.updateList(state.data.toMutableList())
-                    Log.d("TAG", "onViewCreated: "+state.data.toMutableList())
+                    Log.d("TAG",
+                        "onViewCreated: " + state.data.toMutableList().size
+                    )
 //                    adapter.updateList(state.data.toMutableList())
                 }
             }
         }
     }
 
+    private fun toDetail(item: ContentX) {
+
+    }
 }

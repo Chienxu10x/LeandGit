@@ -38,35 +38,18 @@ class RecyclerAdapterWallpaper(val onItemClick : (item : ContentX) -> Unit)
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = getItem(position)
-//        context?.let { act ->
-//            val privacyView: FragmentPrivacyPolicy = FragmentPrivacyPolicy().onSetupView()
-//            (act as MainActivity).replaceFragment(privacyView)
-//        }
-//        holder.itemView.apply {
-//            tvTitle.text = item.title
-//            tvSubTitle.text = item.subtitle
-//
-//            Glide.with(this).load(Uri.parse(item.previews[0].toAssetPath())).into(ivIcon1)
-//            Glide.with(this).load(Uri.parse(item.previews[1].toAssetPath())).into(ivIcon2)
-//            Glide.with(this).load(Uri.parse(item.previews[2].toAssetPath())).into(ivIcon3)
-//
-//            ivIcon1.setOnClickListener { onItemClick(item) }
-//            ivIcon2.setOnClickListener { onItemClick(item) }
-//            ivIcon3.setOnClickListener { onItemClick(item) }
-//
-//            setOnClickListener { onItemClick(item) }
-//        }
-
         holder.itemView.apply {
             val textView : TextView = findViewById(R.id.get_themew1)
             val imageviewMain1 : ImageView = findViewById(R.id.imageview_mainw)
             val imageviewMain2 : ImageView = findViewById(R.id.imageview_mainw2)
-//            val button : RelativeLayout = findViewById(R.id.buttonTheme)
+            val button : RelativeLayout = findViewById(R.id.buttonTheme)
             textView.text = item.title
 
             Glide.with(this).load(Uri.parse(item.wallpaper.toAssetPath())).into(imageviewMain1)
             Glide.with(this).load(Uri.parse(item.wallpaper.toAssetPath())).into(imageviewMain2)
-//            button.setOnClickListener { onItemClick(item) }
+           button.setOnClickListener {
+               onItemClick(item)
+           }
 
         }
     }

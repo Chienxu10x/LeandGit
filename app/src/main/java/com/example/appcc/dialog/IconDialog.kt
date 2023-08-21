@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.appcc.R
+import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.RecyclerAdapterIcon
 import com.example.appcc.databinding.FragmentIconDialogBinding
 import com.example.appcc.databinding.FragmentWallpaperDialogFargmentBinding
+import com.example.appcc.fragment.FragmentIconDetail
 import com.example.appcc.viewmodel.IconsViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -29,9 +31,14 @@ class IconDialog : BottomSheetDialogFragment() {
         // Inflate the layout for this fragment
         isCancelable=true
         return binding.root
-
     }
-    private val recyclerAdapterIcon = RecyclerAdapterIcon{}
+    private val recyclerAdapterIcon = RecyclerAdapterIcon{
+        dismiss()
+        activity.let{act->
+            val fargmentGettheme= FragmentIconDetail(it).setUpView()
+            (act as MainActivity).replaceFragment(fargmentGettheme)
+        }
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         iconViewModel.currentTheme.observe(this){
