@@ -51,7 +51,6 @@ class SettingFragment : BaseFragment() {
                         binding.loading.visibility = View.VISIBLE
                         val referen = FirebaseDatabase.getInstance().getReference(Const.USER)
                             .child(user.uid.toString()).child("avarta")
-                        Log.d("TAG", "bindView: " + user?.uid.toString())
                         referen.addValueEventListener(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 val avatarData = snapshot.getValue(String::class.java)
@@ -64,6 +63,7 @@ class SettingFragment : BaseFragment() {
                                     bundle.putString("avarta", avatarData)
                                     profile.arguments = bundle
                                     (act as MainActivity).replaceFragment(profile)
+                                    (act as MainActivity).removeFragment(this@SettingFragment)
                                     binding.loading.visibility = View.GONE
                                 }
 
@@ -79,6 +79,7 @@ class SettingFragment : BaseFragment() {
                         val privacyView: PrivacyPolicyFragment =
                             PrivacyPolicyFragment().onSetupView()
                         (act as MainActivity).replaceFragment(privacyView)
+                        (act as MainActivity).removeFragment(this@SettingFragment)
                     }
 
 
@@ -141,6 +142,15 @@ class SettingFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
+        Log.d("zzz", "onResume: ")
+        val user = Firebase.auth.currentUser
+        if (user != null) {
+            binding.lnLogout.setVisibility(View.VISIBLE)
+            binding.tvName.setText(user.displayName)
+        } else {
+            binding.lnLogout.setVisibility(View.GONE)
+            binding.tvName.setText(getString(R.string.login_sign_))
+        }
     }
 
     override fun observeData() {
@@ -171,7 +181,9 @@ class SettingFragment : BaseFragment() {
             activity?.resetActivity()
         }
     }
-
+    fun onSetupView():SettingFragment{
+        return SettingFragment()
+    }
     companion object {
         private const val DIALOG_LANGUAGE = "DIALOG_LANGUAGE"
     }

@@ -140,6 +140,7 @@ class PrivacyPolicyFragment : BaseFragment() {
                                 Log.d("avao", "onDataChange: "+avatarData)
                                 profile.arguments = bundle
                                 (act as MainActivity).replaceFragment(profile)
+                                (act as MainActivity).removeFragment(this@PrivacyPolicyFragment)
                             }
                         }
                     }

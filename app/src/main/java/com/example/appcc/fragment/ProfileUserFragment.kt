@@ -87,7 +87,7 @@ class ProfileUserFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProfileUserBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
         return binding.root
@@ -100,8 +100,9 @@ class ProfileUserFragment : BaseFragment() {
     private fun onBackPressed() {
         activity?.let { act ->
             act.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-//            act.window.statusBarColor = ContextCompat.getColor(act, R.color.blue)
             (act as MainActivity).removeFragment(this)
+            val fargmentset=SettingFragment().onSetupView()
+            (act as MainActivity).replaceFragment(fargmentset)
 
         }
     }

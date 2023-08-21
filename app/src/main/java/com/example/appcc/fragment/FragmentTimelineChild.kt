@@ -18,6 +18,8 @@ import com.example.appcc.databinding.FragmentTimelineChildBinding
 import com.example.appcc.model.ContentX
 import com.example.appcc.utils.UiState
 import com.example.appcc.viewmodel.AuthViewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,13 +29,18 @@ class FragmentTimelineChild : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentTimelineChildBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val user=Firebase.auth.currentUser
+        if (user==null){
+            Toast.makeText(requireActivity(),"Vui login",Toast.LENGTH_SHORT).show()
+            return
+        }
         authViewModel.getTimeLine()
         binding.recyclerviewTimeline.layoutManager = LinearLayoutManager(requireContext())
         val adapter = RecyclerAdapterTimeline(requireActivity())
@@ -51,19 +58,16 @@ class FragmentTimelineChild : Fragment() {
                     Log.d("TAG",
                         "onViewCreated: " +"loading"+state.error
                     )
-//                    binding.progressBar.hide()
-//                    toast(state.error)
+
                     Toast.makeText(requireActivity(), state.error, Toast.LENGTH_SHORT).show()
                 }
 
                 is UiState.Success -> {
-//                    binding.progressBar.hide()
                     binding.loading.visibility=View.GONE
                     adapter.updateList(state.data.toMutableList())
                     Log.d("TAG",
                         "onViewCreated: " + state.data.toMutableList().size
                     )
-//                    adapter.updateList(state.data.toMutableList())
                 }
             }
         }
