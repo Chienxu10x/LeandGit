@@ -45,9 +45,6 @@ class ProfileUserFragment : BaseFragment() {
             Glide.with(requireActivity()).load(avarta).error(R.drawable.ic_account).into(binding.imgAccount)
             binding.loading.visibility=View.GONE
 
-
-
-
         if (user != null) {
             binding.edtName.setText(user.displayName)
         }
