@@ -42,8 +42,11 @@ class ProfileUserFragment : BaseFragment() {
         val user = Firebase.auth.currentUser
 
         val avarta=arguments?.getString("avarta")
-        Glide.with(requireActivity()).load(avarta).error(R.drawable.ic_account).into(binding.imgAccount)
-        binding.loading.visibility=View.GONE
+            Glide.with(requireActivity()).load(avarta).error(R.drawable.ic_account).into(binding.imgAccount)
+            binding.loading.visibility=View.GONE
+
+
+
 
         if (user != null) {
             binding.edtName.setText(user.displayName)
