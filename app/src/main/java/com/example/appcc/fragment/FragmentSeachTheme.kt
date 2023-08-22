@@ -29,18 +29,6 @@ class FragmentSeachTheme : BaseFragment(), RecyclerAdapterTheme2.ClickListener {
     private lateinit var adapterTheme2: RecyclerAdapterTheme2
 
     override fun bindView() {
-        binding.tabMenu.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                iconViewModel.getThemeByFilter(0)
-//                binding.fragmentTheme.fullScroll(View.FOCUS_UP)
-            }
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-            }
-
-        })
 
         binding.btnBack.setOnClickListener {
             onBackPressed()
@@ -97,6 +85,7 @@ class FragmentSeachTheme : BaseFragment(), RecyclerAdapterTheme2.ClickListener {
 
         iconViewModel.allTheme.observe(this){
             Log.d("TAG", "observeData: "+"a1")
+            iconViewModel.getThemeByFilter(0)
             binding.tabMenu.removeAllTabs()
             it.contents.forEach{
                 val tab = binding.tabMenu.newTab()

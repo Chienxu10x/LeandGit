@@ -9,8 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.appcc.R
-import com.example.appcc.adapter.RecyclerAdapterTimeline
 import com.example.appcc.adapter.RecyclerAdapterTimelineIcon
 import com.example.appcc.databinding.FragmentIconchildBinding
 import com.example.appcc.utils.UiState
@@ -42,13 +40,10 @@ class IconchildFragment : Fragment() {
         authViewModel.timeline.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is UiState.Loading -> {
-//                    binding.progressBar.show()
                     binding.loading.visibility=View.VISIBLE
                 }
 
                 is UiState.Failure -> {
-//                    binding.progressBar.hide()
-//                    toast(state.error)
                     Toast.makeText(requireActivity(),state.error, Toast.LENGTH_SHORT).show()
                 }
 
