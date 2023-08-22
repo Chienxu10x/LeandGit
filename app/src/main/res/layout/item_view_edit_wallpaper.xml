@@ -22,8 +22,7 @@
             android:gravity="center"
             android:lineSpacingExtra="6sp"
             android:text="@string/see_detail"
-            android:textAppearance="@style/get_theme"
-        />
+            android:textAppearance="@style/get_theme" />
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/buttonTheme1"

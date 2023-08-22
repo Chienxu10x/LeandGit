@@ -93,6 +93,9 @@ class FragmentGetTheme(contentX: ContentX) : BaseFragment() {
             (act as MainActivity).removeFragment(this)
         }
     }
+    fun onSetupView():FragmentGetTheme{
+        return FragmentGetTheme(contentX)
+    }
     override fun onDestroyView() {
         super.onDestroyView()
     }

@@ -13,7 +13,6 @@ object ResourceUtils {
 
         try {
             val stream = context.assets.open(inFile);
-
             val size = stream.available();
             val buffer = ByteArray(size)
             stream.read(buffer);

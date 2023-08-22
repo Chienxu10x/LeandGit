@@ -32,39 +32,10 @@ class MainActivity : BaseActivity() {
         setContentView(binding.root)
         binding.navBottom.setupWithNavController(findNavController(R.id.nav_container))
         setSupportActionBar(binding.myToolbar)
-        binding.themes.text = "Themes"
+        binding.themes.text = getString(R.string.themes)
         binding.menuSetting.setOnClickListener {
-//           val intent =Intent(this@MainActivity,SettingActivity::class.java)
-//           startActivity(intent)
             replaceFragment(SettingFragment())
         }
-//        binding.navBottom.setOnItemSelectedListener {
-//            when (it.itemId) {
-//                R.id.themes_fragment -> {
-//                    binding.themes.text = "Themes"
-//                    false
-//                }
-//                R.id.icons_fragment -> {
-//                    binding.themes.text = "Icons"
-//                    false
-//                }
-//                R.id.widgets_fragment -> {
-//                    binding.themes.text = "Widgets"
-//                    false
-//                }
-//                R.id.timeline_fragment -> {
-//                    binding.themes.text = "Timeline"
-//                    true
-//                }
-//                R.id.wallpaper_fragment -> {
-//                    binding.themes.text = "Wallpaper"
-//                    true
-//                }
-//                else -> {
-//                    true
-//                }
-//            }
-//        }
 
         binding.btnReplaceCoin.setOnClickListener{
             replaceFragment(FragmentCoinDetails())
@@ -110,21 +81,7 @@ class MainActivity : BaseActivity() {
         }
     }
 }
-//    override fun onBottomViewProvides(): BottomNavigationView? {
-//        return null
-//    }
 
-//    override fun bindView() {
-//        TODO("Not yet implemented")
-//    }
-//
-//    override fun observeData() {
-//        TODO("Not yet implemented")
-//    }
-//
-//    override fun onBottomViewProvides(): BottomNavigationView? {
-//        TODO("Not yet implemented")
-//    }
 
 
 

@@ -44,11 +44,9 @@ class RecyclerAdapterIcon(val onItemClick : (item : ContentX) -> Unit)
             val imageIcon14: ImageView = findViewById(R.id.icon_imageview14)
 
             textView.text = item.title
-
-
-            Glide.with(this).load(Uri.parse(item.icon!![0].toAssetPath())).into(imageIcon1)
-            Glide.with(this).load(Uri.parse(item.icon!![1].toAssetPath())).into(imageIcon2)
-            Glide.with(this).load(Uri.parse(item.icon!![2].toAssetPath())).into(imageIcon3)
+            Glide.with(this).load(Uri.parse(item.icon[0].toAssetPath())).into(imageIcon1)
+            Glide.with(this).load(Uri.parse(item.icon[1].toAssetPath())).into(imageIcon2)
+            Glide.with(this).load(Uri.parse(item.icon[2].toAssetPath())).into(imageIcon3)
             Glide.with(this).load(Uri.parse(item.icon!![3].toAssetPath())).into(imageIcon4)
             Glide.with(this).load(Uri.parse(item.icon!![4].toAssetPath())).into(imageIcon5)
             Glide.with(this).load(Uri.parse(item.icon!![5].toAssetPath())).into(imageIcon6)

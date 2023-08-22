@@ -53,22 +53,28 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:orientation="vertical">
-          <ImageView
+
+          <de.hdodenhof.circleimageview.CircleImageView
+              android:id="@+id/imgAccount"
               android:layout_width="@dimen/size_100"
               android:layout_height="@dimen/size_100"
               android:layout_gravity="center"
-              android:src="@drawable/ic_account"/>
+              android:src="@drawable/ic_account" />
+
           <TextView
+              android:padding="5dp"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="@string/name"/>
           <EditText
               android:id="@+id/edtName"
+              android:enabled="false"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"/>
       </LinearLayout>
     </androidx.cardview.widget.CardView>
     <Button
+        android:id="@+id/btnSave1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,4 +83,12 @@
         android:text="@string/save"
         android:layout_margin="@dimen/size_10"
         android:background="@drawable/tab_indi"/>
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,9 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class UserModel(
     var id: String = "",
-    var comment: String = "",
     var name: String = "",
-    var avarta: String = "",
-    var contentX: List<ContentX>? = null
-) : Parcelable {
-}
+    var avarta: String="",
+    var favorite: List<ContentX>? = null
+) : Parcelable

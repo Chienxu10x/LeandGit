@@ -29,15 +29,14 @@ class ThemeDetailDialog : BottomSheetDialogFragment() {
     }
 
     private fun initLister() {
+
         binding.btnWallpapers.setOnClickListener{
-            isCancelable=true
-            val dialogWallpaper =WallpaperDialog()
-            dialogWallpaper.isCancelable=false
-            dialogWallpaper.show(childFragmentManager,DIALOG_WALLPAPER)
+            val dialogWallpaper = WallpaperDialog()
+            dialogWallpaper.isCancelable = false
+            dialogWallpaper.show(childFragmentManager, DIALOG_WALLPAPER)
         }
 
         binding.btnIcons.setOnClickListener{
-            isCancelable = true
             val iconDialog = IconDialog()
             iconDialog.isCancelable = false
             iconDialog.show(childFragmentManager, ICON_DIALOG)

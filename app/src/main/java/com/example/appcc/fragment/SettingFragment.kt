@@ -2,11 +2,13 @@ package com.example.appcc.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import com.bumptech.glide.Glide
 import com.example.appcc.BuildConfig
 import com.example.appcc.R
 import com.example.appcc.activity.MainActivity
@@ -14,10 +16,15 @@ import com.example.appcc.base.BaseFragment
 import com.example.appcc.data.DataSave
 import com.example.appcc.databinding.FragmentSettingBinding
 import com.example.appcc.dialog.SetupLanguageDialog
+import com.example.appcc.utils.Const
 import com.example.appcc.utils.resetActivity
 import com.example.appcc.utils.shareApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,10 +33,10 @@ class SettingFragment : BaseFragment() {
     private lateinit var binding: FragmentSettingBinding
     override fun bindView() {
         val user = Firebase.auth.currentUser
-        if (user!=null){
+        if (user != null) {
             binding.lnLogout.setVisibility(View.VISIBLE)
             binding.tvName.setText(user.displayName)
-        }else{
+        } else {
             binding.lnLogout.setVisibility(View.GONE)
             binding.tvName.setText(getString(R.string.login_sign_))
         }
@@ -41,11 +48,38 @@ class SettingFragment : BaseFragment() {
             lnLoginSignup.setOnClickListener {
                 activity?.let { act ->
                     if (user != null) {
-                        val profile =ProfileUserFragment().onSetupView()
-                        (act as MainActivity).replaceFragment(profile)
+                        binding.loading.visibility = View.VISIBLE
+                        val referen = FirebaseDatabase.getInstance().getReference(Const.USER)
+                            .child(user.uid.toString()).child("avarta")
+                        referen.addValueEventListener(object : ValueEventListener {
+                            override fun onDataChange(snapshot: DataSnapshot) {
+                                val avatarData = snapshot.getValue(String::class.java)
+                                if (avatarData != null) {
+
+                                    // Thay "key" và "value" bằng dữ liệu cần truyền
+
+                                    val profile = ProfileUserFragment().onSetupView()
+                                    val bundle = Bundle()
+                                    bundle.putString("avarta", avatarData)
+                                    profile.arguments = bundle
+                                    (act as MainActivity).replaceFragment(profile)
+                                    (act as MainActivity).removeFragment(this@SettingFragment)
+                                    binding.loading.visibility = View.GONE
+                                }
+
+                            }
+
+                            override fun onCancelled(error: DatabaseError) {
+                                Log.d("TAG", "onDataChange: " + error)
+                            }
+
+                        })
+
                     } else {
-                        val privacyView: PrivacyPolicyFragment =PrivacyPolicyFragment().onSetupView()
+                        val privacyView: PrivacyPolicyFragment =
+                            PrivacyPolicyFragment().onSetupView()
                         (act as MainActivity).replaceFragment(privacyView)
+                        (act as MainActivity).removeFragment(this@SettingFragment)
                     }
 
 
@@ -55,10 +89,16 @@ class SettingFragment : BaseFragment() {
 
             }
             lnFavourite.setOnClickListener {
-
+                activity?.let { act ->
+                    val privacyView: MyFavoriteFragment = MyFavoriteFragment().onSetupView()
+                    (act as MainActivity).replaceFragment(privacyView)
+                }
             }
             lnMyTimelines.setOnClickListener {
-
+                activity?.let { act ->
+                    val privacyView: FragmentMyTimeLine = FragmentMyTimeLine().onSetupView()
+                    (act as MainActivity).replaceFragment(privacyView)
+                }
             }
             lnPolicy.setOnClickListener {
                 activity?.let { act ->
@@ -93,7 +133,7 @@ class SettingFragment : BaseFragment() {
             }
             binding.lnLogout.setOnClickListener {
                 loading.setVisibility(View.VISIBLE)
-                val auth =FirebaseAuth.getInstance()
+                val auth = FirebaseAuth.getInstance()
                 auth.signOut()
                 onBackPressed()
             }
@@ -102,7 +142,17 @@ class SettingFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
+        Log.d("zzz", "onResume: ")
+        val user = Firebase.auth.currentUser
+        if (user != null) {
+            binding.lnLogout.setVisibility(View.VISIBLE)
+            binding.tvName.setText(user.displayName)
+        } else {
+            binding.lnLogout.setVisibility(View.GONE)
+            binding.tvName.setText(getString(R.string.login_sign_))
+        }
     }
+
     override fun observeData() {
 
     }
@@ -124,11 +174,15 @@ class SettingFragment : BaseFragment() {
 
         }
     }
+
     private fun setupLanguage(lang: String) {
         if (lang.isNotEmpty()) {
             DataSave.language = lang
             activity?.resetActivity()
         }
+    }
+    fun onSetupView():SettingFragment{
+        return SettingFragment()
     }
     companion object {
         private const val DIALOG_LANGUAGE = "DIALOG_LANGUAGE"

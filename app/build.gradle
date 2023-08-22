@@ -186,6 +186,8 @@ dependencies {
 }
 
 dependencies {
+
+    implementation 'com.google.firebase:firebase-storage-ktx:20.2.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.2.2'
     //MaterialCardView
     implementation 'com.google.android.material:material:1.4.0'

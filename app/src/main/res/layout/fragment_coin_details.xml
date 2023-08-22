@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".fragment.FragmentCoinDetails"
     android:background="@color/white"
+    android:focusable="true"
+    android:clickable="true"
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"

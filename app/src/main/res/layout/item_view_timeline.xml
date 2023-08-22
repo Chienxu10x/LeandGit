@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="503dp"
     android:orientation="vertical"
-    android:padding="15dp"
-    android:background="@color/gray">
+    android:padding="15dp">
 
 
     <RelativeLayout
@@ -14,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageViewTimelineFace"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@color/green_1"/>
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:scaleType="centerCrop"/>
 
         <LinearLayout
             android:layout_marginStart="10dp"
@@ -30,7 +29,6 @@
                 android:id="@+id/textViewNameTimeline"
                 android:layout_width="92dp"
                 android:layout_height="24dp"
-
                 android:text="Name"/>
             <TextView
                 android:id="@+id/textViewTimes"
@@ -41,24 +39,26 @@
 
         </LinearLayout>
         <Button
+            android:id="@+id/btnGetTheme1"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_width="99dp"
             android:layout_height="38dp"
             android:text="Get theme"
+            android:background="@color/pink_2"
             android:textSize="10dp"/>
 
         
     </RelativeLayout>
     <TextView
         android:layout_marginTop="10dp"
-        android:id="@+id/textView2"
+        android:id="@+id/tvComment"
         android:layout_width="match_parent"
         android:layout_height="38dp"
+        android:textSize="@dimen/size_18"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/blue"
         />
 
     <RelativeLayout
