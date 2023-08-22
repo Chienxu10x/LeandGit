@@ -1,5 +1,6 @@
 package com.example.appcc.fragment
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -38,15 +39,13 @@ class ProfileUserFragment : BaseFragment() {
     //    private lateinit var auth: FirebaseAuth
     private val auth: AuthViewModel by viewModels()
     private var uri: Uri? = null
+    @SuppressLint("SuspiciousIndentation")
     override fun bindView() {
         val user = Firebase.auth.currentUser
 
         val avarta=arguments?.getString("avarta")
             Glide.with(requireActivity()).load(avarta).error(R.drawable.ic_account).into(binding.imgAccount)
             binding.loading.visibility=View.GONE
-
-
-
 
         if (user != null) {
             binding.edtName.setText(user.displayName)
