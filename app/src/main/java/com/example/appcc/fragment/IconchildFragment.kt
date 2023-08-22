@@ -40,13 +40,10 @@ class IconchildFragment : Fragment() {
         authViewModel.timeline.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is UiState.Loading -> {
-//                    binding.progressBar.show()
                     binding.loading.visibility=View.VISIBLE
                 }
 
                 is UiState.Failure -> {
-//                    binding.progressBar.hide()
-//                    toast(state.error)
                     Toast.makeText(requireActivity(),state.error, Toast.LENGTH_SHORT).show()
                 }
 
