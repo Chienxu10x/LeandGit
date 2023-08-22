@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import com.bumptech.glide.Glide
-import com.example.appcc.BuildConfig
 import com.example.appcc.R
 import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseFragment

@@ -45,7 +45,7 @@ class AppWidget7 : AppWidgetProvider() {
     ) {
         super.onUpdate(context, appWidgetManager, appWidgetIds)
         if(appWidgetIds!!.isNotEmpty()){
-            updateAppWidget(context!!, appWidgetManager!!, appWidgetIds!![appWidgetIds.size-1])
+            updateAppWidget(context!!, appWidgetManager!!, appWidgetIds[appWidgetIds.size-1])
         }
     }
 }

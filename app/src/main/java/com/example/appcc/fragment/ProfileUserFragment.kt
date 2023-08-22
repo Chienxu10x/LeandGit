@@ -1,5 +1,6 @@
 package com.example.appcc.fragment
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -18,26 +19,18 @@ import com.example.appcc.R
 import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.FragmentProfileUserBinding
-import com.example.appcc.model.UserModel
-import com.example.appcc.utils.Const
 import com.example.appcc.utils.UiState
 import com.example.appcc.viewmodel.AuthViewModel
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
-import dagger.hilt.android.AndroidEntryPoint
 import java.io.FileNotFoundException
 
 class ProfileUserFragment : BaseFragment() {
     private lateinit var binding: FragmentProfileUserBinding
 
-    //    private lateinit var auth: FirebaseAuth
     private val auth: AuthViewModel by viewModels()
     private var uri: Uri? = null
+    @SuppressLint("SuspiciousIndentation")
     override fun bindView() {
         val user = Firebase.auth.currentUser
 
