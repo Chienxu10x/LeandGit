@@ -56,7 +56,7 @@ class WidgetsFragment : BaseFragment() {
                         binding.vpWidget.setCurrentItem(0, false)
                         android.os.Handler().postDelayed({
                             binding.loadingView.gone()
-                        }, 500)
+                        }, 0)
                     }
 
 

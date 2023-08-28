@@ -21,7 +21,6 @@ class FragmentCoinDetails : BaseFragment() {
         }
 
     }
-
     override fun observeData() {
 
     }

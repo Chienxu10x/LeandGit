@@ -71,7 +71,7 @@ class MyAppLauncherAdapter(val onItemClick: (position: Int, flag: Int) -> Unit,)
             }
 
 
-            ln_install.setOnClickListener() {
+            ln_install.setOnClickListener{
                 onItemClick(position, FLAG_INSTALL)
             }
 
