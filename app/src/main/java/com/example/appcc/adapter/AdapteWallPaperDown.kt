@@ -39,6 +39,7 @@ class AdapterWallPaperDown(var contents: List<ContentX>, val listener: ClickList
     override fun getItemCount(): Int {
         return contents.size
     }
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var contentItem: ContentX? = null
         private var currentPosition: Int = 0
@@ -48,6 +49,5 @@ class AdapterWallPaperDown(var contents: List<ContentX>, val listener: ClickList
 
         }
     }
-
 
 }

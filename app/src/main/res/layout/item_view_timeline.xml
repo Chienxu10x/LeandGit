@@ -1,91 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="503dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="15dp">
-
-
+    android:paddingHorizontal="15dp"
+    android:background="@color/white"
+    android:paddingVertical="5dp">
     <RelativeLayout
         android:id="@+id/RelativeLayoutTimeLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-        <de.hdodenhof.circleimageview.CircleImageView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imageViewTimelineFace"
             android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:scaleType="centerCrop"/>
+            app:riv_corner_radius="10dp"
+            android:scaleType="centerCrop"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_height="55dp"/>
 
-        <LinearLayout
-            android:layout_marginStart="10dp"
+        <TextView
+            android:id="@+id/textViewNameTimeline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_toEndOf="@+id/imageViewTimelineFace">
-            <TextView
-                android:id="@+id/textViewNameTimeline"
-                android:layout_width="92dp"
-                android:layout_height="24dp"
-                android:text="Name"/>
-            <TextView
-                android:id="@+id/textViewTimes"
-                android:layout_width="92dp"
-                android:layout_height="24dp"
-                android:text="Name"
-                />
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_toStartOf="@+id/btnGetTheme1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_toEndOf="@+id/imageViewTimelineFace"
+            android:fontFamily="@font/robotoslab_bold"
+            android:text="Name" />
 
-        </LinearLayout>
+
         <Button
             android:id="@+id/btnGetTheme1"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
             android:layout_width="99dp"
             android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bor"
             android:text="Get theme"
-            android:background="@color/pink_2"
-            android:textSize="10dp"/>
+            android:textColor="@color/yellow_1"
+            android:textSize="10dp" />
 
-        
+
     </RelativeLayout>
-    <TextView
+    <View
         android:layout_marginTop="10dp"
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F1F1F1"
+        app:layout_constraintTop_toBottomOf="@+id/RelativeLayoutTimeLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
         android:id="@+id/tvComment"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:textSize="@dimen/size_18"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        android:paddingVertical="5sp"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        android:fontFamily="@font/robotoslab_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
-
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F1F1F1"
+        app:layout_constraintTop_toBottomOf="@+id/tvComment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="405dp"
         android:paddingTop="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/image_timeline"
             android:layout_width="164dp"
+            app:riv_corner_radius="10dp"
             android:layout_height="355.11dp"
-            android:layout_alignParentStart="true"
-            android:background="@color/green_1"/>
+            android:layout_alignParentStart="true"/>
 
-        <ImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/image_timeline2"
             android:layout_width="164dp"
+            app:riv_corner_radius="10dp"
             android:layout_height="355.11dp"
-            android:layout_alignParentEnd="true"
-            android:background="@color/green_2"/>
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#F1F1F1"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

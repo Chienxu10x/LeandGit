@@ -152,7 +152,7 @@ class PrivacyPolicyFragment : BaseFragment() {
                 })
 
             }else{
-                Log.d("TAG", "updateUI: ")
+                binding.loading.setVisibility(View.GONE)
             }
         }
     }

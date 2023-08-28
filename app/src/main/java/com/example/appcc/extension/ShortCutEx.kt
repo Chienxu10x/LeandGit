@@ -1,5 +1,6 @@
 package com.example.appcc.extension
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.PendingIntent
 import android.content.Context
@@ -48,6 +49,7 @@ fun createMultipleShortcut(
     Toast.makeText(context, "Create shortcut success!", Toast.LENGTH_SHORT).show()
 }
 
+@SuppressLint("ObsoleteSdkInt")
 fun createShortcut(
     context: Context,
     applicationInfo: ApplicationInfo,
@@ -68,55 +70,54 @@ fun createShortcut(
     }
     try {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            createShortcutApiUpper26(context, applicationInfo, bitmap, label, toNextScreen)
-        } else {
-            createShortcutApiLower26(context, applicationInfo, bitmap, label, toNextScreen)
+            Toast.makeText(context, "a!", Toast.LENGTH_SHORT).show()
+            createMultipleShortcut(context, applicationInfo, bitmap, label, toNextScreen)
         }
     } catch (e2: Exception) {
+        Toast.makeText(context, "c!", Toast.LENGTH_SHORT).show()
         e2.printStackTrace()
     }
 }
 
 
-@RequiresApi(Build.VERSION_CODES.O)
-fun createShortcutApiUpper26(
-    context: Context,
-    applicationInfo: ApplicationInfo,
-    bitmap: Bitmap,
-    label: String,
-    toNextScreen: Boolean
-) {
-    val shortcutManager = context.getSystemService(ShortcutManager::class.java) as ShortcutManager
-    if (!shortcutManager.isRequestPinShortcutSupported) {
-        Toast.makeText(context, "Shortcut not supported this version", Toast.LENGTH_LONG).show()
-        return
-    }
-    val encode = URLEncoder.encode(applicationInfo.packageName, "utf-8")
-    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("app://icon_changer/" + encode))
-    intent.action = Intent.ACTION_VIEW
-    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
-    intent.putExtra(Utils.INTENT_PACKAGE, applicationInfo.packageName)
-    val intent2 =
-        ShortcutInfo.Builder(context, "icon_changer" + System.currentTimeMillis())
-            .setIcon(Icon.createWithBitmap(bitmap))
-            .setShortLabel(label)
-            .setIntent(intent)
-
-    val build = intent2.build()
-    val intent3 = Intent(context, MainActivity::class.java)
-    intent3.putExtra(Utils.INTENT_BITMAP, bitmap)
-    intent3.putExtra(Utils.INTENT_LABEL, label)
-    intent3.putExtra("duplicate", false)
-
-    val baos = ByteArrayOutputStream()
-    bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos) //bm is the bitmap object
-    val b: ByteArray = baos.toByteArray()
-    val encoded: String = Base64.encodeToString(b, Base64.DEFAULT)
-
-    val activity =
-        PendingIntent.getBroadcast(context, 100, intent3, PendingIntent.FLAG_UPDATE_CURRENT)
-    shortcutManager.requestPinShortcut(build, activity.intentSender)
-}
+//fun createShortcutApiUpper26(
+//    context: Context,
+//    applicationInfo: ApplicationInfo,
+//    bitmap: Bitmap,
+//    label: String,
+//    toNextScreen: Boolean
+//) {
+//    val shortcutManager = context.getSystemService(ShortcutManager::class.java) as ShortcutManager
+//    if (!shortcutManager.isRequestPinShortcutSupported) {
+//        Toast.makeText(context, "Shortcut not supported this version", Toast.LENGTH_LONG).show()
+//        return
+//    }
+//    val encode = URLEncoder.encode(applicationInfo.packageName, "utf-8")
+//    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("app://icon_changer/" + encode))
+//    intent.action = Intent.ACTION_VIEW
+//    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+//    intent.putExtra(Utils.INTENT_PACKAGE, applicationInfo.packageName)
+//    val intent2 =
+//        ShortcutInfo.Builder(context, "icon_changer" + System.currentTimeMillis())
+//            .setIcon(Icon.createWithBitmap(bitmap))
+//            .setShortLabel(label)
+//            .setIntent(intent)
+//
+//    val build = intent2.build()
+//    val intent3 = Intent(context, MainActivity::class.java)
+//    intent3.putExtra(Utils.INTENT_BITMAP, bitmap)
+//    intent3.putExtra(Utils.INTENT_LABEL, label)
+//    intent3.putExtra("duplicate", false)
+//
+//    val baos = ByteArrayOutputStream()
+//    bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos) //bm is the bitmap object
+//    val b: ByteArray = baos.toByteArray()
+//    val encoded: String = Base64.encodeToString(b, Base64.DEFAULT)
+//
+//    val activity =
+//        PendingIntent.getBroadcast(context, 100, intent3, PendingIntent.FLAG_UPDATE_CURRENT)
+//    shortcutManager.requestPinShortcut(build, activity.intentSender)
+//}
 
 fun createShortcutApiLower26(
     context: Context,
