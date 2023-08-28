@@ -36,7 +36,6 @@ class FragmentTimelineChild : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val user=Firebase.auth.currentUser
         authViewModel.getTimeLine()
         binding.recyclerviewTimeline.layoutManager = LinearLayoutManager(requireContext())
         val adapter = RecyclerAdapterTimeline(requireActivity())
