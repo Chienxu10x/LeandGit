@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/akronim</item>
+        <item>@font/allura</item>
+        <item>@font/annie_use_your_telescope</item>
+        <item>@font/beth_ellen</item>
+        <item>@font/warnes</item>
         <item>@font/work_sans_light</item>
         <item>@font/work_sans_medium</item>
         <item>@font/work_sans_semibold</item>

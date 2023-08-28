@@ -1,5 +1,6 @@
 package com.example.appcc.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import com.example.appcc.activity.MainActivity
 import com.example.appcc.adapter.MyAppLauncherAdapter
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.FragmentAppLauncherBinding
+import com.example.appcc.extension.createMultipleShortcut
 import com.example.appcc.extension.getBitmapFromAsset
 import com.example.appcc.extension.getDeviceName
 import com.example.appcc.extension.gone
@@ -23,12 +25,12 @@ import com.example.appcc.extension.visibble
 import com.example.appcc.model.ContentX
 import com.example.appcc.model.MyAppIcon
 import com.example.appcc.viewmodel.ShortcutViewModel
-import com.example.appcc.extension.createShortcut
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import java.util.Locale
 
+@Suppress("DEPRECATION")
 class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
     private lateinit var binding: FragmentAppLauncherBinding
     private val shortcutViewModel: ShortcutViewModel by activityViewModels()
@@ -53,20 +55,17 @@ class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
         when (flag) {
             MyAppLauncherAdapter.FLAG_ADD_ICON -> {
                 changeIconPosition = position
-//                loadingView.visibble()
-//                val action =
-//                    FragmentIconDetailDirections.actionFragmentAppLauncher2ToSelectApp(someList[position].icon)
-//                findNavController().navigate(action)
                 activity?.let {act->
                     var fragmentSelectApp2: FragmentSelectApp2 = FragmentSelectApp2(someList[position].icon).setUpView()
                     (act as MainActivity).replaceFragment(fragmentSelectApp2)
+                    someList[position].check = false
                 }
-                someList[position].check = false
+
             }
 
             MyAppLauncherAdapter.FLAG_INSTALL -> {
                 if (someList[position].pkg == "" || someList[position].appIcon == null) {
-                    Log.d("ccc", ": "+someList[1].icon)
+                    Log.d("ccc", someList[position].appIcon.toString())
                     Toast.makeText(
                         requireContext(),
                         "You must select related app before install icon",
@@ -78,7 +77,7 @@ class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
                 val x = packageManager.getApplicationInfo(someList[position].pkg, 0)
                 val bitmap = requireContext().getBitmapFromAsset(someList[position].icon)
                 bitmap?.let {
-                    createShortcut(requireContext(), x, it, someList[position].label, true)
+                    createMultipleShortcut(requireContext(), x, it, someList[position].label, true)
                 }
             }
 
@@ -96,6 +95,7 @@ class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setSelectedAppText() {
         var count = 0
         var countCheck = 0
@@ -122,6 +122,7 @@ class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
         binding.tvInstallAll.setText("Install $count App Icons")
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun removeAllAppIcon() {
         for (i in someList) {
             i.check = false
@@ -146,7 +147,7 @@ class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
     }
 
     override fun bindView() {
-
+        val arg = arg
         if (someList.isEmpty()) {
             arg.icon!!.forEach {
                 someList.add(MyAppIcon(it, ""))
@@ -730,10 +731,6 @@ class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
 
     private var showToast = true
     override fun observeData() {
-//        shortcutViewModel.showLoading.observe(this) {
-//            if (!it) {
-//            }
-//        }
         shortcutViewModel.showLoading.observe(this, Observer {
             if (!it){
             }
@@ -752,6 +749,8 @@ class FragmentIconDetail(contentX: ContentX) : BaseFragment() {
 
 
             }
+
+            else -> {}
         }
     }
 

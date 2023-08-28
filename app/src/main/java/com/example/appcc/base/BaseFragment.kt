@@ -67,6 +67,7 @@ abstract class BaseFragment : Fragment() {
                 (activity as MainActivity).setTitleApp()
     }
 
+
 }
 
 
