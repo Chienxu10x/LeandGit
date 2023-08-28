@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="54dp"
+    android:layout_height="wrap_content"
     android:background="#F1F1F1"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp">
+    android:padding="@dimen/_8sdp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:background="@drawable/r_type_text"
         >
@@ -15,17 +14,18 @@
             android:id="@+id/text_style"
             android:layout_width="match_parent"
             android:layout_toStartOf="@id/image_copy"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:text="@string/icons"
+            android:padding="@dimen/_4sdp"
             android:gravity="center_vertical"
             android:layout_centerVertical="true"
-            android:textSize="18sp" />
+            android:textSize="@dimen/_20sdp" />
         <ImageView
             android:id="@+id/image_copy"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
             android:layout_marginEnd="12dp"
             android:layout_alignParentRight="true"
             android:background="@drawable/ic_copy"/>

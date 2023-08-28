@@ -5,7 +5,7 @@ object TextStylish {
     fun font0(str: String): String = str
 
     fun font1(str: String): String {
-        return str.replace("A", "Ⓐ").replace("A", "ⓐ").replace("B", "Ⓑ")
+        return str.replace("A", "Ⓐ").replace("a", "ⓐ").replace("B", "Ⓑ")
             .replace("b", "ⓑ").replace("C", "Ⓒ").replace("c", "ⓒ").replace("D", "Ⓓ")
             .replace("d", "ⓓ").replace("E", "Ⓔ").replace("e", "ⓔ").replace("F", "Ⓕ")
             .replace("f", "ⓕ").replace("G", "Ⓖ").replace("g", "ⓖ").replace("H", "Ⓗ")

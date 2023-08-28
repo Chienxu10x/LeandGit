@@ -37,10 +37,6 @@ class FragmentTimelineChild : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val user=Firebase.auth.currentUser
-        if (user==null){
-            Toast.makeText(requireActivity(),"Vui login",Toast.LENGTH_SHORT).show()
-            return
-        }
         authViewModel.getTimeLine()
         binding.recyclerviewTimeline.layoutManager = LinearLayoutManager(requireContext())
         val adapter = RecyclerAdapterTimeline(requireActivity())
@@ -69,6 +65,8 @@ class FragmentTimelineChild : Fragment() {
                         "onViewCreated: " + state.data.toMutableList().size
                     )
                 }
+
+                else -> {}
             }
         }
     }
