@@ -11,7 +11,7 @@
         android:id="@+id/tv_title"
         android:layout_width="@dimen/size_0"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/hina"
+        android:fontFamily="@font/robotoslab_bold"
         android:gravity="center"
         android:text="@string/language"
         android:textColor="@color/black"

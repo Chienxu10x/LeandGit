@@ -8,6 +8,8 @@ import android.widget.Toast
 
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -18,6 +20,7 @@ import com.example.appcc.base.BaseActivity
 import com.example.appcc.databinding.ActivityMainBinding
 import com.example.appcc.fragment.FragmentCoinDetails
 import com.example.appcc.fragment.FragmentSeachTheme
+import com.example.appcc.fragment.FragmentType
 import com.example.appcc.fragment.IconsFragment
 import com.example.appcc.fragment.PrivacyPolicyFragment
 import com.example.appcc.fragment.SettingFragment
@@ -43,6 +46,10 @@ class MainActivity : BaseActivity() {
 
         binding.btnSeachTheme.setOnClickListener{
             replaceFragment(FragmentSeachTheme())
+        }
+
+        binding.menuType.setOnClickListener{
+            replaceFragment(FragmentType())
         }
 
     }

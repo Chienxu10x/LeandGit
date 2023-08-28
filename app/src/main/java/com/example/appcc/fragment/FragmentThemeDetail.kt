@@ -1,13 +1,16 @@
 package com.example.appcc.fragment
 
 import android.app.Dialog
+import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.compose.ui.graphics.Color
@@ -56,24 +59,6 @@ class FragmentThemeDetail : BaseFragment() {
 
     override fun bindView() {
         val user=Firebase.auth.currentUser
-//        authViewModel.getMyUserModel()
-//        authViewModel.userModel.observe(viewLifecycleOwner){state->
-//            when(state){
-//                is UiState.Loading->{
-//
-//                }
-//                is UiState.Failure->{
-//
-//                }
-//                is UiState.Success->{
-//                    val userModel=state.data.toMutableList()[0]
-//                    Log.d("TAG", "bindView: "+state.data.toMutableList()[0])
-//                    avarta=userModel.avarta
-//                }
-//                else -> {avarta=""}
-//            }
-//
-//        }
         val referen=FirebaseDatabase.getInstance().getReference(Const.USER).child(user?.uid.toString()).child("avarta")
         Log.d("TAG", "bindView: "+user?.uid.toString())
         referen.addValueEventListener(object : ValueEventListener{
@@ -108,6 +93,23 @@ class FragmentThemeDetail : BaseFragment() {
                 }
             }
             imgshare.setOnClickListener {
+                if (user==null){
+                    val toast = Toast(requireActivity())
+                    toast.duration = Toast.LENGTH_SHORT
+
+                    val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                    val layout = inflater.inflate(R.layout.custom_toast, null)
+
+// Customize the content of the Toast layout here if needed
+                    val toastText = layout.findViewById<TextView>(R.id.toast_text)
+                    toastText.text = "Please login"
+
+                    toast.view = layout
+                    toast.setGravity(Gravity.CENTER, 0, 0) // Set gravity to center
+
+                    toast.show()
+                    return@setOnClickListener
+                }
                 val dialog:Dialog= Dialog(requireActivity())
                 val bindingdialog=DialogCommentBinding.inflate(layoutInflater)
                 dialog.setContentView(bindingdialog.root)
@@ -119,10 +121,6 @@ class FragmentThemeDetail : BaseFragment() {
                 Glide.with(requireActivity()).load(Uri.parse(item.previews[1].toAssetPath()))
                     .into(bindingdialog.imgComment1)
                 bindingdialog.btnPost.setOnClickListener {
-                    if (user==null){
-                        Toast.makeText(requireActivity(),"Vui long dang nhap",Toast.LENGTH_SHORT).show()
-                        return@setOnClickListener
-                    }
                     val key: String? =FirebaseDatabase.getInstance().getReference(Const.COMMENT).push().key
                     val commentModel=CommentModel(key.toString(),user.uid,avarta, user.displayName.toString(),bindingdialog.edtComment.text.toString(),item)
 
@@ -150,6 +148,23 @@ class FragmentThemeDetail : BaseFragment() {
 
             }
             flFavorite.setOnClickListener {
+                if (user==null){
+                    val toast = Toast(requireActivity())
+                    toast.duration = Toast.LENGTH_SHORT
+
+                    val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                    val layout = inflater.inflate(R.layout.custom_toast, null)
+
+// Customize the content of the Toast layout here if needed
+                    val toastText = layout.findViewById<TextView>(R.id.toast_text)
+                    toastText.text = "Please login"
+
+                    toast.view = layout
+                    toast.setGravity(Gravity.CENTER, 0, 0) // Set gravity to center
+
+                    toast.show()
+                    return@setOnClickListener
+                }
                 authViewModel.addFavorite(item,item.title)
                 authViewModel.addFavorite.observe(viewLifecycleOwner){state->
                     when(state){
@@ -205,5 +220,25 @@ class FragmentThemeDetail : BaseFragment() {
 
     companion object {
         private const val DIALOG_THEME = "DIALOG_THEME"
+    }
+    fun checkuser(str:String){
+        val user=Firebase.auth.currentUser
+        if (user==null){
+            val toast = Toast(requireActivity())
+            toast.duration = Toast.LENGTH_SHORT
+
+            val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val layout = inflater.inflate(R.layout.custom_toast, null)
+
+// Customize the content of the Toast layout here if needed
+            val toastText = layout.findViewById<TextView>(R.id.toast_text)
+            toastText.text = str
+
+            toast.view = layout
+            toast.setGravity(Gravity.CENTER, 0, 0) // Set gravity to center
+
+            toast.show()
+            return
+        }
     }
 }

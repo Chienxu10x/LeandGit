@@ -191,4 +191,9 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
+    <style name="type_someth">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#A3A3A3</item>
+    </style>
+
 </resources>

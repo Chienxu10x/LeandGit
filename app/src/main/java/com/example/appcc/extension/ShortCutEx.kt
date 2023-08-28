@@ -25,7 +25,6 @@ import java.io.ByteArrayOutputStream
 import java.net.URLEncoder
 import java.util.*
 
-
 fun createMultipleShortcut(
     context: Context,
     applicationInfo: ApplicationInfo,
@@ -34,7 +33,7 @@ fun createMultipleShortcut(
     toNextScreen: Boolean
 ) {
     val encode = URLEncoder.encode(applicationInfo.packageName, "utf-8")
-    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("app://icon_changer/" + encode))
+    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("app://icon_changer/"+encode))
     intent.action = Intent.ACTION_VIEW
     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
     intent.putExtra(Utils.INTENT_PACKAGE, applicationInfo.packageName)
@@ -147,3 +146,4 @@ fun createShortcutApiLower26(
     }
 
 }
+

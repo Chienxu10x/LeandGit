@@ -22,8 +22,10 @@ import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.ActivityMainBinding
 import com.example.appcc.databinding.FragmentThemesBinding
 import com.example.appcc.databinding.ItemViewMainBinding
+import com.example.appcc.extension.gone
 import com.example.appcc.model.ContentX
 import com.example.appcc.extension.navigateTo
+import com.example.appcc.extension.visibble
 import com.example.appcc.viewmodel.IconViewModel
 import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,9 +44,12 @@ private lateinit var binding: FragmentThemesBinding
     }
 
     override fun bindView() {
+
         binding.tabMenu.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab) {
+                binding.loadingView.visibble()
                 iconViewModel.getThemeByFilter(tab.position)
+
 //                binding.fragmentTheme.fullScroll(View.FOCUS_UP)
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -54,6 +59,7 @@ private lateinit var binding: FragmentThemesBinding
             }
 
         })
+
 
 
     }
@@ -72,6 +78,10 @@ private lateinit var binding: FragmentThemesBinding
 
             recyclerAdapterTheme.submitList(it.content)
             binding.recyclerviewTheme.adapter = recyclerAdapterTheme
+            android.os.Handler().postDelayed({
+                binding.loadingView.gone()
+            }, 0)
+
         }
 
         iconViewModel.allTheme.observe(this){

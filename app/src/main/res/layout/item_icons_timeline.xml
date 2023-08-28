@@ -12,43 +12,43 @@
         android:id="@+id/RelativeLayoutTimeLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
-        <de.hdodenhof.circleimageview.CircleImageView
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imageViewTimelineFace"
             android:layout_width="55dp"
+            app:riv_corner_radius="10dp"
+            android:scaleType="centerCrop"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_height="55dp"/>
 
-        <LinearLayout
-            android:layout_marginStart="10dp"
+        <TextView
+            android:id="@+id/textViewNameTimeline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_toEndOf="@+id/imageViewTimelineFace">
-            <TextView
-                android:id="@+id/textViewNameTimeline"
-                android:layout_width="92dp"
-                android:layout_height="24dp"
-                android:text="Name"/>
-            <TextView
-                android:id="@+id/textViewTimes"
-                android:layout_width="92dp"
-                android:layout_height="24dp"
-                android:text="Name"
-                />
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_toStartOf="@+id/btnGetTheme1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_toEndOf="@+id/imageViewTimelineFace"
+            android:fontFamily="@font/robotoslab_bold"
+            android:text="Name" />
 
-        </LinearLayout>
+
         <Button
             android:id="@+id/btnGetTheme2"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
             android:layout_width="99dp"
             android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bor"
             android:text="Get theme"
-            android:background="@color/pink_2"
-            android:textSize="10dp"/>
+            android:textColor="@color/yellow_1"
+            android:textSize="10dp" />
 
 
     </RelativeLayout>

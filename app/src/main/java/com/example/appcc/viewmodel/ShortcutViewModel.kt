@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
+@Suppress("DEPRECATION")
 @HiltViewModel
 class ShortcutViewModel @Inject constructor() : BaseViewModel() {
     val showLoading by lazy {
