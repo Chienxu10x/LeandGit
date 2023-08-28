@@ -15,7 +15,11 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appcc.R
-
+import com.fansipan.text.repeater10k.util.TextStylish
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 class AdapterStyle(private val context: Context,private val itemList: List<String> ) :
@@ -48,18 +52,34 @@ class AdapterStyle(private val context: Context,private val itemList: List<Strin
         holder.itemText.typeface = typeface
         holder.itemText.text = string
         holder.imageViewCopy.setOnClickListener{
-            val textToCopy = string
-            val clipboardManager = holder.itemView.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clipData = ClipData.newPlainText("Copied Text", textToCopy)
-            clipboardManager.setPrimaryClip(clipData)
-            Toast.makeText(context, "Finish Copy", Toast.LENGTH_SHORT).show()
+            applyFont(position,string){result->
+                val textToCopy = result
+                val clipboardManager = holder.itemView.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clipData = ClipData.newPlainText("Copied Text", textToCopy)
+                clipboardManager.setPrimaryClip(clipData)
+                Toast.makeText(context, "Finish Copy", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 
     override fun getItemCount(): Int {
         return itemList.size
     }
+    fun applyFont(position:Int,str: String,onDone:(rs:String)-> Unit){
+        CoroutineScope(Dispatchers.IO).launch {
+            val result=when(position){
+                0-> TextStylish.font1(str)
+                1->TextStylish.font2(str)
+                else -> {str}
+            }
+            withContext(Dispatchers.Main){
+                onDone.invoke(result)
+            }
+        }
 
+
+    }
 }
 
 //

@@ -44,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="  Type something here"
+            android:inputType="text"
             android:layout_marginStart="12dp"
             style="@style/type_someth"
             android:background="@drawable/r_null"/>
