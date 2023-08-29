@@ -25,6 +25,7 @@ import com.example.appcc.activity.MainActivity
 import com.example.appcc.base.BaseFragment
 import com.example.appcc.databinding.DialogCommentBinding
 import com.example.appcc.databinding.FragmentThemeDetailBinding
+import com.example.appcc.dialog.CommentDialog
 import com.example.appcc.dialog.ThemeDetailDialog
 import com.example.appcc.extension.navigateTo
 import com.example.appcc.extension.toAssetPath
@@ -58,6 +59,7 @@ class FragmentThemeDetail : BaseFragment() {
     }
 
     override fun bindView() {
+        binding.textTitle.text = arg.contentx.title
         val user=Firebase.auth.currentUser
         val referen=FirebaseDatabase.getInstance().getReference(Const.USER).child(user?.uid.toString()).child("avarta")
         Log.d("TAG", "bindView: "+user?.uid.toString())
@@ -182,6 +184,12 @@ class FragmentThemeDetail : BaseFragment() {
                     }
                 }
             }
+            btnComment.setOnClickListener{
+                val dialogComment = CommentDialog()
+                dialogComment.isCancelable = false
+                dialogComment.show(childFragmentManager, DIALOG_COMMENT)
+
+            }
 
         }
 
@@ -220,6 +228,7 @@ class FragmentThemeDetail : BaseFragment() {
 
     companion object {
         private const val DIALOG_THEME = "DIALOG_THEME"
+        private const val DIALOG_COMMENT = "DIALOG_COMMENT"
     }
     fun checkuser(str:String){
         val user=Firebase.auth.currentUser

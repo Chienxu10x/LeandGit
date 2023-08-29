@@ -10,13 +10,41 @@
         android:layout_height="match_parent"
         android:id="@+id/image_theme_item"
         />
-    <ImageView
-        android:id="@+id/imgshare"
-        android:layout_width="@dimen/size_50"
-        android:layout_height="@dimen/size_50"
-        android:layout_gravity="end"
-        android:layout_margin="10sp"
-        android:src="@drawable/frame_66"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            style="@style/type_title_theme"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:background="@drawable/v_text_theme" />
+        <RelativeLayout
+            android:id="@+id/btn_comment"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/imgshare"
+            android:layout_width="40dp"
+            android:background="@drawable/frame_close"
+            android:layout_height="40dp">
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgshare"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="10sp"
+            android:src="@drawable/frame_66" />
+    </RelativeLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
