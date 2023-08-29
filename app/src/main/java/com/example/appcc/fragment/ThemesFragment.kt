@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavDirections
@@ -27,6 +28,7 @@ import com.example.appcc.model.ContentX
 import com.example.appcc.extension.navigateTo
 import com.example.appcc.extension.visibble
 import com.example.appcc.viewmodel.IconViewModel
+import com.example.appcc.viewmodel.WidgetViewModel
 import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.log
@@ -34,6 +36,7 @@ import kotlin.math.log
 class ThemesFragment : BaseFragment() {
 private lateinit var binding: FragmentThemesBinding
     private val iconViewModel : IconViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -100,8 +103,11 @@ private lateinit var binding: FragmentThemesBinding
 
     }
     fun toDetail(contentX: ContentX){
-        val action : NavDirections = ThemesFragmentDirections.actionThemesFragmentToFragmentThemeDetail(contentX)
+        val action: NavDirections = ThemesFragmentDirections
+            .actionThemesFragmentToFragmentThemeDetail(contentX)
+//        widgetViewModel.setCurrentWidget(binding.tabMenu.selectedTabPosition+1)
         navigateTo(action)
+
         hideInBaseNavigationView()
         hideInBaseToolBar()
     }

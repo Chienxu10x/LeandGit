@@ -5,6 +5,7 @@
       "content": [
         {
           "title": "Summer",
+          "widget": 8,
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_8/wallpaper8.png",
@@ -64,7 +65,9 @@
           ]
         },
         {
+
           "title": "Sea",
+          "widget": 9,
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_9/wallpaper9.png",
@@ -124,6 +127,7 @@
         },
         {
           "title": "Cute",
+          "widget": 5,
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_5/wallpaper5.png",
@@ -183,6 +187,7 @@
         },
         {
           "title": "Moon",
+          "widget": 1,
           "isLock": false,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_1/wallpaper1.png",
@@ -242,6 +247,7 @@
         },
         {
           "title": "Green",
+          "widget": 2,
           "isLock": false,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_2/wallpaper2.png",
@@ -302,6 +308,7 @@
         },
         {
           "title": "Flower",
+          "widget": 3,
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_3/wallpaper3.png",
@@ -361,6 +368,7 @@
         },
         {
           "title": "Girl",
+          "widget": 4,
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_4/wallpaper4.png",
@@ -420,6 +428,7 @@
         },
         {
           "title": "Autumn",
+          "widget": 6,
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_6/wallpaper6.png",
@@ -538,6 +547,7 @@
         },
         {
           "title": "Rainbow",
+          "widget": 10,
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",
           "wallpaper": "Wallpaper/wallpaper_10/wallpaper10.png",
@@ -1090,6 +1100,7 @@
       "title": "Flower",
       "content": [
         {
+
           "title": "Violet",
           "isLock": true,
           "subtitle": "40 Icon, 1 Theme, 6 Widget",

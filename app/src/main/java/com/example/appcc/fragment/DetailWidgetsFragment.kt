@@ -41,6 +41,10 @@ class DetailWidgetsFragment(contentX: ContentX) : BaseFragment() {
         binding.btnSetWid.setOnClickListener{
             widgetViewModel.setCurrentWidget(widgetViewModel.getCurrentWidgetPosion())
             Toast.makeText(requireContext(),"OK", Toast.LENGTH_SHORT).show();
+//            val int: Int =  widgetViewModel.getCurrentWidgetPosion()
+            widgetViewModel.setCurrentWidget(contentX.widget)
+//            widgetViewModel.setCurrentWidget()
+
 
         }
     }
