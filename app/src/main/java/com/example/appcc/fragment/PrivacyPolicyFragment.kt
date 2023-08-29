@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.appcc.R
 import com.example.appcc.activity.MainActivity
@@ -59,8 +60,13 @@ class PrivacyPolicyFragment : BaseFragment() {
                 onBackPressed()
             }
             btnGoogle.setOnClickListener {
-                binding.loading.setVisibility(View.VISIBLE)
-                sigInGoogle()
+                if (binding.ckCheck.isChecked){
+                    binding.loading.setVisibility(View.VISIBLE)
+                    sigInGoogle()
+                }else{
+                    Toast.makeText(requireContext(),getString(R.string.terms),Toast.LENGTH_SHORT).show()
+                }
+
             }
 
         }

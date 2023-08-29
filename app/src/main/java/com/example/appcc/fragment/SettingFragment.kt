@@ -15,6 +15,7 @@ import com.example.appcc.data.DataSave
 import com.example.appcc.databinding.FragmentSettingBinding
 import com.example.appcc.dialog.SetupLanguageDialog
 import com.example.appcc.utils.Const
+import com.example.appcc.utils.openMail
 import com.example.appcc.utils.resetActivity
 import com.example.appcc.utils.shareApp
 import com.google.firebase.auth.FirebaseAuth
@@ -112,7 +113,7 @@ class SettingFragment : BaseFragment() {
                 }
             }
             lnContact.setOnClickListener {
-
+                requireContext().openMail()
             }
             lnShare.setOnClickListener {
                 requireContext().shareApp()
@@ -179,9 +180,11 @@ class SettingFragment : BaseFragment() {
             activity?.resetActivity()
         }
     }
-    fun onSetupView():SettingFragment{
+
+    fun onSetupView(): SettingFragment {
         return SettingFragment()
     }
+
     companion object {
         private const val DIALOG_LANGUAGE = "DIALOG_LANGUAGE"
     }

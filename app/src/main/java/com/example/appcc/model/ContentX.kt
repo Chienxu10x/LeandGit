@@ -11,5 +11,5 @@ data class ContentX(
     var subtitle: String="",
     var title: String="",
     var wallpaper: String="",
-    var widget: Int,
+    var widget: Int=0
     ): Parcelable

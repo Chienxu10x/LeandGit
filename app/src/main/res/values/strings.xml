@@ -2,6 +2,7 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="app_name">AppCC</string>
+    <string name="terms">Please accept my terms</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="themes">Themes</string>

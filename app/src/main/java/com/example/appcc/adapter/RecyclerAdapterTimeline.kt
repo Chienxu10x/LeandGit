@@ -71,7 +71,10 @@ class RecyclerAdapterTimeline(private val context: Context) :
     }
 
     override fun getItemCount(): Int {
+        if (list!=null){
+            return list.size
+        }
         // Trả về số lượng phần tử trong danh sách
-        return list.size
+        return 0
     }
 }

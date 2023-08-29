@@ -10,7 +10,9 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Environment
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.example.appcc.BuildConfig
+import com.example.appcc.R
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -64,6 +66,12 @@ fun getTotalRam(): Double {
         // Streams.close(reader);
     }
     return ramGB
+}
+fun Context.openMail() {
+    val intent = Intent(Intent.ACTION_SENDTO)
+    intent.data = Uri.parse("mailto:")
+    intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(EMAIL))
+    startActivity(intent)
 }
 
 fun Context.shareApp() {
@@ -191,3 +199,4 @@ fun Activity.resetActivity() {
     this.overridePendingTransition(0, 0)
     this.startActivity(intent)
 }
+private const val EMAIL = "trustedapp.support@apero.vn"
